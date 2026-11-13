@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Watcher · Browse</title>
+  <meta name="description" content="Browse open postings, filter, and star a shortlist.">
+  <meta name="theme-color" content="#0e2a45">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header id="nav"></header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Browse open postings</h1>
+      <p>Every posting the watched boards list today. Star a posting to save it to your shortlist —
+        the shortlist stays in this browser after a reload.</p>
+      <div class="meta"><span>Open postings: <b id="h-open">—</b></span>
+        <span>In my role: <b id="h-role">—</b></span><span>Shortlisted: <b id="h-star">0</b></span></div>
+    </div>
+  </section>
+
+  <main>
+    <section class="card">
+      <div class="toolbar">
+        <div class="seg" id="role" role="group" aria-label="Role switch">
+          <button data-v="role" aria-pressed="true">In my role</button>
+          <button data-v="all" aria-pressed="false">All postings</button>
+          <button data-v="star" aria-pressed="false">★ Shortlist</button>
+        </div>
+        <span class="count" id="count"></span>
+      </div>
+      <div class="controls">
+        <div class="search"><label for="q">Search titles</label>
+          <input type="search" id="q" placeholder="e.g. credit analyst, energy, M&amp;A" autocomplete="off"></div>
+        <div><label for="employer">Employer</label><select id="employer"></select></div>
+        <div><label for="loc">Location</label><select id="loc"></select></div>
+        <div><label for="days">Days open</label>
+          <select id="days">
+            <option value="any">Any</option>
+            <option value="0-1">New (≤ 1 day)</option>
+            <option value="0-3">≤ 3 days</option>
+            <option value="0-7">≤ 7 days</option>
+            <option value="0-14">≤ 14 days</option>
+            <option value="0-30">≤ 30 days</option>
+            <option value="31-99999">More than 30 days</option>
+          </select></div>
+        <div><label for="sort">Sort by first seen</label>
+          <select id="sort"><option value="desc">Newest first</option><option value="asc">Oldest first</option></select></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th style="width:34px"></th><th>Posting</th><th>Location</th>
+            <th class="num">First seen</th><th class="num">Days open</th><th class="hide-sm num">Posted</th><th></th></tr></thead>
+          <tbody id="rows"></tbody>
+        </table>
+      </div>
+      <div id="more" style="text-align:center;margin-top:12px"></div>
+    </section>
+    <p class="foot">Days open = last run date − first-seen date. Postings already open on the first day of
+      watching show “≥”, since their real start date is unknown.</p>
+  </main>
+
+  <script src="assets/app.js"></script>
+  <script src="assets/browse.js"></script>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Watcher · Market</title>
+  <meta name="description" content="A report on the job-posting history: new, removed, days open, employers and locations.">
+  <meta name="theme-color" content="#0e2a45">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header id="nav"></header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Market report</h1>
+      <p>Every number on this page is computed in your browser from <a href="data/history.csv" style="color:#fff;text-decoration:underline">history.csv</a>,
+        so the report updates as the history grows. Postings marked <i>first run</i> were already open when
+        watching began, so their start date is unknown; they are left out where noted.</p>
+      <div class="meta"><span>History through: <b id="m-last">—</b></span>
+        <span>Postings tracked: <b id="m-total">—</b></span><span>Days of history: <b id="m-days">—</b></span></div>
+    </div>
+  </section>
+
+  <main>
+    <section class="card finding" id="s1">
+      <div class="kicker">1 · New postings per day</div>
+      <h2 class="h">—</h2><p class="p"></p>
+      <div class="chart-box"><canvas></canvas></div>
+    </section>
+    <section class="card finding" id="s2">
+      <div class="kicker">2 · Removed postings per day</div>
+      <h2 class="h">—</h2><p class="p"></p>
+      <div class="chart-box"><canvas></canvas></div>
+    </section>
+    <section class="card finding" id="s3">
+      <div class="kicker">3 · Open postings per employer</div>
+      <h2 class="h">—</h2><p class="p"></p>
+      <div class="chart-box tall"><canvas></canvas></div>
+    </section>
+    <section class="card finding" id="s4">
+      <div class="kicker">4 · Days open</div>
+      <h2 class="h">—</h2><p class="p"></p>
+      <div class="chart-box"><canvas></canvas></div>
+    </section>
+    <section class="card finding" id="s5">
+      <div class="kicker">5 · Share removed within seven days</div>
+      <h2 class="h">—</h2><p class="p"></p>
+      <div class="chart-box"><canvas></canvas></div>
+    </section>
+    <section class="card finding" id="s6">
+      <div class="kicker">6 · Top locations among open postings</div>
+      <h2 class="h">—</h2><p class="p"></p>
+      <div class="chart-box tall"><canvas></canvas></div>
+    </section>
+    <p class="foot">Cross-check: <code>python -m jobwatcher market</code> prints the same numbers from the same file.</p>
+  </main>
+
+  <script src="assets/vendor/chart.umd.min.js"></script>
+  <script src="assets/app.js"></script>
+  <script src="assets/market.js"></script>
+</body>
+</html>

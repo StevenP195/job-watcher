@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Job Watcher · Today</title>
+  <meta name="description" content="Daily watch of Houston credit analyst and banking job postings.">
+  <meta name="theme-color" content="#0e2a45">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header id="nav"></header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Today’s job watch</h1>
+      <p>Every morning the pipeline pulls each employer’s job board, compares it with the day
+        before, and records what is new and what is gone.</p>
+      <div class="meta">
+        <span>Last run: <b id="run-time">—</b></span>
+        <span>Watching since: <b id="first-run">—</b></span>
+        <span>Sources OK: <b id="sources-ok">—</b></span>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <div class="tiles">
+      <div class="tile days"><div class="label">Days with a successful run</div>
+        <div class="value" id="t-days">—</div><div class="hint">different dates with raw files</div></div>
+      <div class="tile"><div class="label">Open postings</div>
+        <div class="value" id="t-open">—</div><div class="hint" id="t-open-hint">&nbsp;</div></div>
+      <div class="tile new"><div class="label">New today</div>
+        <div class="value" id="t-new">—</div><div class="hint" id="t-new-hint">&nbsp;</div></div>
+      <div class="tile removed"><div class="label">Removed today</div>
+        <div class="value" id="t-removed">—</div><div class="hint" id="t-removed-hint">&nbsp;</div></div>
+    </div>
+
+    <div class="toolbar">
+      <div class="seg" id="scope" role="group" aria-label="Which postings to list">
+        <button data-v="all" aria-pressed="true">All postings</button>
+        <button data-v="role" aria-pressed="false">In my role</button>
+        <button data-v="hou" aria-pressed="false">My role · Houston</button>
+      </div>
+      <span class="count" id="run-date"></span>
+    </div>
+
+    <div class="grid-2">
+      <section class="card">
+        <div class="card-head"><h2><span class="badge-new">▲</span> New in the latest run</h2>
+          <span class="muted small" id="new-count"></span></div>
+        <ul class="postings" id="new-list"></ul>
+      </section>
+      <section class="card">
+        <div class="card-head"><h2><span class="badge-removed">▼</span> Removed in the latest run</h2>
+          <span class="muted small" id="removed-count"></span></div>
+        <ul class="postings" id="removed-list"></ul>
+      </section>
+    </div>
+
+    <section class="card" style="margin-top:18px">
+      <div class="card-head"><div><h2>Source status</h2>
+        <p class="sub">Result of every source in the latest run. A failed source writes no raw file that day; the rest still run.</p></div></div>
+      <div class="table-wrap">
+        <table>
+          <thead><tr><th>Employer</th><th class="hide-sm">Source</th><th class="hide-sm">System</th>
+            <th>Status</th><th class="num">Postings</th></tr></thead>
+          <tbody id="sources"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <p class="foot">Data: <a href="data/history.csv">history.csv</a> · <a href="data/status.json">status.json</a></p>
+  </main>
+
+  <script src="assets/app.js"></script>
+  <script src="assets/today.js"></script>
+</body>
+</html>
