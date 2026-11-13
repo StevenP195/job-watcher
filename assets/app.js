@@ -6,6 +6,7 @@ const JW = (() => {
     { href: "index.html", label: "Today" },
     { href: "browse.html", label: "Browse" },
     { href: "market.html", label: "Market" },
+    { href: "news.html", label: "News" },
   ];
 
   const store = {
@@ -41,8 +42,8 @@ const JW = (() => {
     el.innerHTML = `
       <div class="offline-banner">Offline — showing the last data this device loaded.</div>
       <div class="nav-inner">
-        <a class="brand" href="index.html"><img src="assets/icons/icon-192.png" alt="">
-          Job Watcher <small>· Houston credit &amp; banking</small></a>
+        <a class="brand" href="index.html" aria-label="Job Watcher home"><img src="assets/icons/icon-192.png" alt="">
+          <span class="brand-name">Job Watcher</span> <small>· Houston credit &amp; banking</small></a>
         <nav class="nav-links">${links}</nav>
         <button class="icon-btn" id="theme-btn" title="Toggle light / dark">◐</button>
       </div>`;
