@@ -5,13 +5,13 @@
      the pages show the latest run; when offline, serve the last copy loaded and
      mark the response so the page can show an "offline" banner. */
 
-const CACHE = "job-watcher-v1";
+const CACHE = "job-watcher-v2";
 const SHELL = [
-  "./", "index.html", "browse.html", "market.html", "manifest.webmanifest",
-  "assets/style.css", "assets/app.js", "assets/today.js", "assets/browse.js", "assets/market.js",
+  "./", "index.html", "browse.html", "market.html", "news.html", "manifest.webmanifest",
+  "assets/style.css", "assets/app.js", "assets/today.js", "assets/browse.js", "assets/market.js", "assets/news.js", "assets/winter.js",
   "assets/vendor/chart.umd.min.js",
   "assets/icons/icon-192.png", "assets/icons/icon-512.png", "assets/icons/maskable-512.png",
-  "data/status.json", "data/history.csv",
+  "data/status.json", "data/history.csv", "data/news.json",
 ];
 
 self.addEventListener("install", event => {
