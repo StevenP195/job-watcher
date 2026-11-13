@@ -76,9 +76,10 @@
       <td><button class="star" data-id="${esc(r.posting_id)}" aria-pressed="${on}" title="${on ? "Remove from" : "Add to"} shortlist">★</button></td>
       <td><div style="font-weight:600">${esc(r.title)}</div>
         <div class="muted small">${esc(r.employer)}${r.department ? " · " + esc(r.department) : ""}
-        ${isTrue(r.in_role) ? ' <span class="pill role">My role</span>' : ""}</div></td>
-      <td class="small">${esc(r.location || "—")}</td>
-      <td class="num small">${fmtDate(r.first_seen)}</td>
+        ${isTrue(r.in_role) ? ' <span class="pill role">My role</span>' : ""}</div>
+        <div class="show-sm muted small">${esc(r.location || "—")} · first seen ${fmtDate(r.first_seen)}</div></td>
+      <td class="small hide-sm">${esc(r.location || "—")}</td>
+      <td class="num small hide-sm">${fmtDate(r.first_seen)}</td>
       <td class="num">${days}</td>
       <td class="num small hide-sm muted">${r.posted_date ? fmtDate(r.posted_date) : "—"}</td>
       <td><a class="apply" href="${esc(r.url)}" target="_blank" rel="noopener">Apply ↗</a></td></tr>`;
