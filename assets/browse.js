@@ -40,7 +40,7 @@
   };
 
   /* ---------- state (remembered per browser) ---------- */
-  const state = Object.assign({ role: "role", q: "", employer: "", loc: "@houston", days: "any", sort: "desc" },
+  const state = Object.assign({ role: "role", q: "", employer: "", loc: "", days: "any", sort: "desc" },
                               store.get("jw-browse", {}));
   state.q = "";
   $("q").value = ""; $("employer").value = state.employer; $("loc").value = state.loc;

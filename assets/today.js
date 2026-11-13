@@ -11,7 +11,9 @@
   const last = JW.lastRunDate(rows);
   const okCount = status.sources.filter(s => s.ok).length;
 
-  $("run-time").textContent = fmtTime(status.run_time) + " (" + status.run_time.replace("T", " ").replace("Z", " UTC") + ")";
+  $("run-time").textContent = status.run_time
+    ? fmtTime(status.run_time) + " (" + status.run_time.replace("T", " ").replace("Z", " UTC") + ")"
+    : "waiting for the first daily run";
   $("first-run").textContent = fmtDate(status.first_run_date);
   $("sources-ok").textContent = `${okCount} of ${status.sources.length}`;
   $("t-days").textContent = n(status.days_with_success);

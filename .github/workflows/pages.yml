@@ -30,7 +30,11 @@ jobs:
           mkdir -p _site/data
           cp index.html browse.html market.html news.html manifest.webmanifest sw.js _site/
           cp -r assets _site/
-          cp data/history.csv data/status.json _site/data/
+          # before the first daily run there is no data yet: publish empty starter files
+          if [ -f data/history.csv ]; then cp data/history.csv _site/data/; else
+            echo "posting_id,source,source_id,employer,title,location,department,posted_date,url,in_role,first_run,first_seen,last_seen,status,removed_date" > _site/data/history.csv; fi
+          if [ -f data/status.json ]; then cp data/status.json _site/data/; else
+            echo '{"run_time":"","first_run_date":"","days_with_success":0,"open":0,"new_today":0,"removed_today":0,"sources":[]}' > _site/data/status.json; fi
           cp data/news.json _site/data/ 2>/dev/null || echo '{"items":[],"companies":[],"updated":"","window_days":21}' > _site/data/news.json
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5

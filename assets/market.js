@@ -119,6 +119,11 @@
      counted once under its combined location). ${houRank ? `The largest single Houston entry ranks #${houRank}.` : ""}
      Houston-area postings in my role: <b>${n(openRows.filter(r => isHouston(r) && isTrue(r.in_role)).length)}</b>.`);
 
+  if (!rows.length) {  // before the first daily run
+    ["s1", "s2", "s3", "s4", "s5", "s6"].forEach(id => set(id, "Waiting for the first daily run",
+      "This section fills in automatically once the pipeline has saved its first day of job postings."));
+  }
+
   /* ---------- charts ---------- */
   const charts = [];
   function draw() {
