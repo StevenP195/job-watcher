@@ -21,10 +21,13 @@ jobs:
     timeout-minutes: 30
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: astral-sh/setup-uv@v5
       - name: Install
         run: uv sync
-      - name: Tests
+      - name: Tests (reported here; a failure does not stop the daily data run)
+        continue-on-error: true
         run: uv run pytest -q
       - name: Fetch sources, build history and status, open the daily issue
         env:

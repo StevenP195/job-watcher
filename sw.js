@@ -5,7 +5,7 @@
      the pages show the latest run; when offline, serve the last copy loaded and
      mark the response so the page can show an "offline" banner. */
 
-const CACHE = "job-watcher-v3";
+const CACHE = "job-watcher-v4";
 const SHELL = [
   "./", "index.html", "browse.html", "market.html", "news.html", "manifest.webmanifest",
   "assets/style.css", "assets/app.js", "assets/today.js", "assets/browse.js", "assets/market.js", "assets/news.js", "assets/winter.js",
@@ -41,7 +41,8 @@ self.addEventListener("fetch", event => {
   if (req.method !== "GET" || new URL(req.url).origin !== location.origin) return;
   event.respondWith((async () => {
     try {
-      const fresh = await fetch(req, { cache: "no-cache" });
+      // a navigation Request can't be re-sent with options, so fetch by URL
+      const fresh = await fetch(req.url, { cache: "no-cache", credentials: "same-origin" });
       if (fresh.ok) {
         const cache = await caches.open(CACHE);
         await cache.put(req, fresh.clone());

@@ -58,7 +58,10 @@ def main():
     if a.command in ("run", "build"):
         rows, st = cmd_build()
         if a.command == "run":
-            cmd_issue(rows, st)
+            try:
+                cmd_issue(rows, st)
+            except Exception as e:  # never lose the day's data commit over an Issues API error
+                print(f"Daily issue failed: {e}")
     elif a.command == "issue":
         cmd_issue()
     elif a.command == "news":
