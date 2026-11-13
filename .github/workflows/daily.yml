@@ -1,0 +1,47 @@
+name: Daily job watch
+
+on:
+  schedule:
+    - cron: "17 11 * * *"   # 11:17 UTC every day (about 5–6 AM in Houston)
+  workflow_dispatch: {}      # "Run workflow" button for a manual run
+
+permissions:
+  contents: write   # commit raw files, history and status
+  issues: write     # open today's issue, close yesterday's
+  pages: write
+  id-token: write
+
+concurrency:
+  group: daily-job-watch
+  cancel-in-progress: false
+
+jobs:
+  watch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: astral-sh/setup-uv@v5
+      - name: Install
+        run: uv sync
+      - name: Tests
+        run: uv run pytest -q
+      - name: Fetch sources, build history and status, open the daily issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: uv run python -m jobwatcher run
+      - name: Commit data
+        run: |
+          git config user.name "job-watcher[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/raw data/runs data/history.csv data/status.json
+          git commit -m "Daily run $(date -u +%F)" || echo "nothing to commit"
+          for i in 1 2 3; do git pull --rebase origin main && git push origin HEAD:main && break; sleep 5; done
+
+  deploy:
+    needs: watch
+    uses: ./.github/workflows/pages.yml
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
