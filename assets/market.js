@@ -137,8 +137,11 @@
 
     mk("s1", { type: "line", data: { labels: newDays.map(short), datasets: [
       { label: "All postings", data: newDays.map(d => newAll.get(d) || 0), borderColor: accent, backgroundColor: accent + "33", fill: true, tension: .25 },
-      { label: "My role", data: newDays.map(d => newRole.get(d) || 0), borderColor: green, backgroundColor: green, tension: .25 },
-    ] }, options: base() });
+      { label: "My role (right axis)", data: newDays.map(d => newRole.get(d) || 0), borderColor: green, backgroundColor: green, tension: .25, yAxisID: "y1" },
+    ] }, options: base({ scales: { x: { grid: { display: false } },
+      y: { beginAtZero: true, ticks: { precision: 0 }, title: { display: true, text: "All postings" } },
+      y1: { beginAtZero: true, position: "right", grid: { display: false }, ticks: { precision: 0, color: green },
+            title: { display: true, text: "My role", color: green } } } }) });
 
     const remDays = days.slice(1);
     mk("s2", { type: "bar", data: { labels: remDays.map(short), datasets: [
