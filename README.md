@@ -30,6 +30,7 @@ Other commands:
 | `uv run python -m jobwatcher fetch` | only call the sources and save `data/raw/<date>/<source>.json.gz` |
 | `uv run python -m jobwatcher issue` | open or update today's GitHub issue from the current data |
 | `uv run python -m jobwatcher market` | print the six Market page numbers computed in Python (cross-check for the browser) |
+| `uv run python -m jobwatcher news` | refresh `data/news.json`: firm headlines and interview prep for the News page |
 | `uv run python -m jobwatcher serve` | serve the site locally at http://localhost:8000 |
 | `uv run pytest` | run the test suite |
 
@@ -79,6 +80,32 @@ A posting is **in role** (`in_role = true`) when its title meets all three condi
 Location is not part of the rule. Houston is the default location filter on the Browse page and the
 first section of the daily issue.
 
+## News page (extra)
+
+`news.html` lists recent headlines about every watched employer, from two Google News searches per
+employer over the last 21 days: the firm in general (national) and the firm plus "Houston" (local).
+Headlines that don't name the firm, venue and sports stories (such as "Fifth Third Park"), stock-quote
+pages and fund-holdings filings are filtered out, and several headlines about one event are merged into one.
+
+Clicking a headline shows **what happened**, **why it's relevant** to a credit, banking or M&A analyst,
+and **how to bring it up in an interview**. These summaries come from the Claude API (`claude-opus-5-5`,
+with web search so it reads the coverage, not just the headline). Each headline is summarized once, and
+at most 25 new headlines a day (`NEWS_MAX_SUMMARIES_PER_RUN` in `jobwatcher/config.py`), which caps the cost.
+
+To turn on AI summaries, add a repository secret named `ANTHROPIC_API_KEY`
+(Settings → Secrets and variables → Actions). Without it, the page still shows the headlines with
+interview tips based on the company type. The news step runs after the job pipeline with
+`continue-on-error`, so it can never cause a failed daily run.
+
+## Design
+
+A clean finance dashboard in a winter palette: a blue-to-white header with falling snow (white flakes
+and green flecks), and a night scene at the bottom of every page, with a swirling starry sky, pines, a
+deer, a little tree and a polar bear with cocoa above a knit-sweater border. Hovering (or tapping) the scene lights
+the tree and writes a note in cursive: *"Remember no man is a failure who has friends. Thanks for the
+wings! Love, Clarence."* Clicking the little tree shakes the snow off its branches. All artwork is
+original SVG drawn in `assets/winter.js`; the cursive font is Homemade Apple from Google Fonts.
+
 ## How it works
 
 **Daily run** (`.github/workflows/daily.yml`, 11:17 UTC):
@@ -108,7 +135,7 @@ listed again re-opens with `removed_date` cleared and `first_seen` unchanged. Ro
 | Path | What it does |
 |---|---|
 | `README.md` | this file |
-| `pyproject.toml`, `uv.lock` | Python project and locked dev dependency (pytest); the pipeline uses only the standard library |
+| `pyproject.toml`, `uv.lock` | Python project: `anthropic` (News summaries) and pytest; the job pipeline itself uses only the standard library |
 | `.gitignore`, `.gitattributes` | ignored files; LF line endings so the history file is byte-identical on every OS |
 | `jobwatcher/__main__.py` | command line: `run`, `fetch`, `build`, `issue`, `market`, `serve` |
 | `jobwatcher/config.py` | watch list (employers, ATS, endpoints), file paths, history columns |
@@ -123,16 +150,20 @@ listed again re-opens with `removed_date` cleared and `first_seen` unchanged. Ro
 | `jobwatcher/status.py` | builds `data/status.json` |
 | `jobwatcher/issues.py` | renders and publishes the daily GitHub Issue |
 | `jobwatcher/market.py` | the six Market numbers in Python, to cross-check the page |
+| `jobwatcher/news.py` | News page data: Google News headlines, filters, Claude API interview-prep summaries |
+| `tests/test_news.py` | news parsing, filters, story merging, and the no-API-key fallback |
 | `tests/conftest.py` | fixture that writes raw files like the fetch step |
 | `tests/test_sources.py` | conversion of each source type to the common columns |
 | `tests/test_title_rule.py` | title rule cases |
 | `tests/test_history.py` | first-seen, last-seen, removed, re-open, failed-source, reproducibility, status counts |
-| `.github/workflows/daily.yml` | daily schedule: tests, pipeline, issue, commit, publish |
+| `.github/workflows/daily.yml` | daily schedule: tests, pipeline, issue, news, commit, publish |
 | `.github/workflows/tests.yml` | runs pytest on every push |
 | `.github/workflows/pages.yml` | publishes the site (pages, assets, history and status) to GitHub Pages |
 | `index.html` + `assets/today.js` | **Today** page: last run, source status, the four counts, new and removed lists |
 | `browse.html` + `assets/browse.js` | **Browse** page: role switch, employer / location / days-open filters, title search, first-seen sort, apply links, starred shortlist (saved in the browser) |
 | `market.html` + `assets/market.js` | **Market** page: six findings with charts, computed in the browser from `history.csv` |
+| `news.html` + `assets/news.js` | **News** page: firm headlines (Houston and national), click for what happened / why it matters / how to bring it up |
+| `assets/winter.js` | falling snow and the interactive night scene with Clarence's note (original SVG art) |
 | `assets/app.js` | shared navigation bar, theme, data loading, CSV parser, helpers, service worker registration |
 | `assets/style.css` | shared fonts and colors (winter finance dashboard, light and dark) |
 | `assets/vendor/chart.umd.min.js` | Chart.js 4.4.1, stored locally so charts work offline |
@@ -144,3 +175,4 @@ listed again re-opens with `removed_date` cleared and `first_seen` unchanged. Ro
 | `data/runs/<date>.json` | result of every source in that day's run (ok, count, error) |
 | `data/history.csv` | one row per posting (fixed path) |
 | `data/status.json` | the latest run (fixed path) |
+| `data/news.json` | News page headlines and summaries |
