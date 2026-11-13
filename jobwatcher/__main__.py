@@ -4,6 +4,7 @@
     python -m jobwatcher fetch    only call the sources and save raw files
     python -m jobwatcher build    rebuild data/history.csv and data/status.json from the raw files
     python -m jobwatcher issue    open / update today's GitHub issue from the current data
+    python -m jobwatcher news     refresh data/news.json (headlines + interview prep summaries)
     python -m jobwatcher market   print the Market page numbers computed in Python (cross-check)
     python -m jobwatcher serve    serve the site at http://localhost:8000
 """
@@ -49,7 +50,7 @@ def cmd_serve(port=8000):
 
 def main():
     p = argparse.ArgumentParser(prog="jobwatcher")
-    p.add_argument("command", choices=["run", "fetch", "build", "issue", "market", "serve"])
+    p.add_argument("command", choices=["run", "fetch", "build", "issue", "market", "news", "serve"])
     p.add_argument("--port", type=int, default=8000)
     a = p.parse_args()
     if a.command in ("run", "fetch"):
@@ -60,6 +61,9 @@ def main():
             cmd_issue(rows, st)
     elif a.command == "issue":
         cmd_issue()
+    elif a.command == "news":
+        from .news import run as news_run
+        news_run()
     elif a.command == "market":
         from .market import report
         report(history.read_csv())

@@ -59,6 +59,52 @@ SOURCES = [
 
 SOURCES_BY_KEY = {s["key"]: s for s in SOURCES}
 
+# News tab: the Google News search phrase for each employer, and its type
+# (bank / ib / energy) used for the interview tips when no AI summary is available.
+NEWS = DATA / "news.json"
+# A headline is kept only if its title names the firm with one of these words.
+NEWS_ALIASES = {
+    "fifth_third": ["fifth third", "comerica"],
+    "origin_bank": ["origin bank", "origin bancorp"],
+    "huntington": ["huntington", "cadence bank"],
+    "regions": ["regions bank", "regions financial", "regions"],
+    "texas_capital": ["texas capital"],
+    "hancock_whitney": ["hancock whitney"],
+    "frost": ["frost bank", "cullen/frost", "frost"],
+    "simmons": ["simmons bank", "simmons first"],
+    "mufg": ["mufg", "mitsubishi ufj"],
+    "mizuho": ["mizuho"],
+    "piper_sandler": ["piper sandler"],
+    "houlihan_lokey": ["houlihan lokey", "houlihan"],
+    "trafigura": ["trafigura"],
+    "engelhart": ["engelhart"],
+    "williams": ["williams companies", "williams (wmb)", "williams", "transco"],
+    "plains": ["plains all american", "plains gp", "plains"],
+    "cheniere": ["cheniere"],
+}
+NEWS_QUERIES = {
+    "fifth_third": ('"Fifth Third" OR "Comerica"', "bank"),
+    "origin_bank": ('"Origin Bank" OR "Origin Bancorp"', "bank"),
+    "huntington": ('"Huntington Bank" OR "Huntington Bancshares" OR "Cadence Bank"', "bank"),
+    "regions": ('"Regions Bank" OR "Regions Financial"', "bank"),
+    "texas_capital": ('"Texas Capital Bank" OR "Texas Capital Bancshares"', "bank"),
+    "hancock_whitney": ('"Hancock Whitney"', "bank"),
+    "frost": ('"Frost Bank" OR "Cullen/Frost"', "bank"),
+    "simmons": ('"Simmons Bank" OR "Simmons First"', "bank"),
+    "mufg": ('"MUFG" bank', "bank"),
+    "mizuho": ('"Mizuho" bank OR "Mizuho Securities" OR "Mizuho Americas"', "ib"),
+    "piper_sandler": ('"Piper Sandler"', "ib"),
+    "houlihan_lokey": ('"Houlihan Lokey"', "ib"),
+    "trafigura": ('"Trafigura"', "energy"),
+    "engelhart": ('"Engelhart" trading', "energy"),
+    "williams": ('"Williams Companies" OR "Williams (WMB)" OR "Transco pipeline"', "energy"),
+    "plains": ('"Plains All American" OR "Plains GP"', "energy"),
+    "cheniere": ('"Cheniere Energy" OR "Cheniere"', "energy"),
+}
+# Claude model for news summaries (override with the NEWS_MODEL environment variable)
+NEWS_MODEL = "claude-opus-5-5"
+NEWS_MAX_SUMMARIES_PER_RUN = 25   # spend cap: at most this many new headlines summarized a day
+
 HISTORY_COLUMNS = [
     "posting_id", "source", "source_id", "employer", "title", "location",
     "department", "posted_date", "url", "in_role", "first_run", "first_seen",
