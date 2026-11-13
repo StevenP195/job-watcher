@@ -17,9 +17,6 @@
   $("n-count").textContent = n(items.length);
   $("n-hou").textContent = n(items.filter(i => i.scope === "houston").length);
   $("n-window").textContent = data.window_days;
-  $("n-ai").innerHTML = data.ai_summaries
-    ? `<b>AI summaries on</b>`
-    : `AI summaries off — showing interview tips`;
 
   const employers = [...new Set(items.map(i => i.employer))].sort();
   $("employer").innerHTML = `<option value="">All employers</option>` +
@@ -39,18 +36,15 @@
   };
 
   function card(it) {
-    const s = it.summary || {};
-    const what = s.what
-      ? `<div class="nd-part"><h4>What happened</h4><p>${esc(s.what)}</p></div>`
-      : `<div class="nd-part"><h4>What happened</h4><p class="muted">Open the article for the full story — AI summaries
-           appear here once an API key is added to the daily run.</p></div>`;
+    const s = it.prep || {};
+    const what = `<div class="nd-part"><h4>What happened</h4><p>${esc(s.what || "")}</p></div>`;
     return `<details class="news-item" data-id="${esc(it.id)}">
       <summary>
         <span class="news-dot ${it.scope}" title="${it.scope === "houston" ? "Houston" : "National"}"></span>
         <span class="news-main"><span class="news-title">${esc(it.title)}</span>
           <span class="news-meta">${esc(it.employer)} · ${esc(it.source || "")} · ${ago(it.published)}
           ${it.scope === "houston" ? '<span class="pill hou">Houston</span>' : ""}
-          ${s.ai ? '<span class="pill role">AI summary</span>' : ""}</span></span>
+          ${s.event ? `<span class="pill role">${esc(s.event)}</span>` : ""}</span></span>
         <span class="news-chev" aria-hidden="true">›</span>
       </summary>
       <div class="news-detail">

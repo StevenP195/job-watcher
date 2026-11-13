@@ -32,8 +32,6 @@ jobs:
         run: uv run python -m jobwatcher run
       - name: Firm news and interview prep (never fails the run)
         continue-on-error: true
-        env:
-          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}   # optional: turns on AI summaries
         run: uv run python -m jobwatcher news
       - name: Commit data
         run: |

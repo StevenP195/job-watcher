@@ -31,7 +31,7 @@ jobs:
           cp index.html browse.html market.html news.html manifest.webmanifest sw.js _site/
           cp -r assets _site/
           cp data/history.csv data/status.json _site/data/
-          cp data/news.json _site/data/ 2>/dev/null || echo '{"items":[],"companies":[],"updated":"","window_days":21,"ai_summaries":false}' > _site/data/news.json
+          cp data/news.json _site/data/ 2>/dev/null || echo '{"items":[],"companies":[],"updated":"","window_days":21}' > _site/data/news.json
           touch _site/.nojekyll
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3

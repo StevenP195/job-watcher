@@ -88,14 +88,13 @@ Headlines that don't name the firm, venue and sports stories (such as "Fifth Thi
 pages and fund-holdings filings are filtered out, and several headlines about one event are merged into one.
 
 Clicking a headline shows **what happened**, **why it's relevant** to a credit, banking or M&A analyst,
-and **how to bring it up in an interview**. These summaries come from the Claude API (`claude-opus-5-5`,
-with web search so it reads the coverage, not just the headline). Each headline is summarized once, and
-at most 25 new headlines a day (`NEWS_MAX_SUMMARIES_PER_RUN` in `jobwatcher/config.py`), which caps the cost.
+and **how to bring it up in an interview**. These notes come from simple rules in `jobwatcher/news.py`
+at no cost (no paid API): each headline is sorted into an event type (merger or acquisition, earnings,
+senior hire, debt or financing deal, expansion, partnership, stock listing, or general firm news), and the
+notes explain why that kind of event matters for a credit, banking or M&A analyst at that type of firm
+(bank, investment bank, or energy company), with a suggested way to raise it in an interview.
 
-To turn on AI summaries, add a repository secret named `ANTHROPIC_API_KEY`
-(Settings → Secrets and variables → Actions). Without it, the page still shows the headlines with
-interview tips based on the company type. The news step runs after the job pipeline with
-`continue-on-error`, so it can never cause a failed daily run.
+The news step runs after the job pipeline with `continue-on-error`, so it can never cause a failed daily run.
 
 ## Design
 
@@ -135,7 +134,7 @@ listed again re-opens with `removed_date` cleared and `first_seen` unchanged. Ro
 | Path | What it does |
 |---|---|
 | `README.md` | this file |
-| `pyproject.toml`, `uv.lock` | Python project: `anthropic` (News summaries) and pytest; the job pipeline itself uses only the standard library |
+| `pyproject.toml`, `uv.lock` | Python project and locked dev dependency (pytest); the pipeline uses only the standard library |
 | `.gitignore`, `.gitattributes` | ignored files; LF line endings so the history file is byte-identical on every OS |
 | `jobwatcher/__main__.py` | command line: `run`, `fetch`, `build`, `issue`, `market`, `serve` |
 | `jobwatcher/config.py` | watch list (employers, ATS, endpoints), file paths, history columns |
@@ -150,8 +149,8 @@ listed again re-opens with `removed_date` cleared and `first_seen` unchanged. Ro
 | `jobwatcher/status.py` | builds `data/status.json` |
 | `jobwatcher/issues.py` | renders and publishes the daily GitHub Issue |
 | `jobwatcher/market.py` | the six Market numbers in Python, to cross-check the page |
-| `jobwatcher/news.py` | News page data: Google News headlines, filters, Claude API interview-prep summaries |
-| `tests/test_news.py` | news parsing, filters, story merging, and the no-API-key fallback |
+| `jobwatcher/news.py` | News page data: Google News headlines, filters, rule-based interview prep |
+| `tests/test_news.py` | news parsing, filters, story merging, and interview-prep rules |
 | `tests/conftest.py` | fixture that writes raw files like the fetch step |
 | `tests/test_sources.py` | conversion of each source type to the common columns |
 | `tests/test_title_rule.py` | title rule cases |
@@ -175,4 +174,4 @@ listed again re-opens with `removed_date` cleared and `first_seen` unchanged. Ro
 | `data/runs/<date>.json` | result of every source in that day's run (ok, count, error) |
 | `data/history.csv` | one row per posting (fixed path) |
 | `data/status.json` | the latest run (fixed path) |
-| `data/news.json` | News page headlines and summaries |
+| `data/news.json` | News page headlines and interview prep |

@@ -4,13 +4,13 @@
 
 1. For each employer, read two Google News RSS searches (last 21 days): the
    company in general (national news) and the company + Houston (local news).
-2. Keep up to 8 headlines per employer, Houston headlines first.
-3. Headlines that are new since the last run get a short summary from the
-   Claude API (with web search, so it reads the actual coverage): what happened,
-   why it matters for this role, and how to bring it up in an interview.
-   Summaries are saved, so each headline is summarized once.
-   Without ANTHROPIC_API_KEY the step still runs: headlines are saved with
-   interview tips based on the company type instead of an AI summary.
+2. Keep up to 8 headlines per employer, Houston headlines first, with
+   off-topic headlines filtered out and repeat coverage of one story merged.
+3. Give each headline interview prep from simple rules (no paid service):
+   the headline is sorted into an event type (acquisition, earnings, hire,
+   debt deal, expansion, partnership, listing, ...) and the notes say what
+   happened, why that kind of event matters for a credit / banking / M&A
+   analyst at this firm, and how to bring it up in an interview.
 4. Writes data/news.json, which news.html reads in the browser.
 
 This step is separate from the job pipeline: if it fails, the job data,
@@ -21,9 +21,7 @@ import datetime as dt
 import email.utils
 import hashlib
 import json
-import os
 import re
-import sys
 import urllib.parse
 import urllib.request
 import xml.etree.ElementTree as ET
@@ -35,52 +33,112 @@ WINDOW_DAYS = 21
 PER_COMPANY = 8
 UA = {"User-Agent": "Mozilla/5.0 (compatible; job-watcher class project)"}
 
-ROLE = ("an entry-level credit analyst, commercial / corporate banking analyst, or "
-        "investment banking / M&A analyst candidate based in Houston, Texas, graduating "
-        "with an MS in Finance in May 2027, with buy-side M&A and Houston energy internship experience")
+# ---------------------------------------------------------------- interview prep (rule based)
+# Each headline is matched to the first event type whose pattern it contains.
+# {firm} is filled with the employer name. "why" is written for each company
+# type: bank, ib (investment bank), energy.
+EVENTS = [
+    ("Merger or acquisition", re.compile(r"acquir|acquisition|merger|merge|\bbuys?\b|to buy|takeover|deal for|combine|\bbid", re.I), {
+        "why": {
+            "bank": "A bank merger changes the loan book, the credit policy and often the team structure. Analysts help "
+                    "review the acquired portfolio, and the combined bank usually needs more credit capacity.",
+            "ib": "Buying another advisory firm adds bankers and sector coverage, which shows where {firm} wants to grow "
+                  "and which groups may be adding analysts.",
+            "energy": "An acquisition changes the company's debt, liquidity and counterparty mix, which is what a credit "
+                      "or treasury team watches most closely.",
+        },
+        "interview": "Bring it up when asked why {firm}: name the deal, say what it adds (markets, scale or sector "
+                     "coverage), and ask how the integration will change the team you would join.",
+    }),
+    ("Earnings or results", re.compile(r"earnings|results|quarter|\bq[1-4]\b|\bprofits?\b|\blosses\b|\bloss\b|revenue|guidance|outlook", re.I), {
+        "why": {
+            "bank": "Quarterly results show loan growth, credit quality (charge-offs, reserves) and margin pressure, "
+                    "which shape how much {firm} wants to lend and to whom.",
+            "ib": "Results show which businesses (M&A advisory, capital markets, restructuring) are driving revenue, "
+                  "and so which groups are busiest.",
+            "energy": "Results and guidance drive cash flow, leverage and covenant headroom, the core of a credit "
+                      "analyst's view of an energy company.",
+        },
+        "interview": "Show you follow the firm: cite one number or trend from the results and ask how it affects "
+                     "the group's priorities for next year.",
+    }),
+    ("Senior hire or leadership change", re.compile(r"appoint|\bnames?\b|\bhires?\b|\bhired\b|\bjoins\b|promot|\bceo\b|president|\bchief\b|\bhead of\b|executive|\bsvps?\b|managing director", re.I), {
+        "why": {
+            "bank": "New leaders often bring new growth plans for a market or business line, and new teams to staff.",
+            "ib": "Senior hires show which sectors {firm} is building out; a new managing director usually needs analysts.",
+            "energy": "A leadership change can shift strategy, capital spending and financing plans.",
+        },
+        "interview": "Mention the new leader by name and ask what they plan to build, which shows you've researched "
+                     "the team and not just the firm.",
+    }),
+    ("Debt or financing deal", re.compile(r"notes|bond|debt|loan|credit facility|refinanc|financing|offering|syndicat|issu", re.I), {
+        "why": {
+            "bank": "A financing deal shows the kind of credit {firm} underwrites and arranges, which is the analyst's core work.",
+            "ib": "Debt and capital-markets deals are analyst work: models, credit memos and pitch materials.",
+            "energy": "New debt changes leverage, interest cost and maturities, the first things a credit analyst checks.",
+        },
+        "interview": "Connect it to credit work: mention the size and terms, and how you would think about leverage "
+                     "and repayment capacity, drawing on your financing-package work at Watercress.",
+    }),
+    ("Expansion or new office", re.compile(r"expan|new (office|branch|location|market|headquarters|hq)|\bopens?\b|\bground\b|\benters?\b|launch|growth", re.I), {
+        "why": {
+            "bank": "Expansion into a market means new commercial clients, and new credit analysts and portfolio managers to cover them.",
+            "ib": "Expansion means new coverage and new seats on deal teams.",
+            "energy": "Expansion projects need financing and create new counterparties, which is credit and treasury work.",
+        },
+        "interview": "Say you noticed the expansion and ask how the Houston team fits into it. It's a natural lead-in "
+                     "to why you want to start your career in Houston.",
+    }),
+    ("Partnership or contract", re.compile(r"partner|agreement|contract|signs|teams up|alliance|selects|award", re.I), {
+        "why": {
+            "bank": "Partnerships show where {firm} is investing (technology, new client segments, new markets).",
+            "ib": "Mandates and partnerships show {firm}'s client relationships and sector strength.",
+            "energy": "Long-term contracts make cash flows more predictable, which supports credit quality and financing.",
+        },
+        "interview": "Use it as a 'recent news' answer: one sentence on the agreement, then why it matters for the "
+                     "firm's clients or cash flows.",
+    }),
+    ("Stock listing or market move", re.compile(r"listing|exchange|ticker|txse|nyse|nasdaq|shares|stock|dividend|buyback", re.I), {
+        "why": {
+            "bank": "Market moves and listings reflect how investors see {firm}'s growth and risk, the context for its lending strategy.",
+            "ib": "How the market values {firm} affects hiring budgets and deal activity.",
+            "energy": "Investor sentiment affects the company's cost of capital and access to financing.",
+        },
+        "interview": "Mention it lightly and ask what it means for the firm's strategy in Texas; avoid stock-price "
+                     "predictions.",
+    }),
+]
+GENERAL = ("Firm news", {
+    "why": {
+        "bank": "News about {firm} shapes its lending appetite and where it is hiring.",
+        "ib": "News about {firm} shows where its deal teams are busy.",
+        "energy": "News about {firm} affects its cash flows and counterparties, the heart of credit and treasury work.",
+    },
+    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and "
+                 "follow it with a question about the team.",
+})
 
-TIPS = {
-    "bank": {
-        "why": "Bank news shapes lending appetite, credit quality and where the bank is hiring. "
-               "Deals, earnings, new markets and leadership changes all affect a credit or banking analyst's day-to-day work.",
-        "interview": "Mention it briefly when asked why this bank: say what you read, then ask how it affects the "
-                     "commercial or energy lending team's growth plans in Houston.",
-    },
-    "ib": {
-        "why": "Deal announcements, league-table moves and senior hires show which sectors the bank is winning in, "
-               "and which groups are busy enough to need analysts.",
-        "interview": "Use it as a 'recent deal or news' talking point: name the transaction or hire, why it matters "
-                     "for the sector, and ask how the Houston energy team is positioned.",
-    },
-    "energy": {
-        "why": "For an energy company, news on projects, contracts, commodity prices and counterparties drives "
-               "credit risk and trade-finance work, which is the work a credit or treasury analyst does.",
-        "interview": "Connect it to credit: how the news changes counterparty exposure, liquidity or financing "
-                     "needs, and tie it to your Houston energy internship experience.",
-    },
-}
 
-SUMMARY_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "summaries": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "id": {"type": "string"},
-                    "what": {"type": "string"},
-                    "why": {"type": "string"},
-                    "interview": {"type": "string"},
-                },
-                "required": ["id", "what", "why", "interview"],
-                "additionalProperties": False,
-            },
-        }
-    },
-    "required": ["summaries"],
-    "additionalProperties": False,
-}
+def event_type(title):
+    for name, pattern, notes in EVENTS:
+        if pattern.search(title):
+            return name, notes
+    return GENERAL
+
+
+def prep(item):
+    """Interview prep for one headline, from the rules above."""
+    name, notes = event_type(item["title"])
+    firm = item["employer"]
+    place = "Houston" if item["scope"] == "houston" else "national"
+    when = dt.date.fromisoformat(item["published"][:10]).strftime("%b %d").replace(" 0", " ")
+    return {
+        "event": name,
+        "what": f"{item['source'] or 'A news outlet'} reported on {when} ({place} coverage): \"{item['title']}\". "
+                f"Read the article for the details before you bring it up.",
+        "why": notes["why"][item["category"]].format(firm=firm),
+        "interview": notes["interview"].format(firm=firm),
+    }
 
 
 # ---------------------------------------------------------------- headlines
@@ -203,61 +261,6 @@ def headlines_for(cfg, now):
     return (houston[:4] + national)[:PER_COMPANY]
 
 
-# ---------------------------------------------------------------- summaries
-
-def tips(item):
-    t = TIPS[item["category"]]
-    return {"what": "", "why": t["why"], "interview": t["interview"], "ai": False}
-
-
-def summarize(client, model, employer, items):
-    """One request per employer: summaries for its new headlines, using web search."""
-    listing = "\n".join(f'- id {it["id"]}: "{it["title"]}" ({it["source"]}, {it["published"][:10]})'
-                        for it in items)
-    prompt = (
-        f"You are helping {ROLE} prepare for interviews with {employer}.\n\n"
-        f"Recent headlines about {employer}:\n{listing}\n\n"
-        "For each headline, search the web for the story and write three short parts:\n"
-        "- what: what happened, in 2 sentences, with the key facts and numbers from the coverage.\n"
-        "- why: why it matters to someone joining this firm in a credit, banking or M&A analyst seat, in 1-2 sentences.\n"
-        "- interview: one concrete way to bring it up in an interview, such as a sentence to say or a question to ask, "
-        "in 1-2 sentences.\n"
-        "Write plain sentences without markdown or citations. If you cannot find the story, base 'what' on the "
-        "headline and say the details could not be confirmed. Return one entry per id."
-    )
-    messages = [{"role": "user", "content": prompt}]
-    for _ in range(4):  # resume server-tool turns that pause
-        response = client.beta.messages.create(
-            model=model,
-            max_tokens=16000,
-            betas=["server-side-fallback-2026-07-01"],
-            fallbacks="default",
-            output_config={"effort": "low",
-                           "format": {"type": "json_schema", "schema": SUMMARY_SCHEMA}},
-            tools=[{"type": "web_search_20260209", "name": "web_search", "max_uses": min(len(items) + 1, 6)}],
-            messages=messages,
-        )
-        if response.stop_reason == "pause_turn":
-            messages.append({"role": "assistant", "content": response.content})
-            continue
-        break
-    if response.stop_reason == "refusal":
-        raise RuntimeError("request declined")
-    text = [b.text for b in response.content if b.type == "text"]
-    if not text:
-        raise RuntimeError(f"no text in response (stop_reason={response.stop_reason})")
-    data = json.loads(text[-1])
-    return {s["id"]: {"what": s["what"].strip(), "why": s["why"].strip(),
-                      "interview": s["interview"].strip(), "ai": True} for s in data["summaries"]}
-
-
-def make_client():
-    if not (os.environ.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_AUTH_TOKEN")):
-        return None
-    import anthropic
-    return anthropic.Anthropic(max_retries=3)
-
-
 # ---------------------------------------------------------------- main
 
 def run(now=None, path=config.NEWS):
@@ -287,46 +290,17 @@ def run(now=None, path=config.NEWS):
         for h in heads:
             prev = old.get(h["id"])
             h["first_seen"] = prev["first_seen"] if prev else now.date().isoformat()
-            h["summary"] = prev["summary"] if prev and prev.get("summary", {}).get("ai") else None
+            h["prep"] = prep(h)
+            h.pop("summary", None)
             items.append(h)
-
-    client = make_client()
-    model = os.environ.get("NEWS_MODEL", config.NEWS_MODEL)
-    pending = [it for it in items if it["summary"] is None]
-    summarized = 0
-    if client:
-        by_company = {}
-        for it in sorted(pending, key=lambda x: (x["scope"] != "houston", x["published"])):
-            by_company.setdefault(it["employer"], []).append(it)
-        budget = config.NEWS_MAX_SUMMARIES_PER_RUN
-        for employer, group in by_company.items():
-            group = group[: max(0, min(4, budget))]
-            if not group:
-                break
-            try:
-                result = summarize(client, model, employer, group)
-            except Exception as e:  # one failure never stops the run
-                print(f"summary failed for {employer}: {e}", file=sys.stderr)
-                continue
-            for it in group:
-                if it["id"] in result:
-                    it["summary"] = result[it["id"]]
-                    summarized += 1
-            budget -= len(group)
-    for it in items:
-        if it["summary"] is None:
-            it["summary"] = tips(it)
 
     items.sort(key=lambda x: x["published"], reverse=True)
     out = {
         "updated": now.isoformat().replace("+00:00", "Z"),
         "window_days": WINDOW_DAYS,
-        "ai_summaries": bool(client),
-        "model": model if client else "",
         "companies": companies,
         "items": items,
     }
     path.write_text(json.dumps(out, indent=1, ensure_ascii=False) + "\n", encoding="utf-8")
-    print(f"news.json: {len(items)} headlines from {sum(c['ok'] for c in companies)}/{len(companies)} feeds; "
-          f"{summarized} new AI summaries" + ("" if client else " (no ANTHROPIC_API_KEY: interview tips only)"))
+    print(f"news.json: {len(items)} headlines from {sum(c['ok'] for c in companies)}/{len(companies)} feeds")
     return out

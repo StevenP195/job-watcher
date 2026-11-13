@@ -60,7 +60,7 @@ SOURCES = [
 SOURCES_BY_KEY = {s["key"]: s for s in SOURCES}
 
 # News tab: the Google News search phrase for each employer, and its type
-# (bank / ib / energy) used for the interview tips when no AI summary is available.
+# (bank / ib / energy), which selects the "why it matters" note for each headline.
 NEWS = DATA / "news.json"
 # A headline is kept only if its title names the firm with one of these words.
 NEWS_ALIASES = {
@@ -101,10 +101,6 @@ NEWS_QUERIES = {
     "plains": ('"Plains All American" OR "Plains GP"', "energy"),
     "cheniere": ('"Cheniere Energy" OR "Cheniere"', "energy"),
 }
-# Claude model for news summaries (override with the NEWS_MODEL environment variable)
-NEWS_MODEL = "claude-opus-5-5"
-NEWS_MAX_SUMMARIES_PER_RUN = 25   # spend cap: at most this many new headlines summarized a day
-
 HISTORY_COLUMNS = [
     "posting_id", "source", "source_id", "employer", "title", "location",
     "department", "posted_date", "url", "in_role", "first_run", "first_seen",
