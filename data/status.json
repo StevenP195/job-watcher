@@ -1,17 +1,17 @@
 {
-  "run_time": "2026-11-13T18:14:31Z",
+  "run_time": "2026-11-14T17:08:33Z",
   "first_run_date": "2026-11-13",
-  "days_with_success": 1,
-  "open": 3986,
-  "new_today": 0,
-  "removed_today": 0,
+  "days_with_success": 2,
+  "open": 3984,
+  "new_today": 55,
+  "removed_today": 57,
   "sources": [
     {
       "name": "fifth_third",
       "employer": "Fifth Third Bank",
       "ats": "workday",
       "ok": true,
-      "count": 989,
+      "count": 977,
       "error": ""
     },
     {
@@ -27,23 +27,23 @@
       "employer": "Huntington Bank (incl. Cadence)",
       "ats": "workday",
       "ok": true,
-      "count": 712,
+      "count": 718,
       "error": ""
     },
     {
       "name": "regions",
       "employer": "Regions Bank",
       "ats": "workday",
-      "ok": true,
-      "count": 472,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://regions.wd5.myworkdayjobs.com/wday/cxs/regions/Regions_Careers/jobs failed: Expecting value: line 1 column 1 (char 0)"
     },
     {
       "name": "texas_capital",
       "employer": "Texas Capital Bank",
       "ats": "workday",
       "ok": true,
-      "count": 103,
+      "count": 105,
       "error": ""
     },
     {
@@ -51,7 +51,7 @@
       "employer": "Hancock Whitney",
       "ats": "workday",
       "ok": true,
-      "count": 169,
+      "count": 167,
       "error": ""
     },
     {
@@ -59,7 +59,7 @@
       "employer": "Frost Bank",
       "ats": "workday",
       "ok": true,
-      "count": 176,
+      "count": 178,
       "error": ""
     },
     {
@@ -67,7 +67,7 @@
       "employer": "Simmons Bank",
       "ats": "workday",
       "ok": true,
-      "count": 155,
+      "count": 156,
       "error": ""
     },
     {
@@ -75,7 +75,7 @@
       "employer": "MUFG",
       "ats": "workday",
       "ok": true,
-      "count": 676,
+      "count": 673,
       "error": ""
     },
     {
@@ -83,7 +83,7 @@
       "employer": "Mizuho Americas",
       "ats": "workday",
       "ok": true,
-      "count": 115,
+      "count": 117,
       "error": ""
     },
     {
@@ -107,7 +107,7 @@
       "employer": "Trafigura",
       "ats": "workday",
       "ok": true,
-      "count": 71,
+      "count": 72,
       "error": ""
     },
     {
@@ -123,7 +123,7 @@
       "employer": "Williams Companies",
       "ats": "workday",
       "ok": true,
-      "count": 130,
+      "count": 132,
       "error": ""
     },
     {
@@ -139,7 +139,7 @@
       "employer": "Cheniere Energy",
       "ats": "oracle",
       "ok": true,
-      "count": 17,
+      "count": 16,
       "error": ""
     }
   ]
