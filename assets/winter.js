@@ -141,6 +141,7 @@
       <stop offset="1" stop-color="#ffe066" stop-opacity="0"/></radialGradient>
     <linearGradient id="deerFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d3e5f6"/></linearGradient>
     <radialGradient id="bearFill" cx=".42" cy=".35" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#f3f8fc"/><stop offset="1" stop-color="#dbe8f4"/></radialGradient>
+    <linearGradient id="deerCoat" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e5934a"/><stop offset="1" stop-color="#c86d28"/></linearGradient>
     <filter id="bulbGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="b"/>
       <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
@@ -174,26 +175,47 @@
   <path d="M0 372 Q240 338 470 366 Q640 384 820 360 Q1020 336 1200 366 V460 H0 Z" fill="url(#hillB)"/>
   ${flecks}
 
-  <!-- deer: slender white painted silhouette (grazing; lifts its head on hover) -->
-  <g class="deer" transform="translate(452 364) scale(1.05)">
-    <ellipse cx="2" cy="1" rx="34" ry="4" fill="#9fc1df" opacity=".45"/>
-    <path d="M-26 -30 C-29 -20 -23 -13 -25 0 L-21.5 0 C-20 -12 -23 -20 -19 -29 Z" fill="#c9dcef"/>
-    <path d="M22 -30 C20 -20 25 -12 23 0 L26.5 0 C28 -12 26 -21 28 -30 Z" fill="#c9dcef"/>
-    <path d="M-32 -40 C-34 -51 -21 -57 -2 -55 C14 -54 26 -53 32 -47 C36 -41 34 -31 27 -28 C10 -25 -12 -25 -25 -28 C-32 -30 -34 -35 -32 -40 Z" fill="url(#deerFill)"/>
-    <path d="M-18 -30 C-21 -19 -16 -12 -18 0 L-14.5 0 C-13 -12 -16 -20 -12 -29 Z" fill="url(#deerFill)"/>
-    <path d="M28 -32 C27 -21 31 -12 30 0 L33.5 0 C35 -12 32 -22 33 -33 Z" fill="url(#deerFill)"/>
-    <path d="M-31 -47 C-36 -50 -37 -44 -33 -42 Z" fill="#ffffff"/>
-    <path d="M-20 -50 C-6 -46 10 -46 24 -50" stroke="#b9d1ea" stroke-width="1.2" fill="none" opacity=".7"/>
+  <!-- deer: warm brown cartoon deer with spots and antlers (grazes; lifts its head on hover) -->
+  <g class="deer" transform="translate(452 366) scale(.95)">
+    <ellipse cx="0" cy="1" rx="40" ry="4.5" fill="#9fc1df" opacity=".5"/>
+    <!-- far legs (shaded) -->
+    <path d="M-26 -46 C-24 -34 -18 -28 -20 -16 L-18.5 -3 L-14 -3 L-15 -16 C-13 -28 -17 -38 -18 -46 Z" fill="#b35f24"/>
+    <path d="M19 -42 C20 -28 21 -14 21 -3 L25.5 -3 C25.5 -14 25 -28 25 -42 Z" fill="#b35f24"/>
+    <path d="M-19 -4 h6.5 l1 4 h-8.5 Z M20.5 -4 h6 l1 4 h-8 Z" fill="#4a2414"/>
+    <!-- body -->
+    <path d="M-36 -58 C-40 -70 -26 -76 -8 -74 C8 -73 20 -74 28 -70 C38 -66 40 -54 36 -46 C33 -40 26 -38 18 -39
+             C4 -38 -14 -38 -26 -40 C-34 -42 -36 -50 -36 -58 Z" fill="url(#deerCoat)"/>
+    <path d="M-22 -40.5 C-8 -43 8 -43 22 -40 C12 -37 -12 -37 -22 -40.5 Z" fill="#f6dfba"/>
+    <path d="M30 -66 C38 -60 39 -49 33 -42 C31 -50 30 -58 30 -66 Z" fill="#f6dfba"/>
+    <g fill="#ffe4b5">
+      <ellipse cx="-22" cy="-68" rx="2.4" ry="1.6"/><ellipse cx="-14" cy="-71" rx="2.2" ry="1.5"/><ellipse cx="-6" cy="-70" rx="2.4" ry="1.6"/>
+      <ellipse cx="2" cy="-71.5" rx="2" ry="1.4"/><ellipse cx="10" cy="-70" rx="2.2" ry="1.5"/><ellipse cx="-18" cy="-63.5" rx="1.6" ry="1.1"/>
+      <ellipse cx="-9" cy="-65" rx="1.7" ry="1.2"/><ellipse cx="0" cy="-65.5" rx="1.5" ry="1"/><ellipse cx="17" cy="-67.5" rx="1.6" ry="1.1"/>
+    </g>
+    <!-- tail -->
+    <path d="M-34 -66 C-42 -74 -48 -66 -41 -58 C-39 -56 -36 -57 -35 -60 Z" fill="#c86d28"/>
+    <path d="M-36 -63 C-41 -67 -44 -63 -40 -59 C-38.5 -58 -37 -59 -36.5 -60.5 Z" fill="#fff6e6"/>
+    <!-- near legs -->
+    <path d="M-36 -54 C-40 -40 -32 -30 -28 -24 C-27 -16 -30 -9 -30 -3 L-25.5 -3 C-25 -9 -22 -16 -22 -26 C-22 -34 -24 -44 -22 -50 Z" fill="url(#deerCoat)"/>
+    <path d="M26 -44 C28 -30 29.5 -14 29.5 -3 L34 -3 C34 -14 33 -30 33.5 -44 Z" fill="url(#deerCoat)"/>
+    <path d="M-30.5 -4 h6 l1 4 h-8 Z M29 -4 h6 l1 4 h-8 Z" fill="#4a2414"/>
+    <!-- neck and head (rotate together) -->
     <g class="deer-head">
-      <path d="M20 -50 C24 -62 30 -71 34 -78 L43 -75 C39 -65 35 -54 33 -45 Z" fill="url(#deerFill)"/>
-      <path d="M33 -80 C37 -86 46 -86 53 -81 C57 -78 57 -74 53 -73 C47 -72 40 -73 35 -74 Z" fill="#ffffff"/>
-      <path d="M36 -82 L28 -88 L35 -86 Z" fill="#eaf3fb"/>
-      <circle cx="44" cy="-79.5" r="1.4" fill="#16467e"/>
-      <circle cx="55" cy="-76" r="1.2" fill="#2a3c50"/>
-      <g stroke="#f4f9ff" stroke-width="1.8" fill="none" stroke-linecap="round">
-        <path d="M39 -84 C38 -93 35 -100 30 -107 M37 -94 L30 -97 M35 -100 L37 -107 M32 -104 L26 -106"/>
-        <path d="M42 -84 C43 -93 47 -99 51 -105 M44 -93 L50 -95 M47 -99 L46 -106 M49 -103 L55 -104"/>
-      </g>
+      <path d="M46 -118 C46 -128 42 -136 34 -142 M43 -130 C48 -134 50 -140 49 -146 M38 -137 C36 -143 37 -148 40 -152"
+            stroke="#5e2e15" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+      <path d="M18 -66 C24 -80 31 -94 37 -104 L50 -100 C44 -90 39 -76 35 -55 Z" fill="url(#deerCoat)"/>
+      <path d="M36 -56 C39 -72 44 -86 49 -97 L50 -100 C45 -88 41 -74 37.5 -56 Z" fill="#f6dfba"/>
+      <path d="M34 -108 C34 -118 46 -122 54 -116 C58 -112 62 -108 68 -105 C71 -103 70 -98 66 -97
+               C58 -95 48 -96 42 -99 C37 -101 34 -104 34 -108 Z" fill="#d9822f"/>
+      <path d="M57 -108 C61 -106 66 -104 68 -102.5 C68.5 -99 65 -97 60 -97.6 C58 -100 57 -104 57 -108 Z" fill="#f2c58f"/>
+      <path d="M40 -114 C32 -124 24 -126 19 -122 C23 -116 31 -111.5 38 -110 Z" fill="#d9822f"/>
+      <path d="M37 -113 C31 -120 26 -121 23 -120 C26 -116 31 -113 36 -111.5 Z" fill="#f6c9a0"/>
+      <path d="M42 -117 C40 -128 34 -136 24 -140 M37 -129 C38 -137 36 -143 32 -148 M31 -136 C28 -141 26 -146 27 -151 M28 -139 C22 -140 18 -138 15 -134"
+            stroke="#7a3e1e" stroke-width="4" fill="none" stroke-linecap="round"/>
+      <ellipse cx="50" cy="-109" rx="2.6" ry="3" fill="#2b160d"/><circle cx="50.9" cy="-110.2" r=".95" fill="#fff"/>
+      <path d="M47.5 -112.5 l-1.8 -1.6" stroke="#2b160d" stroke-width="1" stroke-linecap="round"/>
+      <ellipse cx="67.6" cy="-103.2" rx="3" ry="2.4" fill="#3a1d12"/><circle cx="66.8" cy="-104" r=".7" fill="#8a6050"/>
+      <path d="M61.5 -98.2 q2.2 1.4 4.5 .2" stroke="#7a3e1e" stroke-width="1.1" fill="none" stroke-linecap="round"/>
     </g>
   </g>
 

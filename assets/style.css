@@ -477,3 +477,7 @@ h1, h2, h3, .hero h1, .card h2, .finding h2 { font-family: var(--font-title); fo
 .tile .label { font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; }
 .controls label, .finding .kicker { font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
 .tile .value { font-weight: 800; font-size: 34px; letter-spacing: -.01em; }
+
+/* detailed deer: grazes with its head down, looks up on hover */
+.deer-head { transform-origin: 26px -60px; transform: rotate(82deg); }
+.scene-stage:hover .deer-head, .scene-stage.on .deer-head, .scene-stage:focus-within .deer-head { transform: rotate(0deg); }
