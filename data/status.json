@@ -1,17 +1,17 @@
 {
-  "run_time": "2026-11-14T17:08:33Z",
+  "run_time": "2026-11-15T17:43:03Z",
   "first_run_date": "2026-11-13",
-  "days_with_success": 2,
-  "open": 3984,
-  "new_today": 55,
-  "removed_today": 57,
+  "days_with_success": 3,
+  "open": 3968,
+  "new_today": 16,
+  "removed_today": 32,
   "sources": [
     {
       "name": "fifth_third",
       "employer": "Fifth Third Bank",
       "ats": "workday",
       "ok": true,
-      "count": 977,
+      "count": 971,
       "error": ""
     },
     {
@@ -27,16 +27,16 @@
       "employer": "Huntington Bank (incl. Cadence)",
       "ats": "workday",
       "ok": true,
-      "count": 718,
+      "count": 720,
       "error": ""
     },
     {
       "name": "regions",
       "employer": "Regions Bank",
       "ats": "workday",
-      "ok": false,
-      "count": 0,
-      "error": "POST https://regions.wd5.myworkdayjobs.com/wday/cxs/regions/Regions_Careers/jobs failed: Expecting value: line 1 column 1 (char 0)"
+      "ok": true,
+      "count": 464,
+      "error": ""
     },
     {
       "name": "texas_capital",
@@ -67,7 +67,7 @@
       "employer": "Simmons Bank",
       "ats": "workday",
       "ok": true,
-      "count": 156,
+      "count": 157,
       "error": ""
     },
     {
@@ -75,7 +75,7 @@
       "employer": "MUFG",
       "ats": "workday",
       "ok": true,
-      "count": 673,
+      "count": 671,
       "error": ""
     },
     {
@@ -99,7 +99,7 @@
       "employer": "Houlihan Lokey",
       "ats": "workday",
       "ok": true,
-      "count": 50,
+      "count": 51,
       "error": ""
     },
     {
@@ -107,7 +107,7 @@
       "employer": "Trafigura",
       "ats": "workday",
       "ok": true,
-      "count": 72,
+      "count": 68,
       "error": ""
     },
     {

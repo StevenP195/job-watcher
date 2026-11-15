@@ -1,0 +1,142 @@
+{
+  "run_time": "2026-11-15T17:43:03Z",
+  "date": "2026-11-15",
+  "sources": [
+    {
+      "name": "fifth_third",
+      "employer": "Fifth Third Bank",
+      "ats": "workday",
+      "ok": true,
+      "count": 971,
+      "error": ""
+    },
+    {
+      "name": "origin_bank",
+      "employer": "Origin Bank",
+      "ats": "workday",
+      "ok": true,
+      "count": 37,
+      "error": ""
+    },
+    {
+      "name": "huntington",
+      "employer": "Huntington Bank (incl. Cadence)",
+      "ats": "workday",
+      "ok": true,
+      "count": 720,
+      "error": ""
+    },
+    {
+      "name": "regions",
+      "employer": "Regions Bank",
+      "ats": "workday",
+      "ok": true,
+      "count": 464,
+      "error": ""
+    },
+    {
+      "name": "texas_capital",
+      "employer": "Texas Capital Bank",
+      "ats": "workday",
+      "ok": true,
+      "count": 105,
+      "error": ""
+    },
+    {
+      "name": "hancock_whitney",
+      "employer": "Hancock Whitney",
+      "ats": "workday",
+      "ok": true,
+      "count": 167,
+      "error": ""
+    },
+    {
+      "name": "frost",
+      "employer": "Frost Bank",
+      "ats": "workday",
+      "ok": true,
+      "count": 178,
+      "error": ""
+    },
+    {
+      "name": "simmons",
+      "employer": "Simmons Bank",
+      "ats": "workday",
+      "ok": true,
+      "count": 157,
+      "error": ""
+    },
+    {
+      "name": "mufg",
+      "employer": "MUFG",
+      "ats": "workday",
+      "ok": true,
+      "count": 671,
+      "error": ""
+    },
+    {
+      "name": "mizuho",
+      "employer": "Mizuho Americas",
+      "ats": "workday",
+      "ok": true,
+      "count": 117,
+      "error": ""
+    },
+    {
+      "name": "piper_sandler",
+      "employer": "Piper Sandler",
+      "ats": "workday",
+      "ok": true,
+      "count": 46,
+      "error": ""
+    },
+    {
+      "name": "houlihan_lokey",
+      "employer": "Houlihan Lokey",
+      "ats": "workday",
+      "ok": true,
+      "count": 51,
+      "error": ""
+    },
+    {
+      "name": "trafigura",
+      "employer": "Trafigura",
+      "ats": "workday",
+      "ok": true,
+      "count": 68,
+      "error": ""
+    },
+    {
+      "name": "engelhart",
+      "employer": "Engelhart",
+      "ats": "greenhouse",
+      "ok": true,
+      "count": 3,
+      "error": ""
+    },
+    {
+      "name": "williams",
+      "employer": "Williams Companies",
+      "ats": "workday",
+      "ok": true,
+      "count": 132,
+      "error": ""
+    },
+    {
+      "name": "plains",
+      "employer": "Plains All American",
+      "ats": "workday",
+      "ok": true,
+      "count": 65,
+      "error": ""
+    },
+    {
+      "name": "cheniere",
+      "employer": "Cheniere Energy",
+      "ats": "oracle",
+      "ok": true,
+      "count": 16,
+      "error": ""
+    }
+  ]
+}
