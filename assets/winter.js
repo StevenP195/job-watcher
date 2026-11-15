@@ -92,6 +92,9 @@
       parts.push(`<path d="M${x} ${top} L${x + half} ${bot} Q${x + half * .5} ${bot - 5} ${x + half * .25} ${bot + 2}
         Q${x} ${bot - 4} ${x - half * .3} ${bot + 2} Q${x - half * .55} ${bot - 5} ${x - half} ${bot} Z" fill="${body}"/>`);
       parts.push(`<path d="M${x} ${top + 3} L${x - half * .8} ${bot - 2} Q${x - half * .4} ${bot - 6} ${x} ${bot - 3} Z" fill="${shade}" opacity=".55"/>`);
+      if (snow) parts.push(`<path d="M${x - half} ${bot} Q${x - half * .6} ${bot + 5} ${x - half * .3} ${bot + 1} Q${x} ${bot + 6}
+        ${x + half * .3} ${bot + 1} Q${x + half * .6} ${bot + 5} ${x + half} ${bot}" stroke="${snow}" stroke-width="3.2" fill="none"
+        stroke-linecap="round" opacity=".9"/>`);
       if (snow) parts.push(`<path d="M${x} ${top} L${x + half * .55} ${top + h * .19} Q${x + half * .2} ${top + h * .15} ${x} ${top + h * .2}
         Q${x - half * .25} ${top + h * .15} ${x - half * .5} ${top + h * .18} Z" fill="${snow}" opacity=".9"/>`);
     }
@@ -121,7 +124,7 @@
 
     return `
 <svg class="scene-art" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMax slice" role="img"
-     aria-label="A snowy night: a guiding star over pine trees, a deer, a little tree and a polar bear with hot cocoa">
+     aria-label="A snowy night: a guiding star over pine trees, a log cabin, a deer, a little tree, a string of lights and a polar bear with hot cocoa">
   <defs>
     <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
       <stop offset="0" stop-color="#050d1c"/><stop offset=".45" stop-color="#0b2a55"/>
@@ -135,6 +138,10 @@
     <linearGradient id="hillB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfe2f3"/></linearGradient>
     <radialGradient id="starGlow"><stop offset="0" stop-color="#fff7c2"/><stop offset=".4" stop-color="#ffe066" stop-opacity=".6"/>
       <stop offset="1" stop-color="#ffe066" stop-opacity="0"/></radialGradient>
+    <linearGradient id="deerFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#d3e5f6"/></linearGradient>
+    <radialGradient id="bearFill" cx=".42" cy=".35" r=".75"><stop offset="0" stop-color="#ffffff"/><stop offset=".7" stop-color="#f3f8fc"/><stop offset="1" stop-color="#dbe8f4"/></radialGradient>
+    <filter id="bulbGlow" x="-100%" y="-100%" width="300%" height="300%"><feGaussianBlur stdDeviation="3" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
   </defs>
 
   <rect width="1200" height="460" fill="url(#sky)"/>
@@ -149,20 +156,43 @@
   <path d="M0 330 Q180 268 380 318 T760 300 T1200 312 V460 H0 Z" fill="url(#hillA)" opacity=".9"/>
   ${left}
   ${right}
+
+  <!-- snowy log cabin with a warm window and chimney smoke -->
+  <g class="cabin" transform="translate(712 314) scale(.9)">
+    <path class="smoke" d="M18 -52 q-6 -8 0 -15 q6 -7 0 -14 q-5 -6 1 -12" stroke="#dbe9f5" stroke-width="3" fill="none" stroke-linecap="round" opacity=".6"/>
+    <rect x="14" y="-50" width="8" height="18" fill="#5a3b28"/><rect x="12.5" y="-52" width="11" height="4" rx="2" fill="#f4f9ff"/>
+    <rect x="-27" y="-26" width="54" height="26" fill="#6b4a33"/>
+    <path d="M-27 -19 h54 M-27 -12 h54 M-27 -5 h54" stroke="#563a27" stroke-width="1.4"/>
+    <rect class="window-glow" x="-19" y="-19" width="13" height="11" rx="1" fill="#ffd479"/>
+    <path d="M-12.5 -19 v11 M-19 -13.5 h13" stroke="#6b4a33" stroke-width="1.4"/>
+    <rect x="6" y="-18" width="11" height="18" fill="#3f291b"/>
+    <path d="M-36 -24 L0 -50 L36 -24 Q30 -20 24 -23 Q12 -18 0 -22 Q-12 -18 -24 -23 Q-30 -20 -36 -24 Z" fill="#f7fbff"/>
+    <path d="M-34 -24 Q-20 -27 0 -26 Q20 -27 34 -24" stroke="#c9dcef" stroke-width="1.5" fill="none"/>
+    <ellipse cx="0" cy="1" rx="44" ry="4" fill="#ffffff"/>
+  </g>
   <path d="M0 372 Q240 338 470 366 Q640 384 820 360 Q1020 336 1200 366 V460 H0 Z" fill="url(#hillB)"/>
   ${flecks}
 
-  <!-- deer -->
-  <g class="deer" transform="translate(452 360)">
-    <ellipse cx="0" cy="-30" rx="27" ry="12" fill="#f4f9ff"/>
-    <rect x="-20" y="-24" width="4" height="26" rx="2" fill="#e3eef9"/><rect x="-11" y="-22" width="4" height="24" rx="2" fill="#f4f9ff"/>
-    <rect x="12" y="-24" width="4" height="26" rx="2" fill="#e3eef9"/><rect x="20" y="-22" width="4" height="24" rx="2" fill="#f4f9ff"/>
-    <path d="M-27 -34 q-6 -3 -5 4" stroke="#f4f9ff" stroke-width="4" fill="none" stroke-linecap="round"/>
+  <!-- deer: slender white painted silhouette (grazing; lifts its head on hover) -->
+  <g class="deer" transform="translate(452 364) scale(1.05)">
+    <ellipse cx="2" cy="1" rx="34" ry="4" fill="#9fc1df" opacity=".45"/>
+    <path d="M-26 -30 C-29 -20 -23 -13 -25 0 L-21.5 0 C-20 -12 -23 -20 -19 -29 Z" fill="#c9dcef"/>
+    <path d="M22 -30 C20 -20 25 -12 23 0 L26.5 0 C28 -12 26 -21 28 -30 Z" fill="#c9dcef"/>
+    <path d="M-32 -40 C-34 -51 -21 -57 -2 -55 C14 -54 26 -53 32 -47 C36 -41 34 -31 27 -28 C10 -25 -12 -25 -25 -28 C-32 -30 -34 -35 -32 -40 Z" fill="url(#deerFill)"/>
+    <path d="M-18 -30 C-21 -19 -16 -12 -18 0 L-14.5 0 C-13 -12 -16 -20 -12 -29 Z" fill="url(#deerFill)"/>
+    <path d="M28 -32 C27 -21 31 -12 30 0 L33.5 0 C35 -12 32 -22 33 -33 Z" fill="url(#deerFill)"/>
+    <path d="M-31 -47 C-36 -50 -37 -44 -33 -42 Z" fill="#ffffff"/>
+    <path d="M-20 -50 C-6 -46 10 -46 24 -50" stroke="#b9d1ea" stroke-width="1.2" fill="none" opacity=".7"/>
     <g class="deer-head">
-      <path d="M18 -38 L30 -62 L38 -58 L28 -34 Z" fill="#f4f9ff"/>
-      <ellipse cx="38" cy="-64" rx="10" ry="6" fill="#f4f9ff" transform="rotate(20 38 -64)"/>
-      <path d="M33 -69 l-4 -16 m2 6 l-7 -4 m9 -8 l-5 -6 M39 -70 l4 -15 m-2 6 l7 -5 m-5 -7 l5 -5" stroke="#f4f9ff" stroke-width="2" fill="none" stroke-linecap="round"/>
-      <circle cx="41" cy="-66" r="1.3" fill="#16467e"/>
+      <path d="M20 -50 C24 -62 30 -71 34 -78 L43 -75 C39 -65 35 -54 33 -45 Z" fill="url(#deerFill)"/>
+      <path d="M33 -80 C37 -86 46 -86 53 -81 C57 -78 57 -74 53 -73 C47 -72 40 -73 35 -74 Z" fill="#ffffff"/>
+      <path d="M36 -82 L28 -88 L35 -86 Z" fill="#eaf3fb"/>
+      <circle cx="44" cy="-79.5" r="1.4" fill="#16467e"/>
+      <circle cx="55" cy="-76" r="1.2" fill="#2a3c50"/>
+      <g stroke="#f4f9ff" stroke-width="1.8" fill="none" stroke-linecap="round">
+        <path d="M39 -84 C38 -93 35 -100 30 -107 M37 -94 L30 -97 M35 -100 L37 -107 M32 -104 L26 -106"/>
+        <path d="M42 -84 C43 -93 47 -99 51 -105 M44 -93 L50 -95 M47 -99 L46 -106 M49 -103 L55 -104"/>
+      </g>
     </g>
   </g>
 
@@ -188,31 +218,74 @@
     </g>
   </g>
 
-  <!-- polar bear with a red scarf and cocoa -->
-  <g class="bear" transform="translate(800 330)">
-    <ellipse cx="0" cy="34" rx="34" ry="30" fill="#ffffff"/>
-    <ellipse cx="-20" cy="60" rx="12" ry="7" fill="#f2f7fb"/><ellipse cx="20" cy="60" rx="12" ry="7" fill="#f2f7fb"/>
-    <circle cx="0" cy="-6" r="22" fill="#ffffff"/>
-    <circle cx="-16" cy="-22" r="7" fill="#ffffff"/><circle cx="16" cy="-22" r="7" fill="#ffffff"/>
-    <circle cx="-16" cy="-22" r="3.5" fill="#1b2b3c"/><circle cx="16" cy="-22" r="3.5" fill="#1b2b3c"/>
-    <path d="M-9 -9 q3 -3 6 0 M3 -9 q3 -3 6 0" stroke="#1b2b3c" stroke-width="2" fill="none" stroke-linecap="round"/>
-    <ellipse cx="0" cy="0" rx="5" ry="3.5" fill="#1b2b3c"/>
-    <path d="M-5 5 q5 5 10 0" stroke="#1b2b3c" stroke-width="1.6" fill="none" stroke-linecap="round"/>
-    <path d="M-22 12 q22 12 44 0 l1 9 q-23 12 -46 0 Z" fill="#d62f45"/>
-    <path d="M10 18 l6 34 l-12 2 l-3 -34 Z" fill="#d62f45"/>
-    <path d="M-16 15 l4 8 M-8 18 l3 8 M0 19 l2 8 M8 18 l1 8 M7 30 h9 M8 38 h9 M9 46 h9" stroke="#fff" stroke-width="1.6" stroke-linecap="round"/>
-    <!-- cocoa mug -->
-    <g transform="translate(52 40)">
-      <path class="steam" d="M-4 -10 q-6 -10 0 -18 q6 -8 0 -16" stroke="#fff" stroke-width="2" fill="none" opacity=".7" stroke-linecap="round"/>
-      <path class="steam s2" d="M6 -10 q-6 -10 0 -18 q6 -8 0 -16" stroke="#fff" stroke-width="2" fill="none" opacity=".6" stroke-linecap="round"/>
-      <path d="M-12 -8 h26 l-2 26 q-11 5 -22 0 Z" fill="#d62f45"/>
-      <path d="M14 -2 q10 0 9 8 q-1 7 -10 6" stroke="#d62f45" stroke-width="3.5" fill="none"/>
-      <ellipse cx="1" cy="-8" rx="13" ry="3" fill="#6b3b1f"/>
-      <circle cx="-3" cy="-9" r="2.6" fill="#fff"/><circle cx="4" cy="-9.5" r="2.4" fill="#fff"/>
-      <path d="M1 0 v12 M-5 6 h12 M-3 2 l8 8 M5 2 l-8 8" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
+  <!-- polar bear in a knit scarf (waves when you hover him) with a cocoa mug -->
+  <g class="bear" transform="translate(800 374)" tabindex="0" role="button" aria-label="Polar bear: hover to say hello">
+    <ellipse cx="4" cy="2" rx="44" ry="6" fill="#9fc1df" opacity=".5"/>
+    <ellipse cx="-16" cy="-7" rx="15" ry="10" fill="url(#bearFill)"/><ellipse cx="16" cy="-7" rx="15" ry="10" fill="url(#bearFill)"/>
+    <g fill="#2b3a4a" opacity=".55"><circle cx="-22" cy="-6" r="1.6"/><circle cx="-16" cy="-5" r="1.6"/><circle cx="-10" cy="-6" r="1.6"/>
+      <circle cx="10" cy="-6" r="1.6"/><circle cx="16" cy="-5" r="1.6"/><circle cx="22" cy="-6" r="1.6"/></g>
+    <path d="M-34 -22 C-41 -58 -30 -86 0 -88 C30 -86 41 -58 34 -22 C30 -8 -30 -8 -34 -22 Z" fill="url(#bearFill)"/>
+    <ellipse cx="0" cy="-40" rx="19" ry="23" fill="#ffffff" opacity=".7"/>
+    <path d="M-29 -72 C-44 -64 -47 -46 -41 -35 C-38 -30 -31 -32 -30 -38 C-30 -48 -26 -58 -21 -65 Z" fill="url(#bearFill)"/>
+    <g class="bear-arm">
+      <path d="M29 -72 C44 -64 47 -46 41 -35 C38 -30 31 -32 30 -38 C30 -48 26 -58 21 -65 Z" fill="url(#bearFill)"/>
+      <g fill="#2b3a4a" opacity=".5"><circle cx="37" cy="-36" r="1.3"/><circle cx="40" cy="-38.5" r="1.3"/><circle cx="34" cy="-34.5" r="1.3"/></g>
+    </g>
+    <g class="bear-head">
+      <circle cx="-19" cy="-126" r="8.5" fill="url(#bearFill)"/><circle cx="19" cy="-126" r="8.5" fill="url(#bearFill)"/>
+      <circle cx="-19" cy="-126" r="4" fill="#f6c9cf"/><circle cx="19" cy="-126" r="4" fill="#f6c9cf"/>
+      <circle cx="0" cy="-105" r="27" fill="url(#bearFill)"/>
+      <ellipse cx="0" cy="-95" rx="13" ry="10" fill="#ffffff"/>
+      <ellipse cx="0" cy="-99" rx="4.8" ry="3.4" fill="#1b2b3c"/><ellipse cx="-1.4" cy="-100.2" rx="1.4" ry=".9" fill="#5b6f84"/>
+      <path d="M0 -96 V-93 M-5 -92 Q0 -87 5 -92" stroke="#1b2b3c" stroke-width="1.7" fill="none" stroke-linecap="round"/>
+      <path d="M-15 -109 Q-11 -113 -7 -109 M7 -109 Q11 -113 15 -109" stroke="#1b2b3c" stroke-width="2.3" fill="none" stroke-linecap="round"/>
+      <circle cx="-17" cy="-99" r="4" fill="#ff9aa6" opacity=".55"/><circle cx="17" cy="-99" r="4" fill="#ff9aa6" opacity=".55"/>
+    </g>
+    <path d="M-26 -84 C-12 -75 12 -75 26 -84 L27 -72 C12 -63 -12 -63 -27 -72 Z" fill="#d62f45"/>
+    <path d="M-20 -77 l2 3 l2 -3 M-11 -74.5 l2 3 l2 -3 M-2 -73.5 l2 3 l2 -3 M7 -74.5 l2 3 l2 -3 M16 -77 l2 3 l2 -3" stroke="#fff" stroke-width="1.3" fill="none"/>
+    <path d="M-23 -71 C-10 -64 10 -64 23 -71" stroke="#fff" stroke-width="1" stroke-dasharray="1.5 3" fill="none"/>
+    <path class="scarf-tail" d="M-12 -72 C-19 -56 -26 -40 -36 -22 L-23 -17 C-15 -35 -9 -52 -2 -68 Z" fill="#c8283d"/>
+    <path d="M-13 -62 l9 3 M-18 -51 l10 3 M-23 -40 l10 4 M-28 -30 l10 4" stroke="#fff" stroke-width="1.5"/>
+    <path d="M-16 -57 l2 2 l2 -2 M-21 -46 l2 2 l2 -2 M-26 -35 l2 2 l2 -2" stroke="#fff" stroke-width="1" fill="none"/>
+    <path d="M-34 -21 l-2 7 M-31 -20 l-1.5 7 M-28 -19 l-1 7 M-25 -18 l-.5 7" stroke="#c8283d" stroke-width="2" stroke-linecap="round"/>
+    <!-- cocoa mug with marshmallows and heart-shaped steam -->
+    <g transform="translate(62 -2)">
+      <path class="steam heart" d="M0 -40 C-2 -47 -12 -49 -12 -57 C-12 -64 -3 -65 0 -59 C3 -65 12 -64 12 -57 C12 -49 2 -47 0 -40"
+            stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round"/>
+      <path class="steam s2" d="M-8 -36 q-5 -8 0 -15 q5 -7 0 -14" stroke="#fff" stroke-width="1.6" fill="none" opacity=".6" stroke-linecap="round"/>
+      <path d="M-15 -31 h30 l-2.5 29 q-12.5 6 -25 0 Z" fill="#d62f45"/>
+      <path d="M15 -24 q12 0 11 9 q-1 9 -12 7" stroke="#d62f45" stroke-width="4" fill="none"/>
+      <ellipse cx="0" cy="-31" rx="15" ry="3.6" fill="#5a3018"/>
+      <rect x="-9" y="-36" width="6" height="5" rx="1.6" fill="#fff"/><rect x="-2" y="-37" width="6" height="5" rx="1.6" fill="#f4f4f4"/>
+      <rect x="5" y="-35" width="6" height="5" rx="1.6" fill="#fff"/>
+      <path d="M0 -24 v15 M-7 -16.5 h14 M-5 -22 l10 11 M5 -22 l-10 11" stroke="#fff" stroke-width="1.3" stroke-linecap="round"/>
+      <path d="M-3 -24 l3 2 l3 -2 M-3 -9 l3 -2 l3 2" stroke="#fff" stroke-width="1" fill="none"/>
     </g>
   </g>
+
 </svg>`;
+  }
+
+  // C9-style bulbs hanging from a swagged wire, colors from a classic string of lights
+  function garland() {
+    const colors = ["#e8384f", "#ffd34d", "#2fbf71", "#3f8cff", "#ff8a2b", "#a66bff"];
+    const swags = [[-10, 300], [300, 600], [600, 900], [900, 1210]];
+    let wire = "", bulbs = "", k = 0;
+    for (const [x0, x1] of swags) {
+      const cx = (x0 + x1) / 2, y0 = 4, cy = 52;
+      wire += `M${x0} ${y0} Q${cx} ${cy} ${x1} ${y0} `;
+      for (const t of [.14, .32, .5, .68, .86]) {
+        const x = (1 - t) ** 2 * x0 + 2 * (1 - t) * t * cx + t * t * x1;
+        const y = (1 - t) ** 2 * y0 + 2 * (1 - t) * t * cy + t * t * y0;
+        const tilt = (t - .5) * 50, c = colors[k % colors.length];
+        bulbs += `<g transform="translate(${x.toFixed(1)} ${y.toFixed(1)}) rotate(${tilt.toFixed(0)})">
+          <rect x="-2.6" y="0" width="5.2" height="5" rx="1" fill="#2f4f3a"/>
+          <path class="c9" style="animation-delay:${(k % 7) * .29}s" d="M0 4 C-6 8 -7 16 0 23 C7 16 6 8 0 4 Z" fill="${c}"/>
+          <path d="M-2 9 C-3 12 -3 15 -1.5 17" stroke="#fff" stroke-width="1.2" opacity=".55" fill="none" stroke-linecap="round"/></g>`;
+        k++;
+      }
+    }
+    return `<path d="${wire}" stroke="#20372a" stroke-width="1.8" fill="none"/>${bulbs}`;
   }
 
   function knitBand() {
@@ -241,10 +314,11 @@
     footer.innerHTML = `
       <div class="scene-stage" tabindex="0" aria-label="Hover or tap to read Clarence's note">
         ${sceneSVG()}
+        <svg class="garland-art" viewBox="0 0 1200 80" preserveAspectRatio="xMidYMin slice" aria-hidden="true">${garland()}</svg>
         <div class="note" aria-live="polite">
           ${QUOTE.map((l, i) => `<span class="note-line ${l.cls}" style="--i:${i}">${l.t}</span>`).join("")}
         </div>
-        <div class="scene-hint">✦ hover to read · click the little tree</div>
+        <div class="scene-hint">✦ hover to read · click the little tree · wave at the bear</div>
       </div>
       <div class="knit" aria-hidden="true"></div>`;
     document.body.appendChild(footer);
@@ -258,6 +332,10 @@
       if (e.target.closest(".little-tree")) return;
       if (matchMedia("(hover: none)").matches) stage.classList.toggle("on");
     });
+    const bear = footer.querySelector(".bear");
+    const wave = () => { bear.classList.add("wave"); clearTimeout(bear._t); bear._t = setTimeout(() => bear.classList.remove("wave"), 3200); };
+    bear.addEventListener("click", wave);
+    bear.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); wave(); } });
     const tree = footer.querySelector(".little-tree");
     const shake = () => {
       tree.classList.remove("shake"); void tree.getBBox(); tree.classList.add("shake");

@@ -375,3 +375,26 @@ body.offline .offline-banner { display: block; }
   .nav-links { gap: 0; }
   .nav-links a { padding: 7px 7px; font-size: 13px; }
 }
+
+/* ---------- scene: waving bear, grazing deer, bulb string, cabin ---------- */
+.deer-head { transform-origin: 22px -50px; transform: rotate(48deg); }
+.bear { cursor: pointer; outline: none; }
+.bear-arm { transform-origin: 26px -68px; transition: transform .45s cubic-bezier(.3,1.5,.5,1); }
+.bear-head { transform-origin: 0 -84px; transition: transform .45s ease; }
+.bear:hover .bear-arm, .bear.wave .bear-arm, .bear:focus-visible .bear-arm { animation: wave 1s ease-in-out infinite; }
+.bear:hover .bear-head, .bear.wave .bear-head, .bear:focus-visible .bear-head { transform: rotate(-6deg); }
+@keyframes wave { 0%, 100% { transform: rotate(-118deg); } 50% { transform: rotate(-150deg); } }
+.steam.heart { animation-duration: 4.5s; }
+.c9 { opacity: .5; transition: opacity .5s; }
+.scene-stage:hover .c9, .scene-stage.on .c9, .scene-stage:focus-within .c9 {
+  opacity: 1; filter: url(#bulbGlow); animation: bulb 2.2s ease-in-out infinite;
+}
+.window-glow { animation: flicker 3.5s ease-in-out infinite; }
+@keyframes flicker { 0%, 100% { fill: #ffd479; } 45% { fill: #ffbe55; } 60% { fill: #ffe29a; } }
+.smoke { animation: steam 5s ease-in-out infinite; }
+.note { top: clamp(40px, 6.5vw, 78px); line-height: 1.6; }
+@media (prefers-reduced-motion: reduce) {
+  .c9, .window-glow, .smoke, .bear-arm { animation: none !important; }
+  .bear:hover .bear-arm, .bear.wave .bear-arm { transform: rotate(-135deg); }
+}
+.garland-art { position: absolute; top: 0; left: 0; width: 100%; aspect-ratio: 1200 / 80; min-height: 44px; z-index: 2; pointer-events: none; }

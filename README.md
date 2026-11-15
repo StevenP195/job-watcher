@@ -100,7 +100,8 @@ The news step runs after the job pipeline with `continue-on-error`, so it can ne
 
 A clean finance dashboard in a winter palette: a blue-to-white header with falling snow (white flakes
 and green flecks), and a night scene at the bottom of every page, with a swirling starry sky, pines, a
-deer, a little tree and a polar bear with cocoa above a knit-sweater border. Hovering (or tapping) the scene lights
+deer, a log cabin, a little tree, a string of colored bulbs and a polar bear with cocoa above a knit-sweater
+border. The bear waves when you hover him. Hovering (or tapping) the scene lights
 the tree and writes a note in cursive: *"Remember no man is a failure who has friends. Thanks for the
 wings! Love, Clarence."* Clicking the little tree shakes the snow off its branches. All artwork is
 original SVG drawn in `assets/winter.js`; the cursive font is Homemade Apple from Google Fonts.
