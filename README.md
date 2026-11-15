@@ -106,8 +106,8 @@ the tree and writes a note in cursive: *"Remember no man is a failure who has fr
 wings! Love, Clarence."* Clicking the little tree shakes the snow off its branches. All artwork is
 original SVG drawn in `assets/winter.js`. The Market page has its own scene in the same blue palette: a Houston-style
 energy landscape with a skyline whose windows light up, a refinery flare, pump jacks feeding a pipeline, wind
-turbines and an LNG tanker (hover to power it up; click a turbine or the flare). The site font is Courgette and
-the note is in Homemade Apple, both from Google Fonts. On the Today page each section folds with a drop-down arrow.
+turbines and an LNG tanker (hover to power it up; click a turbine or the flare). Page titles are bold Courgette,
+all other text is Nunito, and the note is in Homemade Apple, all from Google Fonts. On the Today page each section folds with a drop-down arrow.
 
 ## How it works
 

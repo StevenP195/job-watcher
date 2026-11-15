@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Homemade+Apple&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Homemade+Apple&family=Nunito:wght@400;600;700;800&display=swap");
 /* Job Watcher — clean finance dashboard, winter palette.
    One set of fonts and colors shared by all three pages. */
 
@@ -463,3 +463,17 @@ h1, h2, h3, .brand, .nav-links a, .hero p, .hero .meta, .tile .label, .tile .val
 .tile .value { font-weight: 400; font-size: 36px; }
 .energy .scene-hint { right: auto; left: 16px; }
 .energy .note { top: clamp(16px, 3.2vw, 38px); }
+
+/* ---------- fonts (final): bold Courgette for titles, Nunito for everything else ---------- */
+:root {
+  --font-title: "Courgette", Georgia, serif;
+  --font: "Nunito", "Segoe UI", system-ui, -apple-system, Roboto, Arial, sans-serif;
+  --font-data: var(--font);
+}
+body, input, select, table, button { font-family: var(--font); }
+h1, h2, h3, .hero h1, .card h2, .finding h2 { font-family: var(--font-title); font-weight: 700; letter-spacing: 0; }
+.nav-links a, .seg button, .apply { font-weight: 700; font-size: 14px; }
+.brand { font-weight: 800; }
+.tile .label { font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .05em; }
+.controls label, .finding .kicker { font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: .06em; }
+.tile .value { font-weight: 800; font-size: 34px; letter-spacing: -.01em; }

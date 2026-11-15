@@ -436,11 +436,8 @@
     const footer = document.createElement("footer");
     footer.className = "scene energy";
     footer.innerHTML = `
-      <div class="scene-stage" tabindex="0" aria-label="Hover or tap to power up the scene and read Clarence's note">
+      <div class="scene-stage" tabindex="0" aria-label="Hover or tap to power up the scene">
         ${energySVG()}
-        <div class="note" aria-live="polite">
-          ${QUOTE.map((l, i) => `<span class="note-line ${l.cls}" style="--i:${i}">${l.t}</span>`).join("")}
-        </div>
         <div class="scene-hint">✦ hover to power up · click a turbine or the flare</div>
       </div>
       <div class="pipe-band" aria-hidden="true"></div>`;
@@ -469,7 +466,6 @@
     flare.addEventListener("click", sparks);
     flare.addEventListener("keydown", onKey(sparks));
     stage.addEventListener("mouseleave", () => stage.classList.remove("on"));
-    if (location.hash === "#clarence") stage.classList.add("on");
   }
 
   function buildScene() {
