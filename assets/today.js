@@ -16,6 +16,16 @@
     : "waiting for the first daily run";
   $("first-run").textContent = fmtDate(status.first_run_date);
   $("sources-ok").textContent = `${okCount} of ${status.sources.length}`;
+  $("src-summary").textContent = status.sources.length
+    ? `${okCount} of ${status.sources.length} OK${okCount < status.sources.length ? " · " + (status.sources.length - okCount) + " failed" : ""}`
+    : "";
+  // collapsible sections: remember which are open in this browser
+  const folds = JW.store.get("jw-today-folds", {});
+  document.querySelectorAll("details.fold").forEach(d => {
+    if (d.id in folds) d.open = folds[d.id];
+    d.addEventListener("toggle", () => { folds[d.id] = d.open; JW.store.set("jw-today-folds", folds); });
+  });
+  if (okCount < status.sources.length && !("fold-sources" in folds)) $("fold-sources").open = true;
   $("t-days").textContent = n(status.days_with_success);
   $("t-open").textContent = n(status.open);
   $("t-new").textContent = n(status.new_today);
@@ -40,7 +50,7 @@
       <td class="num">${n(s.count)}</td></tr>`).join("");
 
   /* new / removed lists */
-  const LIMIT = 60;
+  const LIMIT = 8;  // short lists by default; "Show all" expands
   const order = (a, b) => (isTrue(b.in_role) - isTrue(a.in_role)) || (isHouston(b) - isHouston(a))
     || a.employer.localeCompare(b.employer) || a.title.localeCompare(b.title);
 

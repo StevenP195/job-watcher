@@ -49,21 +49,22 @@
     </div>
 
     <div class="grid-2">
-      <section class="card">
-        <div class="card-head"><h2><span class="badge-new">▲</span> New in the latest run</h2>
-          <span class="muted small" id="new-count"></span></div>
+      <details class="card fold" id="fold-new" open>
+        <summary class="card-head"><h2><span class="badge-new">▲</span> New in the latest run</h2>
+          <span class="muted small" id="new-count"></span><span class="fold-arrow" aria-hidden="true">▾</span></summary>
         <ul class="postings" id="new-list"></ul>
-      </section>
-      <section class="card">
-        <div class="card-head"><h2><span class="badge-removed">▼</span> Removed in the latest run</h2>
-          <span class="muted small" id="removed-count"></span></div>
+      </details>
+      <details class="card fold" id="fold-removed" open>
+        <summary class="card-head"><h2><span class="badge-removed">▼</span> Removed in the latest run</h2>
+          <span class="muted small" id="removed-count"></span><span class="fold-arrow" aria-hidden="true">▾</span></summary>
         <ul class="postings" id="removed-list"></ul>
-      </section>
+      </details>
     </div>
 
-    <section class="card" style="margin-top:18px">
-      <div class="card-head"><div><h2>Source status</h2>
-        <p class="sub">Result of every source in the latest run. A failed source writes no raw file that day; the rest still run.</p></div></div>
+    <details class="card fold" id="fold-sources" style="margin-top:18px" open>
+      <summary class="card-head"><h2>Source status</h2>
+        <span class="muted small" id="src-summary"></span><span class="fold-arrow" aria-hidden="true">▾</span></summary>
+      <p class="sub" style="margin:0 0 10px">Result of every source in the latest run. A failed source writes no raw file that day; the rest still run.</p>
       <div class="table-wrap">
         <table>
           <thead><tr><th>Employer</th><th class="hide-sm">Source</th><th class="hide-sm">System</th>
@@ -71,7 +72,7 @@
           <tbody id="sources"></tbody>
         </table>
       </div>
-    </section>
+    </details>
 
     <p class="foot">Data: <a href="data/history.csv">history.csv</a> · <a href="data/status.json">status.json</a></p>
   </main>

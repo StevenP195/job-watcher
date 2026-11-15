@@ -174,6 +174,7 @@
     ] }, options: base({ indexAxis: "y", plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true }, y: { grid: { display: false } } } }) });
   }
   draw();
+  if (document.fonts) document.fonts.ready.then(draw);  // redraw once the web font has loaded
   document.addEventListener("jw-theme", draw);
   matchMedia("(prefers-color-scheme: dark)").addEventListener("change", draw);
 })();

@@ -104,7 +104,10 @@ deer, a log cabin, a little tree, a string of colored bulbs and a polar bear wit
 border. The bear waves when you hover him. Hovering (or tapping) the scene lights
 the tree and writes a note in cursive: *"Remember no man is a failure who has friends. Thanks for the
 wings! Love, Clarence."* Clicking the little tree shakes the snow off its branches. All artwork is
-original SVG drawn in `assets/winter.js`; the cursive font is Homemade Apple from Google Fonts.
+original SVG drawn in `assets/winter.js`. The Market page has its own scene in the same blue palette: a Houston-style
+energy landscape with a skyline whose windows light up, a refinery flare, pump jacks feeding a pipeline, wind
+turbines and an LNG tanker (hover to power it up; click a turbine or the flare). The site font is Courgette and
+the note is in Homemade Apple, both from Google Fonts. On the Today page each section folds with a drop-down arrow.
 
 ## How it works
 

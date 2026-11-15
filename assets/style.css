@@ -1,9 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Homemade+Apple&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Courgette&family=Homemade+Apple&display=swap");
 /* Job Watcher — clean finance dashboard, winter palette.
    One set of fonts and colors shared by all three pages. */
 
 :root {
-  --font: "Inter", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font: "Courgette", "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
   --mono: "JetBrains Mono", "Cascadia Mono", Consolas, "SFMono-Regular", monospace;
 
   /* light: frost on glass */
@@ -398,3 +398,68 @@ body.offline .offline-banner { display: block; }
   .bear:hover .bear-arm, .bear.wave .bear-arm { transform: rotate(-135deg); }
 }
 .garland-art { position: absolute; top: 0; left: 0; width: 100%; aspect-ratio: 1200 / 80; min-height: 44px; z-index: 2; pointer-events: none; }
+
+/* ---------- collapsible cards (Today page) ---------- */
+.grid-2 { align-items: start; }
+details.fold > summary { list-style: none; cursor: pointer; user-select: none; }
+details.fold > summary::-webkit-details-marker { display: none; }
+details.fold > summary h2 { flex: 1; }
+details.fold:not([open]) > summary { margin-bottom: 0; }
+.fold-arrow {
+  width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; flex: none;
+  background: var(--surface-2); color: var(--accent); font-size: 15px; transition: transform .2s;
+}
+details.fold:not([open]) .fold-arrow { transform: rotate(-90deg); }
+details.fold > summary:hover .fold-arrow { background: var(--accent-soft); }
+
+/* ---------- energy scene (Market page) ---------- */
+.blades { transform-origin: 0 0; animation: spin 9s linear infinite; }
+.turbine { cursor: pointer; outline: none; }
+.scene-stage:hover .blades, .scene-stage.on .blades { animation-duration: 4s !important; }
+.turbine.fast .blades { animation-duration: 1.1s !important; }
+.beam { transform-origin: 0px -46px; animation: nod 3.4s ease-in-out infinite; }
+@keyframes nod { 0%, 100% { transform: rotate(-9deg); } 50% { transform: rotate(9deg); } }
+.win { opacity: .1; transition: opacity .5s; transition-delay: var(--d); }
+.scene-stage:hover .win, .scene-stage.on .win, .scene-stage:focus-within .win { opacity: .95; }
+.flare { cursor: pointer; outline: none; }
+.flame { transform-origin: 0 2px; animation: flick .45s ease-in-out infinite alternate; }
+.flame.f2 { animation-duration: .3s; }
+@keyframes flick { from { transform: scale(1, 1) skewX(-4deg); } to { transform: scale(1.08, 1.28) skewX(5deg); } }
+.flare-glow { opacity: .55; transition: opacity .5s; }
+.scene-stage:hover .flare-glow, .scene-stage.on .flare-glow { opacity: 1; }
+.flare.burst .flame { animation: flick .45s ease-in-out infinite alternate, whoosh .7s ease-out; }
+@keyframes whoosh { 30% { transform: scale(1.9, 2.4); } }
+.flow { stroke-dasharray: 6 16; opacity: 0; transition: opacity .5s; }
+.scene-stage:hover .flow, .scene-stage.on .flow, .scene-stage:focus-within .flow { opacity: .95; animation: flow .9s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -22; } }
+.tanker { transition: transform 7s ease-in-out; }
+.scene-stage:hover .tanker, .scene-stage.on .tanker { transform: translateX(-90px); }
+.wave { animation: bob 3s ease-in-out infinite; }
+@keyframes bob { 50% { transform: translateX(8px); } }
+.pipe-band {
+  height: 26px; border-top: 3px solid #fff;
+  background: repeating-linear-gradient(90deg, transparent 0 92px, rgba(7, 26, 54, .55) 92px 100px),
+              linear-gradient(180deg, #a6dbf2, #2a74b0 50%, #123a6b);
+}
+@media (prefers-reduced-motion: reduce) {
+  .blades, .beam, .flame, .flow, .wave { animation: none !important; }
+  .win, .tanker { transition: none !important; }
+}
+
+/* ---------- fonts: Courgette for display text, a plain sans for dense data ----------
+   (Courgette's capital I reads like a J, so job titles and tables stay in the data font) */
+:root { --font-data: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif; }
+body, input, select, table { font-family: var(--font-data); }
+h1, h2, h3, .brand, .nav-links a, .hero p, .hero .meta, .tile .label, .tile .value, .tile .hint, .seg button,
+.finding .kicker, .apply, .scene-hint, .foot, .toolbar .count, .controls label, .card-head .muted {
+  font-family: var(--font);
+}
+.tile .label, .controls label, .finding .kicker { text-transform: none; letter-spacing: 0; font-size: 14.5px; font-weight: 400; }
+.nav-links a, .seg button, .apply { font-weight: 400; font-size: 15px; }
+.hero h1 { font-size: 30px; font-weight: 400; }
+.card h2, .finding h2 { font-weight: 400; }
+.card h2 { font-size: 19px; }
+.finding h2 { font-size: 22px; }
+.tile .value { font-weight: 400; font-size: 36px; }
+.energy .scene-hint { right: auto; left: 16px; }
+.energy .note { top: clamp(16px, 3.2vw, 38px); }

@@ -1,5 +1,6 @@
 /* Winter effects shared by every page:
    - falling snow (white flakes with flecks of evergreen) in the header
+   - on the Market page, an energy landscape instead (see energySVG below)
    - the night scene at the bottom of the page: swirling starry sky, pines,
      a deer, a little tree, a polar bear with cocoa, and a knit border.
      Hovering (or tapping) the scene lights the tree and writes Clarence's note
@@ -41,11 +42,11 @@
         a: greenFleck ? 0.75 : 0.45 + z * 0.5,
       };
     }
-    burst(x, y, n = 40) {
+    burst(x, y, n = 40, color = "255,255,255") {
       for (let i = 0; i < n; i++) {
         const ang = Math.random() * Math.PI * 2, sp = 0.6 + Math.random() * 2.4;
         this.bursts.push({ x, y, vx: Math.cos(ang) * sp, vy: Math.sin(ang) * sp - 1.4,
-                           r: 0.8 + Math.random() * 2, life: 1, color: "255,255,255" });
+                           r: 0.8 + Math.random() * 2, life: 1, color });
       }
       this.start();
     }
@@ -308,7 +309,171 @@
     { t: "Clarence", cls: "sign2" },
   ];
 
+  /* ------------------------------------------------------------ energy scene (Market page)
+     A Houston-style energy landscape, original SVG: skyline, refinery with a
+     flare, pump jacks feeding a pipeline, wind turbines, and an LNG tanker. */
+  function energySVG() {
+    const stars = Array.from({ length: 60 }, (_, i) => {
+      const x = (i * 197) % 1200, y = (i * 83) % 230, r = (i % 5 === 0) ? 1.6 : .9;
+      return `<circle class="twinkle" style="animation-delay:${(i % 9) * .37}s" cx="${x}" cy="${y}" r="${r}" fill="#fff"/>`;
+    }).join("");
+
+    // skyline: [x, width, height above the 352 baseline]
+    const B = [[500, 34, 70], [538, 40, 120], [582, 30, 95], [616, 46, 165], [666, 36, 130],
+               [706, 52, 190], [762, 34, 150], [800, 44, 110], [848, 30, 80]];
+    let sky = "", wins = "", k = 0;
+    B.forEach(([x, w, h], i) => {
+      const top = 352 - h, fill = i % 2 ? "#143f73" : "#0f3160";
+      sky += `<rect x="${x}" y="${top}" width="${w}" height="${h + 40}" fill="${fill}"/>`;
+      if (i === 5) sky += `<path d="M${x + w / 2 - 7} ${top} l7 -30 l7 30 Z" fill="${fill}"/>`;
+      if (i === 3) sky += `<rect x="${x + 8}" y="${top - 12}" width="${w - 16}" height="12" fill="${fill}"/>
+        <rect x="${x + 16}" y="${top - 22}" width="${w - 32}" height="10" fill="${fill}"/>`;
+      if (i === 1) sky += `<path d="M${x} ${top} L${x + w} ${top - 16} V${top} Z" fill="${fill}"/>`;
+      for (let wy = top + 8; wy < 340; wy += 11) for (let wx = x + 5; wx < x + w - 6; wx += 8) {
+        k++;
+        if ((k * 7 + i * 3) % 5 === 0) continue;
+        wins += `<rect class="win" style="--d:${((k * 13) % 29) * .05}s" x="${wx}" y="${wy}" width="4" height="6" fill="#ffd479"/>`;
+      }
+    });
+
+    const turbine = (x, base, h, dur) => `<g class="turbine" transform="translate(${x} ${base - h})" tabindex="0" role="button"
+        aria-label="Wind turbine: click to spin it up">
+      <circle r="${h * .5}" fill="transparent"/>
+      <path d="M-3.2 ${h} L-1.6 0 h3.2 L3.2 ${h} Z" fill="#eef5fb"/>
+      <g class="blades" style="animation-duration:${dur}s">
+        ${[0, 120, 240].map(a => `<path transform="rotate(${a})" d="M0 0 C5 -${h * .14} 4 -${h * .42} 0 -${h * .5} C-2 -${h * .3} -2.5 -${h * .1} 0 0 Z" fill="#ffffff"/>`).join("")}
+      </g>
+      <circle r="4" fill="#cfe2f3"/>
+    </g>`;
+
+    const jack = (x, base, s, delay) => `<g class="jack" transform="translate(${x} ${base}) scale(${s})">
+      <rect x="-42" y="-4" width="88" height="5" rx="2" fill="#0f3160"/>
+      <path d="M-12 -4 L0 -46 L12 -4 M-7 -22 H7" stroke="#16467e" stroke-width="4" fill="none" stroke-linejoin="round"/>
+      <rect x="-42" y="-24" width="19" height="20" rx="2" fill="#16467e"/>
+      <g class="beam" style="animation-delay:${delay}s">
+        <path d="M-34 -46 H30" stroke="#2a74b0" stroke-width="5.5" stroke-linecap="round"/>
+        <path d="M29 -60 Q47 -46 35 -29 L29 -34 Z" fill="#2a74b0"/>
+        <path d="M-32 -46 V-16" stroke="#7cc4e4" stroke-width="2.5"/>
+      </g>
+      <path d="M38 -30 V-4" stroke="#5e9bd8" stroke-width="1.5"/>
+      <rect x="33" y="-9" width="10" height="9" rx="1" fill="#0f3160"/>
+    </g>`;
+
+    const domes = [-58, -24, 10, 44].map(x => `<path d="M${x - 15} -14 A15 15 0 0 1 ${x + 15} -14 Z" fill="#eef5fb"/>
+      <path d="M${x - 9} -22 A12 12 0 0 1 ${x + 2} -28" stroke="#fff" stroke-width="1.5" fill="none" opacity=".8"/>`).join("");
+    const flecks = Array.from({ length: 30 }, (_, i) =>
+      `<circle cx="${(i * 263) % 640}" cy="${394 + (i * 37) % 50}" r="${i % 3 ? 1.3 : 2}" fill="${i % 4 ? "#5cc69a" : "#2f8f6b"}" opacity=".7"/>`).join("");
+
+    return `
+<svg class="scene-art" viewBox="0 0 1200 460" preserveAspectRatio="xMidYMax slice" role="img"
+     aria-label="A Houston energy landscape at night: a skyline, a refinery flare, pump jacks, a pipeline, wind turbines and an LNG tanker">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#050d1c"/><stop offset=".45" stop-color="#0b2a55"/>
+      <stop offset=".8" stop-color="#1f5d9c"/><stop offset="1" stop-color="#9fcbee"/>
+    </linearGradient>
+    <radialGradient id="glow"><stop offset="0" stop-color="#e9f6ff" stop-opacity=".9"/>
+      <stop offset=".3" stop-color="#7cc4e4" stop-opacity=".4"/><stop offset="1" stop-color="#1f5d9c" stop-opacity="0"/></radialGradient>
+    <radialGradient id="flareGlow"><stop offset="0" stop-color="#ffd27a" stop-opacity=".85"/>
+      <stop offset="1" stop-color="#ffb347" stop-opacity="0"/></radialGradient>
+    <linearGradient id="hillA" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3b7cc4"/><stop offset="1" stop-color="#16467e"/></linearGradient>
+    <linearGradient id="hillB" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#cfe2f3"/></linearGradient>
+    <linearGradient id="water" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a74b0"/><stop offset="1" stop-color="#0b2a55"/></linearGradient>
+  </defs>
+
+  <rect width="1200" height="460" fill="url(#sky)"/>
+  ${stars}
+  <circle cx="930" cy="74" r="70" fill="url(#glow)"/><circle cx="930" cy="74" r="20" fill="#eef7ff"/>
+
+  <path d="M0 330 Q180 268 380 318 T760 300 T1200 312 V460 H0 Z" fill="url(#hillA)" opacity=".9"/>
+  ${turbine(940, 322, 150, 9)}${turbine(1040, 316, 195, 11)}${turbine(1140, 322, 130, 8)}
+
+  <g class="skyline">${sky}${wins}</g>
+
+  <g class="refinery">
+    <rect x="424" y="262" width="14" height="130" rx="6" fill="#143f73"/>
+    <rect x="444" y="288" width="11" height="104" rx="5" fill="#0f3160"/>
+    <path d="M424 290 h14 M424 310 h14 M424 330 h14" stroke="#2a74b0" stroke-width="1.5"/>
+    <circle cx="474" cy="342" r="15" fill="#143f73"/><path d="M464 340 A12 12 0 0 1 474 330" stroke="#2a74b0" stroke-width="1.5" fill="none"/>
+    <path d="M406 392 V238" stroke="#143f73" stroke-width="4"/>
+    <g transform="translate(406 236)">
+      <g class="flare" tabindex="0" role="button" aria-label="Flare stack: click for sparks">
+        <circle class="flare-glow" r="24" fill="url(#flareGlow)"/>
+        <path class="flame" d="M0 2 C-9 -6 -4 -16 0 -27 C3 -17 10 -8 0 2 Z" fill="#ffb347"/>
+        <path class="flame f2" d="M0 1 C-4 -4 -2 -9 0 -15 C2 -9 5 -4 0 1 Z" fill="#fff1b8"/>
+      </g>
+    </g>
+  </g>
+
+  <path d="M0 372 Q240 338 470 366 Q640 384 820 360 Q1020 336 1200 366 V460 H0 Z" fill="url(#hillB)"/>
+  ${flecks}
+
+  <!-- pipeline from the wells to the refinery -->
+  <path d="M60 386 H300 Q350 386 378 372 L404 362" stroke="#5e9bd8" stroke-width="6" fill="none" stroke-linecap="round"/>
+  <path class="flow" d="M60 386 H300 Q350 386 378 372 L404 362" stroke="#ffffff" stroke-width="2.2" fill="none" stroke-linecap="round"/>
+  <path d="M100 386 v8 M180 386 v8 M260 386 v8" stroke="#2f5f9a" stroke-width="3"/>
+  ${jack(120, 380, 1, 0)}${jack(262, 384, .82, -1.3)}
+
+  <!-- ship channel and LNG tanker -->
+  <path d="M640 460 Q720 420 840 412 Q1010 402 1200 406 V460 Z" fill="url(#water)"/>
+  <path class="wave" d="M700 446 q10 -5 20 0 t20 0 M900 452 q10 -5 20 0 t20 0 M1080 440 q10 -5 20 0 t20 0 M800 430 q8 -4 16 0 t16 0"
+        stroke="#a6dbf2" stroke-width="1.6" fill="none" stroke-linecap="round" opacity=".7"/>
+  <g transform="translate(990 432)">
+    <g class="tanker">
+      <rect x="62" y="-38" width="20" height="24" rx="2" fill="#f4f9ff"/>
+      <path d="M66 -32 h12 M66 -26 h12" stroke="#2a74b0" stroke-width="2"/>
+      <rect x="69" y="-48" width="6" height="10" fill="#7cc4e4"/>
+      ${domes}
+      <path d="M-92 -14 H90 L100 -14 L88 4 H-82 Z" fill="#0f3160"/>
+      <path d="M-84 0 H90" stroke="#7cc4e4" stroke-width="2.5"/>
+      <text x="-30" y="-3" font-size="8" font-family="Arial, sans-serif" font-weight="700" fill="#a6dbf2" letter-spacing="2">LNG</text>
+    </g>
+  </g>
+</svg>`;
+  }
+
+  function buildEnergyScene() {
+    const footer = document.createElement("footer");
+    footer.className = "scene energy";
+    footer.innerHTML = `
+      <div class="scene-stage" tabindex="0" aria-label="Hover or tap to power up the scene and read Clarence's note">
+        ${energySVG()}
+        <div class="note" aria-live="polite">
+          ${QUOTE.map((l, i) => `<span class="note-line ${l.cls}" style="--i:${i}">${l.t}</span>`).join("")}
+        </div>
+        <div class="scene-hint">✦ hover to power up · click a turbine or the flare</div>
+      </div>
+      <div class="pipe-band" aria-hidden="true"></div>`;
+    document.body.appendChild(footer);
+
+    const stage = footer.querySelector(".scene-stage");
+    const snow = addSnow(stage, { density: 6500, green: 0.1, wind: 0.35 });
+    const onKey = fn => e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); fn(); } };
+
+    stage.addEventListener("click", e => {
+      if (e.target.closest(".turbine, .flare")) return;
+      if (matchMedia("(hover: none)").matches) stage.classList.toggle("on");
+    });
+    footer.querySelectorAll(".turbine").forEach(t => {
+      const spin = () => { t.classList.toggle("fast"); stage.classList.add("on"); };
+      t.addEventListener("click", spin);
+      t.addEventListener("keydown", onKey(spin));
+    });
+    const flare = footer.querySelector(".flare");
+    const sparks = () => {
+      const r = flare.getBoundingClientRect(), s = stage.getBoundingClientRect();
+      snow.burst(r.left - s.left + r.width / 2, r.top - s.top + r.height / 2, 55, "255,190,90");
+      flare.classList.remove("burst"); void flare.getBBox(); flare.classList.add("burst");
+      stage.classList.add("on");
+    };
+    flare.addEventListener("click", sparks);
+    flare.addEventListener("keydown", onKey(sparks));
+    stage.addEventListener("mouseleave", () => stage.classList.remove("on"));
+    if (location.hash === "#clarence") stage.classList.add("on");
+  }
+
   function buildScene() {
+    if (/market\.html$/.test(location.pathname)) return buildEnergyScene();
     const footer = document.createElement("footer");
     footer.className = "scene";
     footer.innerHTML = `
