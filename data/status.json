@@ -1,42 +1,42 @@
 {
-  "run_time": "2026-11-15T17:43:03Z",
+  "run_time": "2026-11-16T21:02:14Z",
   "first_run_date": "2026-11-13",
-  "days_with_success": 3,
+  "days_with_success": 4,
   "open": 3968,
-  "new_today": 16,
-  "removed_today": 32,
+  "new_today": 1,
+  "removed_today": 1,
   "sources": [
     {
       "name": "fifth_third",
       "employer": "Fifth Third Bank",
       "ats": "workday",
-      "ok": true,
-      "count": 971,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://fifththird.wd5.myworkdayjobs.com/wday/cxs/fifththird/53careers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "origin_bank",
       "employer": "Origin Bank",
       "ats": "workday",
-      "ok": true,
-      "count": 37,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://originbank.wd1.myworkdayjobs.com/wday/cxs/originbank/Careers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "huntington",
       "employer": "Huntington Bank (incl. Cadence)",
       "ats": "workday",
-      "ok": true,
-      "count": 720,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://huntington.wd12.myworkdayjobs.com/wday/cxs/huntington/HNBcareers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "regions",
       "employer": "Regions Bank",
       "ats": "workday",
-      "ok": true,
-      "count": 464,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://regions.wd5.myworkdayjobs.com/wday/cxs/regions/Regions_Careers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "texas_capital",
@@ -50,41 +50,41 @@
       "name": "hancock_whitney",
       "employer": "Hancock Whitney",
       "ats": "workday",
-      "ok": true,
-      "count": 167,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://hancockwhitney.wd5.myworkdayjobs.com/wday/cxs/hancockwhitney/Careers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "frost",
       "employer": "Frost Bank",
       "ats": "workday",
-      "ok": true,
-      "count": 178,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://frostbank.wd5.myworkdayjobs.com/wday/cxs/frostbank/external/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "simmons",
       "employer": "Simmons Bank",
       "ats": "workday",
-      "ok": true,
-      "count": 157,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://simmonsbank.wd5.myworkdayjobs.com/wday/cxs/simmonsbank/SimmonsCareers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "mufg",
       "employer": "MUFG",
       "ats": "workday",
-      "ok": true,
-      "count": 671,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://mufgub.wd3.myworkdayjobs.com/wday/cxs/mufgub/MUFG-Careers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "mizuho",
       "employer": "Mizuho Americas",
       "ats": "workday",
-      "ok": true,
-      "count": 117,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://mizuho.wd1.myworkdayjobs.com/wday/cxs/mizuho/mizuhoamericas/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "piper_sandler",
@@ -98,17 +98,17 @@
       "name": "houlihan_lokey",
       "employer": "Houlihan Lokey",
       "ats": "workday",
-      "ok": true,
-      "count": 51,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://hl.wd1.myworkdayjobs.com/wday/cxs/hl/Campus/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "trafigura",
       "employer": "Trafigura",
       "ats": "workday",
-      "ok": true,
-      "count": 68,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://trafigura.wd3.myworkdayjobs.com/wday/cxs/trafigura/TrafiguraCareerSite/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "engelhart",
@@ -122,17 +122,17 @@
       "name": "williams",
       "employer": "Williams Companies",
       "ats": "workday",
-      "ok": true,
-      "count": 132,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://williams.wd5.myworkdayjobs.com/wday/cxs/williams/External/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "plains",
       "employer": "Plains All American",
       "ats": "workday",
-      "ok": true,
-      "count": 65,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://plains.wd1.myworkdayjobs.com/wday/cxs/plains/plains/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "cheniere",
