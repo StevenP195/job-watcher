@@ -1,10 +1,10 @@
 {
-  "run_time": "2026-11-16T21:02:14Z",
+  "run_time": "2026-11-17T19:51:58Z",
   "first_run_date": "2026-11-13",
-  "days_with_success": 4,
-  "open": 3968,
-  "new_today": 1,
-  "removed_today": 1,
+  "days_with_success": 5,
+  "open": 3969,
+  "new_today": 3,
+  "removed_today": 2,
   "sources": [
     {
       "name": "fifth_third",
@@ -18,9 +18,9 @@
       "name": "origin_bank",
       "employer": "Origin Bank",
       "ats": "workday",
-      "ok": false,
-      "count": 0,
-      "error": "POST https://originbank.wd1.myworkdayjobs.com/wday/cxs/originbank/Careers/jobs failed: HTTP Error 429: Too Many Requests"
+      "ok": true,
+      "count": 37,
+      "error": ""
     },
     {
       "name": "huntington",
@@ -42,9 +42,9 @@
       "name": "texas_capital",
       "employer": "Texas Capital Bank",
       "ats": "workday",
-      "ok": true,
-      "count": 105,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://texascapitalbank.wd12.myworkdayjobs.com/wday/cxs/texascapitalbank/Careers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "hancock_whitney",
@@ -98,9 +98,9 @@
       "name": "houlihan_lokey",
       "employer": "Houlihan Lokey",
       "ats": "workday",
-      "ok": false,
-      "count": 0,
-      "error": "POST https://hl.wd1.myworkdayjobs.com/wday/cxs/hl/Campus/jobs failed: HTTP Error 429: Too Many Requests"
+      "ok": true,
+      "count": 51,
+      "error": ""
     },
     {
       "name": "trafigura",
@@ -139,7 +139,7 @@
       "employer": "Cheniere Energy",
       "ats": "oracle",
       "ok": true,
-      "count": 16,
+      "count": 17,
       "error": ""
     }
   ]
