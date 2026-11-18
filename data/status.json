@@ -1,10 +1,10 @@
 {
-  "run_time": "2026-11-17T19:51:58Z",
+  "run_time": "2026-11-18T19:24:35Z",
   "first_run_date": "2026-11-13",
-  "days_with_success": 5,
-  "open": 3969,
-  "new_today": 3,
-  "removed_today": 2,
+  "days_with_success": 6,
+  "open": 3967,
+  "new_today": 20,
+  "removed_today": 22,
   "sources": [
     {
       "name": "fifth_third",
@@ -50,9 +50,9 @@
       "name": "hancock_whitney",
       "employer": "Hancock Whitney",
       "ats": "workday",
-      "ok": false,
-      "count": 0,
-      "error": "POST https://hancockwhitney.wd5.myworkdayjobs.com/wday/cxs/hancockwhitney/Careers/jobs failed: HTTP Error 429: Too Many Requests"
+      "ok": true,
+      "count": 170,
+      "error": ""
     },
     {
       "name": "frost",
@@ -82,9 +82,9 @@
       "name": "mizuho",
       "employer": "Mizuho Americas",
       "ats": "workday",
-      "ok": false,
-      "count": 0,
-      "error": "POST https://mizuho.wd1.myworkdayjobs.com/wday/cxs/mizuho/mizuhoamericas/jobs failed: HTTP Error 429: Too Many Requests"
+      "ok": true,
+      "count": 115,
+      "error": ""
     },
     {
       "name": "piper_sandler",
@@ -99,7 +99,7 @@
       "employer": "Houlihan Lokey",
       "ats": "workday",
       "ok": true,
-      "count": 51,
+      "count": 48,
       "error": ""
     },
     {
