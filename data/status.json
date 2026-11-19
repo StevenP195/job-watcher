@@ -1,10 +1,10 @@
 {
-  "run_time": "2026-11-18T19:24:35Z",
+  "run_time": "2026-11-19T19:29:15Z",
   "first_run_date": "2026-11-13",
-  "days_with_success": 6,
+  "days_with_success": 7,
   "open": 3967,
-  "new_today": 20,
-  "removed_today": 22,
+  "new_today": 3,
+  "removed_today": 3,
   "sources": [
     {
       "name": "fifth_third",
@@ -19,7 +19,7 @@
       "employer": "Origin Bank",
       "ats": "workday",
       "ok": true,
-      "count": 37,
+      "count": 39,
       "error": ""
     },
     {
@@ -50,9 +50,9 @@
       "name": "hancock_whitney",
       "employer": "Hancock Whitney",
       "ats": "workday",
-      "ok": true,
-      "count": 170,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://hancockwhitney.wd5.myworkdayjobs.com/wday/cxs/hancockwhitney/Careers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "frost",
@@ -82,16 +82,16 @@
       "name": "mizuho",
       "employer": "Mizuho Americas",
       "ats": "workday",
-      "ok": true,
-      "count": 115,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://mizuho.wd1.myworkdayjobs.com/wday/cxs/mizuho/mizuhoamericas/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "piper_sandler",
       "employer": "Piper Sandler",
       "ats": "workday",
       "ok": true,
-      "count": 46,
+      "count": 44,
       "error": ""
     },
     {
