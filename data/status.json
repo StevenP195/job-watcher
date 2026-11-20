@@ -1,9 +1,9 @@
 {
-  "run_time": "2026-11-19T19:29:15Z",
+  "run_time": "2026-11-20T19:06:27Z",
   "first_run_date": "2026-11-13",
-  "days_with_success": 7,
-  "open": 3967,
-  "new_today": 3,
+  "days_with_success": 8,
+  "open": 3969,
+  "new_today": 5,
   "removed_today": 3,
   "sources": [
     {
@@ -19,7 +19,7 @@
       "employer": "Origin Bank",
       "ats": "workday",
       "ok": true,
-      "count": 39,
+      "count": 42,
       "error": ""
     },
     {
@@ -91,16 +91,16 @@
       "employer": "Piper Sandler",
       "ats": "workday",
       "ok": true,
-      "count": 44,
+      "count": 45,
       "error": ""
     },
     {
       "name": "houlihan_lokey",
       "employer": "Houlihan Lokey",
       "ats": "workday",
-      "ok": true,
-      "count": 48,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://hl.wd1.myworkdayjobs.com/wday/cxs/hl/Campus/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "trafigura",
@@ -139,7 +139,7 @@
       "employer": "Cheniere Energy",
       "ats": "oracle",
       "ok": true,
-      "count": 17,
+      "count": 15,
       "error": ""
     }
   ]
