@@ -1,5 +1,5 @@
 {
- "updated": "2026-11-21T17:58:44Z",
+ "updated": "2026-11-22T18:31:23Z",
  "window_days": 21,
  "companies": [
   {
@@ -48,14 +48,14 @@
    "key": "frost",
    "employer": "Frost Bank",
    "ok": true,
-   "count": 7,
+   "count": 6,
    "error": ""
   },
   {
    "key": "simmons",
    "employer": "Simmons Bank",
    "ok": true,
-   "count": 5,
+   "count": 8,
    "error": ""
   },
   {
@@ -75,15 +75,15 @@
   {
    "key": "piper_sandler",
    "employer": "Piper Sandler",
-   "ok": true,
-   "count": 8,
-   "error": ""
+   "ok": false,
+   "count": 0,
+   "error": "HTTP Error 429: Too Many Requests"
   },
   {
    "key": "houlihan_lokey",
    "employer": "Houlihan Lokey",
    "ok": true,
-   "count": 5,
+   "count": 8,
    "error": ""
   },
   {
@@ -110,19 +110,109 @@
   {
    "key": "plains",
    "employer": "Plains All American",
-   "ok": true,
-   "count": 8,
-   "error": ""
+   "ok": false,
+   "count": 0,
+   "error": "HTTP Error 429: Too Many Requests"
   },
   {
    "key": "cheniere",
    "employer": "Cheniere Energy",
-   "ok": true,
-   "count": 8,
-   "error": ""
+   "ok": false,
+   "count": 0,
+   "error": "HTTP Error 429: Too Many Requests"
   }
  ],
  "items": [
+  {
+   "title": "Possible Huntington Bank outage leading to app issues users report",
+   "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxQT2hEQVpjVFVzM0ZqeXZzbVZldDloMGJyeVBNSWdkbWRPTkdUSkNVMWlwcVdGSmNFbHgyY2s5TzA5Yjh2b1JUemtGcUF3ckZMdU5EWG11WXV4TW9xREZHaERGX19rRGJWRUFibnRJbVZoUGpPMDJwa2o1bTBxRTJpM2tKS0cxTEVFVWo5SDdlUzRWSmRsS2EzbGxGcw?oc=5",
+   "source": "Neowin",
+   "published": "2026-11-22T13:52:00Z",
+   "id": "dc32260775a9",
+   "company": "huntington",
+   "employer": "Huntington Bank (incl. Cadence)",
+   "category": "bank",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Debt or financing deal",
+    "what": "Neowin reported on Nov 22 (national coverage): \"Possible Huntington Bank outage leading to app issues users report\". Read the article for the details before you bring it up.",
+    "why": "A financing deal shows the kind of credit Huntington Bank (incl. Cadence) underwrites and arranges, which is the analyst's core work.",
+    "interview": "Connect it to credit work: mention the size and terms, and how you would think about leverage and repayment capacity, drawing on your financing-package work at Watercress."
+   }
+  },
+  {
+   "title": "Williams Companies Slashed Its Dividend in 2016. Here’s What $1,000 Invested Then Is Worth Today",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxQTTJZWGtpbktPcjVaSDlCcmRHektmS2JySWU1RWlsbEVEMmpXSE9naS0tWnRRWm1oMkdqYlpCQ3A3TENnYXRWTXUyNDRpRWsxbjBia09DbFdNbmhkVU1ONnlqeDZqSEJ2MXFDYjdPTWY4eExMX1FaVEp2d2pSNDltMTFVR3FfVUk3UlVKOWUxWDNrYzVQWTlFM2hrSW9wLUc4SDlDTUFMSHA?oc=5",
+   "source": "Yahoo Finance",
+   "published": "2026-11-21T22:47:28Z",
+   "id": "dcd62172d3f9",
+   "company": "williams",
+   "employer": "Williams Companies",
+   "category": "energy",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Stock listing or market move",
+    "what": "Yahoo Finance reported on Nov 21 (national coverage): \"Williams Companies Slashed Its Dividend in 2016. Here’s What $1,000 Invested Then Is Worth Today\". Read the article for the details before you bring it up.",
+    "why": "Investor sentiment affects the company's cost of capital and access to financing.",
+    "interview": "Mention it lightly and ask what it means for the firm's strategy in Texas; avoid stock-price predictions."
+   }
+  },
+  {
+   "title": "Origin Bancorp director Michael Jones buys $78,660 in shares",
+   "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxNNnAzRUtBMHZqOXo4aVk5by0xMy1xYmhQdnQ5YlRwOGFkZ2JuYm9MYmlwWnh2UW0tNEtQczdKZjl1Zmh2Rk4zcE1pSzdQVDYzODZISjgzQzhxM0JScXh0aVZBVjFSbkpCNVVWSm5mRktWZjJfOGREcXpGbVhyT3I2ZnNna0pEc0ZKWXZVM2ZVZDk0Sk11Qi1kbktSV19hRXJDWWpSeVdQdWZLUVdzeWlnXzFMTDBEcjFZWlpNSDRLcWo?oc=5",
+   "source": "Investing.com",
+   "published": "2026-11-21T21:02:36Z",
+   "id": "ceedee4f1c0b",
+   "company": "origin_bank",
+   "employer": "Origin Bank",
+   "category": "bank",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Merger or acquisition",
+    "what": "Investing.com reported on Nov 21 (national coverage): \"Origin Bancorp director Michael Jones buys $78,660 in shares\". Read the article for the details before you bring it up.",
+    "why": "A bank merger changes the loan book, the credit policy and often the team structure. Analysts help review the acquired portfolio, and the combined bank usually needs more credit capacity.",
+    "interview": "Bring it up when asked why Origin Bank: name the deal, say what it adds (markets, scale or sector coverage), and ask how the integration will change the team you would join."
+   }
+  },
+  {
+   "title": "How Hancock Whitney Corporation 6.25% Subordinated Notes Due 2060 (HWCPZ) Affects Rotational Strategy Timing",
+   "url": "https://news.google.com/rss/articles/CBMilAJBVV95cUxNS1VvVVBhUEtxWnB5ZVpIMHB0ek5BZXZvNThEZVJCeVFGdDl1US1SaWdlMkp0b1puZFZ2emVYSlJPdmhjZVk5Q3dNVHVfNVhsSTNfemdpakJzUUh5TVprXzdMNzNHZVRsY0JwOU5BSS1qaktZWHRMa0F0V05rSjhUWXJDUnk4TU5vWXl2UFUtV1dYYzNqTFBwRERZejQ3NTd5OG1jQ3lCWkVORVhXWDNmaGJMNFJNa1QwRDg0dHJmQ09xX2gtOHA2emVBNHhBa1Z2d185eVItMFlPZG55N3BackZZbXg1ajFIVlQ4MWpNczVWcXdqcDMtS0dJN1pFYWp3QWZYaVAxNHNSQXY4eHJFOVo0NnM?oc=5",
+   "source": "Stock Traders Daily",
+   "published": "2026-11-21T18:24:02Z",
+   "id": "df16ec1236d1",
+   "company": "hancock_whitney",
+   "employer": "Hancock Whitney",
+   "category": "bank",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Debt or financing deal",
+    "what": "Stock Traders Daily reported on Nov 21 (national coverage): \"How Hancock Whitney Corporation 6.25% Subordinated Notes Due 2060 (HWCPZ) Affects Rotational Strategy Timing\". Read the article for the details before you bring it up.",
+    "why": "A financing deal shows the kind of credit Hancock Whitney underwrites and arranges, which is the analyst's core work.",
+    "interview": "Connect it to credit work: mention the size and terms, and how you would think about leverage and repayment capacity, drawing on your financing-package work at Watercress."
+   }
+  },
+  {
+   "title": "Huntington Bank instrumental in ensuring Lights Before Christmas tradition carries on",
+   "url": "https://news.google.com/rss/articles/CBMipAJBVV95cUxNY0tfLW94VE9PTnVkUWhDanZ4QlF2bTFlN1ZGWERXS1NVZWVaTzlITnUtUGZ5Yl9TZmVpUFNjdEdCWGx0SHp3enNKa24yTWt2d3hfQVh5TkNMYlV5clcybndMYTZLNllJVnhTbk1JdmVYeXNrcWZvbXFMZXVxVFhaVzlqRFd1UUo0UEtGUEZFRUY0MXdYOGVkME45cV9HM1RFZFA1YWd2N3E2LS01dG5FS21lWUNRd1VlVVRlUDJXYnZoSXR5MjZIaGhOamZONVJjSTRXRndEcWVMRDlFVkpTQktiOTV3MTJ2Ynh6OUNfTTFIMlZFWFh0aV9aZko2Uzh5RUpHTmlVV3hJQkNQcGE5T0pjZmJ3MVpsUjdmMk9nU0s4LVpH?oc=5",
+   "source": "wtol.com",
+   "published": "2026-11-20T23:15:00Z",
+   "id": "014f2708f744",
+   "company": "huntington",
+   "employer": "Huntington Bank (incl. Cadence)",
+   "category": "bank",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Firm news",
+    "what": "wtol.com reported on Nov 20 (national coverage): \"Huntington Bank instrumental in ensuring Lights Before Christmas tradition carries on\". Read the article for the details before you bring it up.",
+    "why": "News about Huntington Bank (incl. Cadence) shapes its lending appetite and where it is hiring.",
+    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
+   }
+  },
   {
    "title": "Regions Bank to light up Birmingham skyline with annual Christmas display on downtown tower",
    "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxPcDREcDJtYnVtcGhnRUs5ZzhsUXNSSXlfN3NuQmxTWlB1enZ4N0lKNm5FcnoycjBlbHduVFhkN0MteDBEZFo2eWhad3hUWWx4YkJiUjFzQXlmZlFvcnktS0ZOdFRZTFRLUWhqdTdkam1KSnpqUmxiMXdENGk0d2N3RFR4dnQxUjZvSE9pbVBSbHJjZVdkbmFCMTBvQ29sbjhQQnlmSm9Lc2ZhSDE0cGRiclZrQWdwdktyanc?oc=5",
@@ -160,27 +250,27 @@
    }
   },
   {
-   "title": "Simmons Bank Says Total Financing Provided By Co For Texas Multifamily Project Was About $88 Mln",
-   "url": "https://news.google.com/rss/articles/CBMi-AFBVV95cUxPNHZ6dU1Ddl9fV2hzMmlUbE5JTFl3YzFwem1WY1p1RTlqOHJ6Z09TRThwQ2M5MlZWUFFIZ1NGY2Z0TWVSdGxlOTJFdTZBcFB6LW5YaXpROUFjTDhiei12SVpCUWxHanZFY2lsd1A5U1l3Sy1VVC0yeVZiaUlLemZ0NXhYTndsOXViZWp3ZXJQTmNiVWpaN3RNRmRJMmp5Q3BCVFFpbmZXVmtaN0NYQTJhRXlQNlo1al9jTnBTajQ1NDh4bjlnQ2Z3T01qNTlKVGFGT3FkemtjS2V6YnBsVGFBZk5oLUg1T1lud2JmTDJYbE11a01WUmN6Mw?oc=5",
+   "title": "Simmons First National Corporation (SFNC) Says It Expects No Project Credit Loss",
+   "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxQbDlvU2psaW5PLUZXT0RBMDlFZ1h0NUVKcURkbGVYaExPSWdXVjFPSEV6YWpMZHdveEV6RE4xNjVxTWgyNlQtMzFrc3R2dmQ4SjdRa0dfbkY5QzYxeDc5dFpjRldKUV9MT2FFdF9tejNfVFJDanlrd25zdjVLSW1UUWVFUDlzR3VHVzhHUjdOMFhBMG9pMGVXS1N3LTFxUUR2RUpWZVFRYTRacEJSeEtxNWEwYmNwRUF3Z0wtSDlmZ3RkdGVFalQzT2hDZEdIN2QxcFNaZ0djQQ?oc=5",
    "source": "TradingView",
-   "published": "2026-11-20T19:22:02Z",
-   "id": "43de759f842b",
+   "published": "2026-11-20T19:00:00Z",
+   "id": "79ff608a7b9e",
    "company": "simmons",
    "employer": "Simmons Bank",
    "category": "bank",
    "scope": "national",
-   "first_seen": "2026-11-21",
+   "first_seen": "2026-11-22",
    "prep": {
-    "event": "Debt or financing deal",
-    "what": "TradingView reported on Nov 20 (national coverage): \"Simmons Bank Says Total Financing Provided By Co For Texas Multifamily Project Was About $88 Mln\". Read the article for the details before you bring it up.",
-    "why": "A financing deal shows the kind of credit Simmons Bank underwrites and arranges, which is the analyst's core work.",
-    "interview": "Connect it to credit work: mention the size and terms, and how you would think about leverage and repayment capacity, drawing on your financing-package work at Watercress."
+    "event": "Earnings or results",
+    "what": "TradingView reported on Nov 20 (national coverage): \"Simmons First National Corporation (SFNC) Says It Expects No Project Credit Loss\". Read the article for the details before you bring it up.",
+    "why": "Quarterly results show loan growth, credit quality (charge-offs, reserves) and margin pressure, which shape how much Simmons Bank wants to lend and to whom.",
+    "interview": "Show you follow the firm: cite one number or trend from the results and ask how it affects the group's priorities for next year."
    }
   },
   {
    "title": "Simmons Bank Issues Statement Correcting Inaccurate Media Reports Regarding Texas Multifamily Project",
-   "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxPTl9jM08weGpYTms3LW9uYnpWZGs5WkxxUGpvekN4R2VKX2ZNMDBIQlcyU3ZtVFVlaG02bHVZSHMtSGVCdU5CM0ZHb29VM1JENHNpTEY1NU1qRmp6LTE5MW9hOGNydjdIWDRra0ZhMUxkY1VXOFltMVV3SHN0WkhTVFZNaWxqajVnLVB5OG0tQlNQVDVMNURHTzRwU2VTT0JMMThUSExMWXcwTEFaMTRpTVhsZ2VGcUNfMXc2VkJhSlFrUzluRzlTTnlLWjlCaGpPTXV1SHhyOTZJbGdIckRKYTJfd3UxSmFDM3JVdEFn?oc=5",
-   "source": "PR Newswire",
+   "url": "https://news.google.com/rss/articles/CBMitgJBVV95cUxOSUMwdDZhYjcySU5ZNWR4eXVWWFU5emU3TENWeVVWaWdOV2dyaV8xbEJycmo0YkY4VUpYallSSDZXUUphUVFuaHpiR2JqRXpUUGctRGxXVHh2cXBPdVR5bmx2M2RUTWRram1PWTdoVEpnZmk5N3NoYzNzMm1QcVFmNlhUSmt6OHg1M1doWVpQNGljSGQ1U3J2UEpWd2o2TktDcWNXcl9nbm54V3ZxVWtiWFVMWkc2RHZFSUcyelZwOVM3WHhyU1BXUG8wVHNNVUhXckhSalN5VXpaSnlvY0JpMHFhS3gzN1dWaENEQVlGell4SHowWVFJMXFydnJaWFQtWEFKcHdva0xiaDhPdjh0bndkUmRNRWZLR0RFdzBUZzYxM1puVHRhQmFqWW5KVTl0SkdhRUpB?oc=5",
+   "source": "indianola-ia.com",
    "published": "2026-11-20T19:00:00Z",
    "id": "dbe49eb5aa29",
    "company": "simmons",
@@ -190,7 +280,7 @@
    "first_seen": "2026-11-20",
    "prep": {
     "event": "Debt or financing deal",
-    "what": "PR Newswire reported on Nov 20 (national coverage): \"Simmons Bank Issues Statement Correcting Inaccurate Media Reports Regarding Texas Multifamily Project\". Read the article for the details before you bring it up.",
+    "what": "indianola-ia.com reported on Nov 20 (national coverage): \"Simmons Bank Issues Statement Correcting Inaccurate Media Reports Regarding Texas Multifamily Project\". Read the article for the details before you bring it up.",
     "why": "A financing deal shows the kind of credit Simmons Bank underwrites and arranges, which is the analyst's core work.",
     "interview": "Connect it to credit work: mention the size and terms, and how you would think about leverage and repayment capacity, drawing on your financing-package work at Watercress."
    }
@@ -211,24 +301,6 @@
     "what": "Stock Titan reported on Nov 20 (national coverage): \"A Texas property's loan is about 73% of its appraised value, Simmons Bank says.\". Read the article for the details before you bring it up.",
     "why": "A financing deal shows the kind of credit Simmons Bank underwrites and arranges, which is the analyst's core work.",
     "interview": "Connect it to credit work: mention the size and terms, and how you would think about leverage and repayment capacity, drawing on your financing-package work at Watercress."
-   }
-  },
-  {
-   "title": "Can Simmons First National (NASDAQ:SFNC) Ride Dividend To New Highs?",
-   "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPbVpRTFpxNnMwY041bkN1S29BZzBMUFB1eXYzQTdYRS1JTEhJSWFXVjBtMU5ZLVRPTlRmck1aVVV5TmR1YTBpcl9PTlY0V2hWU1FhTlNvUmZhei1xRGNTUFdVZXdGOXp2WlpiTVpULW1YMFFwNmdsekxYbUVqRlBROVFNYzR2cjdWN29NNHoxaGRwUGRqUXE2T2JnZ3JSa0VWTFprd3FYWFFldVFyQkE?oc=5",
-   "source": "Kalkine Media",
-   "published": "2026-11-20T18:37:00Z",
-   "id": "82bbd14fb8de",
-   "company": "simmons",
-   "employer": "Simmons Bank",
-   "category": "bank",
-   "scope": "national",
-   "first_seen": "2026-11-21",
-   "prep": {
-    "event": "Stock listing or market move",
-    "what": "Kalkine Media reported on Nov 20 (national coverage): \"Can Simmons First National (NASDAQ:SFNC) Ride Dividend To New Highs?\". Read the article for the details before you bring it up.",
-    "why": "Market moves and listings reflect how investors see Simmons Bank's growth and risk, the context for its lending strategy.",
-    "interview": "Mention it lightly and ask what it means for the firm's strategy in Texas; avoid stock-price predictions."
    }
   },
   {
@@ -376,6 +448,42 @@
    }
   },
   {
+   "title": "MUFG Details Canton Test for Intraday JGB Repo Funding",
+   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxQQ2JPb1BLTmhpTGRranpwMW82U25YUWpjeW5kTmFGNkQwMHdNR1RZRVBRMUg3TGwxMjg0ZGx4MGg2Z01UbkRzdzZybE9USjczOWNHQVRZNXlGcEJIdjFlTVJXTlJ2ZkIxYVl5LXlfRWJZMG11M2ZGNzJCMHJ5TGI2ck5oYXRCSHM0Y29XOWl2Y0ZPMEYyMHdKY3I0MHJhZkZPZzFUZnVpUQ?oc=5",
+   "source": "The Defiant",
+   "published": "2026-11-20T08:00:00Z",
+   "id": "13019a5bc816",
+   "company": "mufg",
+   "employer": "MUFG",
+   "category": "bank",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Firm news",
+    "what": "The Defiant reported on Nov 20 (national coverage): \"MUFG Details Canton Test for Intraday JGB Repo Funding\". Read the article for the details before you bring it up.",
+    "why": "News about MUFG shapes its lending appetite and where it is hiring.",
+    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
+   }
+  },
+  {
+   "title": "Top Williams Companies (WMB) Competitors 2026",
+   "url": "https://news.google.com/rss/articles/CBMifEFVX3lxTE5Fb2cwRnNkemp2MTA1ZGJEYzFGLXZsSmIwVExHVF9xMURJYWFkMW1LanV4TzRnb3FWS3NIYUwxYlE5V3hNRF81M3NyQkFENUpPLUtjcG41bVpELXdzLXpqY2R5blpfLXVEYVBFUkd0MDdNRGdUQ3JBdG51OGU?oc=5",
+   "source": "MarketBeat",
+   "published": "2026-11-20T08:00:00Z",
+   "id": "4fb7c6d0789a",
+   "company": "williams",
+   "employer": "Williams Companies",
+   "category": "energy",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Firm news",
+    "what": "MarketBeat reported on Nov 20 (national coverage): \"Top Williams Companies (WMB) Competitors 2026\". Read the article for the details before you bring it up.",
+    "why": "News about Williams Companies affects its cash flows and counterparties, the heart of credit and treasury work.",
+    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
+   }
+  },
+  {
    "title": "Piper Sandler keeps Buy on Amgen stock; EUR 398.23, down 0.41%",
    "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPZzdWRkt2Ui1fUUhQbzRFVWl6UkZ1TWFxOHF5alN1bm52S0xGczdjZDktYU40eTNOUy1HbkNkX2tZTUJvUFQ3NUxHQjV6ci01enpKbmpWVzB6NkpDaEFCQ3ByeHRHb2N6bG9NOHV3Z2piWnpGa21WcEpJSHVEaXZRVUFpcjFTVk5tTDRGazZmVGl2N0l4dmhZQ0poQkw3bmdEMlYxbkhFY1h0QzZCU2diSFhoTXlEVHJT?oc=5",
    "source": "ad-hoc-news.de",
@@ -391,42 +499,6 @@
     "what": "ad-hoc-news.de reported on Nov 20 (national coverage): \"Piper Sandler keeps Buy on Amgen stock; EUR 398.23, down 0.41%\". Read the article for the details before you bring it up.",
     "why": "Buying another advisory firm adds bankers and sector coverage, which shows where Piper Sandler wants to grow and which groups may be adding analysts.",
     "interview": "Bring it up when asked why Piper Sandler: name the deal, say what it adds (markets, scale or sector coverage), and ask how the integration will change the team you would join."
-   }
-  },
-  {
-   "title": "Mizuho Financial Group Inc Earnings — Q2 2027 Analysis & Highlights",
-   "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPbTAyT0hwb3hwSUpWTXQ4YmNQLUota3U1SEJTaHV5U3BQcVZuOElGVldwVV80RlFlWklfelI3ZEtiRjh2cVJ0bzVRWUpUM1gtVHdSSVpFNER2cFc3Z3lSX2RvZERYSlhIWVdJRnRhNkFfbjhmN3R6Q2NFUHFic05QY1FKZ1FkcGs?oc=5",
-   "source": "Smartkarma",
-   "published": "2026-11-20T07:00:32Z",
-   "id": "3c4c49166d88",
-   "company": "mizuho",
-   "employer": "Mizuho Americas",
-   "category": "ib",
-   "scope": "national",
-   "first_seen": "2026-11-21",
-   "prep": {
-    "event": "Earnings or results",
-    "what": "Smartkarma reported on Nov 20 (national coverage): \"Mizuho Financial Group Inc Earnings — Q2 2027 Analysis & Highlights\". Read the article for the details before you bring it up.",
-    "why": "Results show which businesses (M&A advisory, capital markets, restructuring) are driving revenue, and so which groups are busiest.",
-    "interview": "Show you follow the firm: cite one number or trend from the results and ask how it affects the group's priorities for next year."
-   }
-  },
-  {
-   "title": "BMO Returns to US Oil and Gas Banking, Taps Mizuho's Akbar to Lead Energy Push",
-   "url": "https://news.google.com/rss/articles/CBMidkFVX3lxTFB2YVFETTVnN0JQQTZaSlMtU3ZSOThQQmRzUnZWTi1acUx0X0VNLVZaODV5ZDNzX0M5ZkQyWEYzMG9rbDB2dkRFUVdtTy1SbDVYYUplNHhfOVVhc05sQWI4Mkp1V3NoM2xYNUNGNnpBYnBUY3dOWFE?oc=5",
-   "source": "BigGo Finance",
-   "published": "2026-11-20T02:35:00Z",
-   "id": "b4c0f2439a8e",
-   "company": "mizuho",
-   "employer": "Mizuho Americas",
-   "category": "ib",
-   "scope": "national",
-   "first_seen": "2026-11-20",
-   "prep": {
-    "event": "Firm news",
-    "what": "BigGo Finance reported on Nov 20 (national coverage): \"BMO Returns to US Oil and Gas Banking, Taps Mizuho's Akbar to Lead Energy Push\". Read the article for the details before you bring it up.",
-    "why": "News about Mizuho Americas shows where its deal teams are busy.",
-    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
    }
   },
   {
@@ -502,19 +574,19 @@
    }
   },
   {
-   "title": "Trafigura Ship Fuel Venture Hesitant to Invest in Alternative Fuels Until Demand Rises",
-   "url": "https://news.google.com/rss/articles/CBMijgFBVV95cUxOMkVDaEhJZUtlX0hDSWdYZGcwYnotU3RFOVE1WWNUbWh4VkdmM3hlVGtiV1JWaXlISVRqeTFEa04zZFIzWjVsSVV5Zm5obnBERmpiV2F0UUdPT3E3T3Q3VUxaejVjMzRkZ0hEMVpMQWFHTHFNd2dfM1J3QXAySWFGUjRUX014dkxUR3U4ZUJR0gGTAUFVX3lxTFBYTDRvTG5GMGtKV2pRRUxIV01xUklpQVpsVlVPTnlXaG5LN0YwdTRuQ3dqNC1JZTJXTDY2WjlyTUZBNmVSaHExS3RBM0ptazB5dm4wV0ZEd25zZHpMSlBNMzczS3ZOQTc1b21LOEJpTS1LTEVWVW9ZVlBOeWJJckVuR1ZCZGJLLWhfLVFTMXhkcnd4cw?oc=5",
-   "source": "Maritime Logistics News",
-   "published": "2026-11-19T18:16:01Z",
-   "id": "1561700e83f7",
+   "title": "Trafigura Ship Fuel Venture Isn't Rushing Into Alternative Fuels as Fuel Oil Demand Stays Firm, Director Says",
+   "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQTDRkYjFFdHcwSzZZODBianRLN3ppR0pUUjZva0tGRklmeURlODVzbFBrbnczcUR5c1puMnVQZ2NZX0tkT0s4cXFCRFpFTnVZdVFCdWhLWjJkUThTRWowMWw4aGtBRXRVWGF1UTNxWFRmUGpWZ3k5eWoxSUNsdE9wSU56MWR0ckwwemw0dlhmQno4enhjMkFNNDdVY3BkOTJPR3Z0ZWhfRFpPMzkyNzlDazB4LUR2RGZPZlJPRWlvcV90RUo1Y1ZIb1ZSa2hFSkNISDhJNHNHQUJ4cElYSkZIbGxpWmZNbGlCelBjNjRDdnhFN2JYS3BwNDhyOA?oc=5",
+   "source": "US News Money",
+   "published": "2026-11-19T16:59:35Z",
+   "id": "7b3f2c83c878",
    "company": "trafigura",
    "employer": "Trafigura",
    "category": "energy",
    "scope": "houston",
-   "first_seen": "2026-11-20",
+   "first_seen": "2026-11-22",
    "prep": {
     "event": "Firm news",
-    "what": "Maritime Logistics News reported on Nov 19 (Houston coverage): \"Trafigura Ship Fuel Venture Hesitant to Invest in Alternative Fuels Until Demand Rises\". Read the article for the details before you bring it up.",
+    "what": "US News Money reported on Nov 19 (Houston coverage): \"Trafigura Ship Fuel Venture Isn't Rushing Into Alternative Fuels as Fuel Oil Demand Stays Firm, Director Says\". Read the article for the details before you bring it up.",
     "why": "News about Trafigura affects its cash flows and counterparties, the heart of credit and treasury work.",
     "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
    }
@@ -664,6 +736,24 @@
    }
   },
   {
+   "title": "Williams Companies (WMB) Leans On Power Growth, Is The Upside Already Priced In?",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPcThiUnRxUC1BOC1LU2dKUWxsbnBpdE02ZDRoLVVsbTdsTXgwSjlNdjJMUFIyMjVTOW9JdFI0Q1U4QWdNWEd3RHlmb25WTFdXd3NlbHRpdlpXZDJlaGZZdVJhR2RpQWtFeDV0LTNFTFVreGF2emVQU0VtVGJEV2ZfdlVKZklaek02X19jb1pndlJUMmJOd3RkeE51OUMzRENx?oc=5",
+   "source": "Yahoo Finance",
+   "published": "2026-11-19T07:10:00Z",
+   "id": "ded580a9bd65",
+   "company": "williams",
+   "employer": "Williams Companies",
+   "category": "energy",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Expansion or new office",
+    "what": "Yahoo Finance reported on Nov 19 (national coverage): \"Williams Companies (WMB) Leans On Power Growth, Is The Upside Already Priced In?\". Read the article for the details before you bring it up.",
+    "why": "Expansion projects need financing and create new counterparties, which is credit and treasury work.",
+    "interview": "Say you noticed the expansion and ask how the Houston team fits into it. It's a natural lead-in to why you want to start your career in Houston."
+   }
+  },
+  {
    "title": "Origin Bancorp Shows Improvement, But Not Enough (TXSE:OBK)",
    "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxNZmRIRE1ybEhfeGJSbWVhWUVZVDlJOWF6ajViQ1A4SkZMRDg3Yk1mSFdEU0ZsRlRZQmNGZGphTU1UQmN6cGM2NmRQVGZxVUVtYW1ibmotWlg5MXU5b1JsWmEzaVZpSE1vRndicUlTV3Vtdnk4dUpleWg2Zl9KOGw1THBlVks1QnBUVUlrd3lEcmw3QQ?oc=5",
    "source": "Seeking Alpha",
@@ -682,42 +772,6 @@
    }
   },
   {
-   "title": "Huntington Bank to hire dozens in Alabama",
-   "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxQY0psazNJa01zNXhRNzlLd3BSQXZzbnFyOVJSUU5rTTVQWHBPMWxqQ3V6RTRqNjA2RktuSXR4M0lNSXNIYlp4cl80RzNFOWJsSUhncWk4QTVYa0xScEY4SmhxUEdnWmZraWhxNmJRSFRFN3F0QVB2Z3JLekVJZmQ5ZTdsSUdWcHN0Y0hBMGFtTVcxT21TbWlsVEY5MVE4Q2doeXc?oc=5",
-   "source": "The Business Journals",
-   "published": "2026-11-19T01:27:00Z",
-   "id": "70644dc80897",
-   "company": "huntington",
-   "employer": "Huntington Bank (incl. Cadence)",
-   "category": "bank",
-   "scope": "national",
-   "first_seen": "2026-11-21",
-   "prep": {
-    "event": "Senior hire or leadership change",
-    "what": "The Business Journals reported on Nov 19 (national coverage): \"Huntington Bank to hire dozens in Alabama\". Read the article for the details before you bring it up.",
-    "why": "New leaders often bring new growth plans for a market or business line, and new teams to staff.",
-    "interview": "Mention the new leader by name and ask what they plan to build, which shows you've researched the team and not just the firm."
-   }
-  },
-  {
-   "title": "Form 4 Origin Bancorp Inc: Cecil W. Jones (Director) For: 18 November",
-   "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxOOU9oLWRHcG9yNnlpM2dWMFdNTlJnbVFHRUV1a3RRZXc3dnp0UHpMTXJ2NzJNODNZc1RPaXQySGtyUHNiN2UxS1VtQzBUcm9sU0F0SDBfc3VuSkZsX3FkMmw4UjJGYzdfQWxHMHFSS1dSNWVFVmRTRTZtakh0YzFwV0J6Qi0tYzVxTHFXWFlGWkoxVmR2My02LUZqRERPRGdTVDBETE1hb2N5Q2d1LU5Dckt5a2dUQTdXNFhYQmlQS2daTG8?oc=5",
-   "source": "Investing.com UK",
-   "published": "2026-11-18T20:50:00Z",
-   "id": "dac3bf4c148d",
-   "company": "origin_bank",
-   "employer": "Origin Bank",
-   "category": "bank",
-   "scope": "national",
-   "first_seen": "2026-11-21",
-   "prep": {
-    "event": "Firm news",
-    "what": "Investing.com UK reported on Nov 18 (national coverage): \"Form 4 Origin Bancorp Inc: Cecil W. Jones (Director) For: 18 November\". Read the article for the details before you bring it up.",
-    "why": "News about Origin Bank shapes its lending appetite and where it is hiring.",
-    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
-   }
-  },
-  {
    "title": "Houlihan Lokey Appoints Chen Na Managing Director in Equity Capital Solutions",
    "url": "https://news.google.com/rss/articles/CBMitwFBVV95cUxQR0FYS2k2WWIzZ1lTMGw5NnJ3eW5ob2VLd2xNd3p4YXlLdEhkV2tOS3djV25aUnZmb2dGQmZCcmlTQnNZZXEwLTRYZ2VMcTFuMjZTby1kc1dVblhIM09sYnd1ZWh5Y19qUF8yRWpFMzN5b0JDMFViZTZpMVhjWTloNmFmSlBQYUprR0h6VlZNd2hvSXFHUllaenFZd3FIVVRIOEtMZzliekJ6aWxjLXFJaHZDaFdmdHM?oc=5",
    "source": "citybiz",
@@ -733,24 +787,6 @@
     "what": "citybiz reported on Nov 18 (Houston coverage): \"Houlihan Lokey Appoints Chen Na Managing Director in Equity Capital Solutions\". Read the article for the details before you bring it up.",
     "why": "Senior hires show which sectors Houlihan Lokey is building out; a new managing director usually needs analysts.",
     "interview": "Mention the new leader by name and ask what they plan to build, which shows you've researched the team and not just the firm."
-   }
-  },
-  {
-   "title": "Woodside and Trafigura agree to a 10-year LNG supply deal",
-   "url": "https://news.google.com/rss/articles/CBMid0FVX3lxTE9STDlaN0VvNnBfQ21taXJaN2daTE96V2RiRkNTMTlZQzhQc2YxS1B2V2JmMTBjTm9PYUg3R01fRVhOWnpqR0xkM25aU2h2bi0tLWFoeFRReDVoNEp6a1I5ZnFFUjIySHYweUFBT0hJV05ybEhaMWJB?oc=5",
-   "source": "Inspenet",
-   "published": "2026-11-18T14:31:58Z",
-   "id": "3c6f320278eb",
-   "company": "trafigura",
-   "employer": "Trafigura",
-   "category": "energy",
-   "scope": "houston",
-   "first_seen": "2026-11-18",
-   "prep": {
-    "event": "Firm news",
-    "what": "Inspenet reported on Nov 18 (Houston coverage): \"Woodside and Trafigura agree to a 10-year LNG supply deal\". Read the article for the details before you bring it up.",
-    "why": "News about Trafigura affects its cash flows and counterparties, the heart of credit and treasury work.",
-    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
    }
   },
   {
@@ -808,6 +844,42 @@
    }
   },
   {
+   "title": "Trafigura signs long-term LNG supply agreement with Woodside Energy",
+   "url": "https://news.google.com/rss/articles/CBMizAFBVV95cUxPUFlzMGlWcTlkZ2hzVHo3MHdjQmZHYVpKd2UzUExoajlPOUdvMzltR25ybVdBV0QyZmZGWnk4R1lpMFNwSWl3dkQ5U0YyWWcyTFN0YXRkd1JQTXB0NGVWWV9oQ0JEbEFpbFdGTDVfYnZOMVZNTUFocy1NVkFFQ3JRRWN1QnJUZmR0bnY0OXo5Mk5nRzNPQ1VvS1dqRzdIR1ZrUWJSdGI1cmpJaGZsZFhlUjJhSXQ0WTA4T29NUHRlV0V2bzkxbUx1MGluX2k?oc=5",
+   "source": "Trafigura",
+   "published": "2026-11-18T08:05:12Z",
+   "id": "b93f6bc65d58",
+   "company": "trafigura",
+   "employer": "Trafigura",
+   "category": "energy",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Partnership or contract",
+    "what": "Trafigura reported on Nov 18 (national coverage): \"Trafigura signs long-term LNG supply agreement with Woodside Energy\". Read the article for the details before you bring it up.",
+    "why": "Long-term contracts make cash flows more predictable, which supports credit quality and financing.",
+    "interview": "Use it as a 'recent news' answer: one sentence on the agreement, then why it matters for the firm's clients or cash flows."
+   }
+  },
+  {
+   "title": "Mizuho Financial (MFG) Gets a Buy from Bank of America Securities",
+   "url": "https://news.google.com/rss/articles/CBMi4wFBVV95cUxPZjhwcHV2cGR0dkpTWTBkaW45VndPT0wzeWU2US13ZjE4S1JyeEdYZVk1Zk5FWkNMR0lnazVjRVhaUG9aZUVISTVxUTdpUGJQWlpyODJkbW5YQ0VLV25xenVRSUFDbEFTMmNxTUtYMmgyMFV5Z3oya2R4WW5OUHl5TkhkbVBHWDhhODVwSVZyZmpteUlZTDFFUDh1V1dxN3prcFBndmhHNmNoT2NfU1lDZVdjaG9xbFVkbi1VNWl1akp0VHJDR1RWYU1OTXZQWS1iTW13aWlpbDlVbnlXdjRlYngwMA?oc=5",
+   "source": "The Globe and Mail",
+   "published": "2026-11-18T08:00:00Z",
+   "id": "e1997ffdbb46",
+   "company": "mizuho",
+   "employer": "Mizuho Americas",
+   "category": "ib",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Merger or acquisition",
+    "what": "The Globe and Mail reported on Nov 18 (national coverage): \"Mizuho Financial (MFG) Gets a Buy from Bank of America Securities\". Read the article for the details before you bring it up.",
+    "why": "Buying another advisory firm adds bankers and sector coverage, which shows where Mizuho Americas wants to grow and which groups may be adding analysts.",
+    "interview": "Bring it up when asked why Mizuho Americas: name the deal, say what it adds (markets, scale or sector coverage), and ask how the integration will change the team you would join."
+   }
+  },
+  {
    "title": "Net interest Income after loan loss provision of Origin Bancorp, Inc. – AMEX:OBK",
    "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQZGwzOFBiSk5TMG4teDZiOWgxbF90Q1lPeUQ1WDZxaTZHamZxajRDQUtYUlEtWlZpYkVER2pPZ0NsRG9aUjNNVjlyMVFxbXpGTDZuQ2RWem90Q2I0OEJrQ1F5dEhJbWdwOFRNR05HQlZmTkk3bHdhSnNFcGJsbWp4X0s2Q25nZHBudTBNeGxWbDJsd0h3aU1sVmtaVHBnb193bzc5blNn?oc=5",
    "source": "TradingView",
@@ -826,6 +898,24 @@
    }
   },
   {
+   "title": "Simmons & Simmons first law firm to meet global AI industry standard",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOUDhqWVdnQ3ZlWTVlcklwT3k1amhORnZkV2RUZlpoU29uYmJoX2NyY2dfN2tZUkQ2N0ZBSDdRSkVSSWI5ZTZXVlBrZHR5dnpKSlltbkl4cHZZYjdLWkZtMkU0NDlxRTZJQVJxVFpNdjd0MnR2VEs4OU8wZUYySWNodC1Mc0xGa0UwQ2dqdkJUOGZSRF9CT19rMXlVUUU3SVlFOEtWSjJHSjIxNmxHRlNkQV9vSmU5Zw?oc=5",
+   "source": "Simmons & Simmons",
+   "published": "2026-11-17T22:03:34Z",
+   "id": "30d22036f716",
+   "company": "simmons",
+   "employer": "Simmons Bank",
+   "category": "bank",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Firm news",
+    "what": "Simmons & Simmons reported on Nov 17 (national coverage): \"Simmons & Simmons first law firm to meet global AI industry standard\". Read the article for the details before you bring it up.",
+    "why": "News about Simmons Bank shapes its lending appetite and where it is hiring.",
+    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
+   }
+  },
+  {
    "title": "Can Cheniere Energy (NYSE:LNG) Keep Riding Gas Demand Higher?",
    "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxQTU9jc3lVY0R2Sk92eTRydC1GM1lXN2V6NnR4Rks1V1FIcXEyUVdaeHJmcnNIcjh0Zmp2ZlZWNVc1aTJLcEd1YlhGNENET2Q0bjIzdFdYd1N3Vm5CUkc2VnJGdXpGcUQwTmtjNTN4T1hIV1FaU3A4NDUzbVM2UUZaRWVTM19Db3R2aXU0ZW1KQjJqeU9fQWJZX2dxLW5nSm1v?oc=5",
    "source": "Kalkine Media",
@@ -841,24 +931,6 @@
     "what": "Kalkine Media reported on Nov 17 (national coverage): \"Can Cheniere Energy (NYSE:LNG) Keep Riding Gas Demand Higher?\". Read the article for the details before you bring it up.",
     "why": "Investor sentiment affects the company's cost of capital and access to financing.",
     "interview": "Mention it lightly and ask what it means for the firm's strategy in Texas; avoid stock-price predictions."
-   }
-  },
-  {
-   "title": "UnitedHealth (UNH) Receives a Buy from Mizuho Securities",
-   "url": "https://news.google.com/rss/articles/CBMi1wFBVV95cUxNQUV0aERrdTBfRldjNEFUcDNRdFRadmQzV1R2d25VSUd0UGxmQmtsME5tRXFFc1hHb0RsdVZWaTZfSjVIWWlKUC1ONE5CaHljRzNodXl1TTg5VTl3bXM3UFJ1SzFCZ0s1cHAyRDFkeFgyUFR0NHBqVHB0V1JVeDNDU0NTdTJlaHRwcmZQSlNGSUZjcmV6NW9jQ0tYRWxHck1IcWZpVzVjUmJ2Tk1sNlVnMmYybHh3V0xfMGZlZmpseTRpTUZ6UFlfRmtJM2pRSXV5SUh5X25jVQ?oc=5",
-   "source": "The Globe and Mail",
-   "published": "2026-11-17T17:16:43Z",
-   "id": "bb4422a159bf",
-   "company": "mizuho",
-   "employer": "Mizuho Americas",
-   "category": "ib",
-   "scope": "national",
-   "first_seen": "2026-11-17",
-   "prep": {
-    "event": "Merger or acquisition",
-    "what": "The Globe and Mail reported on Nov 17 (national coverage): \"UnitedHealth (UNH) Receives a Buy from Mizuho Securities\". Read the article for the details before you bring it up.",
-    "why": "Buying another advisory firm adds bankers and sector coverage, which shows where Mizuho Americas wants to grow and which groups may be adding analysts.",
-    "interview": "Bring it up when asked why Mizuho Americas: name the deal, say what it adds (markets, scale or sector coverage), and ask how the integration will change the team you would join."
    }
   },
   {
@@ -967,6 +1039,24 @@
     "what": "Aberdeen & Grampian Chamber of Commerce reported on Nov 17 (Houston coverage): \"Piper Sandler's Nick Dalgarno receives outstanding contribution award\". Read the article for the details before you bring it up.",
     "why": "Mandates and partnerships show Piper Sandler's client relationships and sector strength.",
     "interview": "Use it as a 'recent news' answer: one sentence on the agreement, then why it matters for the firm's clients or cash flows."
+   }
+  },
+  {
+   "title": "Simmons Bank Open for the Snedeker Foundation 2026: Best Pictures: Round 3 – Photo 29/70",
+   "url": "https://news.google.com/rss/articles/CBMiswFBVV95cUxPUjJmc2JOVUg4aXRlU1hsVzFYRGNBMjd1Q2dVNDVUNW4yMktNZm5DQmxVaXNNNm1JYmJEeTZaVVpBekFDMExHZUU2d3pnTkJxcFpHaW80bWVqYzhPYTNOenJFZ0tlMzg5N2JYdXZ5emM3S1Z3d0RENGpSTjlrTWI4enFhQVBoYjlFcGJRaThvNENYT1pyTU10U1YtU0JULWVXWGNHV1lra3V0ZndDRk90R2tuOA?oc=5",
+   "source": "www.golfpost.com",
+   "published": "2026-11-17T01:47:46Z",
+   "id": "515efc71239b",
+   "company": "simmons",
+   "employer": "Simmons Bank",
+   "category": "bank",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Expansion or new office",
+    "what": "www.golfpost.com reported on Nov 17 (national coverage): \"Simmons Bank Open for the Snedeker Foundation 2026: Best Pictures: Round 3 – Photo 29/70\". Read the article for the details before you bring it up.",
+    "why": "Expansion into a market means new commercial clients, and new credit analysts and portfolio managers to cover them.",
+    "interview": "Say you noticed the expansion and ask how the Houston team fits into it. It's a natural lead-in to why you want to start your career in Houston."
    }
   },
   {
@@ -1096,24 +1186,6 @@
    }
   },
   {
-   "title": "Houlihan Lokey Further Expands Global Oil & Gas Group With Senior Hire in London",
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxNX0VtSmFXc2RqeU01X1hhZXQ5ZlFtTXBsM2Q0YlVMWlJnTEItTnA1cVBnWTQ5cThSa294NjJOd1RfdmZyUDVtZ1FlMldiRUR2SXV2YTBHdXowbHNpX2pVbXBhMldFNmd1QnJqR0lsUVZBUTFJbndyeThkZ1Rld2xhM2pkUHZrcGpndE5OcTRMdGJTcGdXODBsa0Rn?oc=5",
-   "source": "Yahoo Finance",
-   "published": "2026-11-16T09:00:00Z",
-   "id": "f806520b3104",
-   "company": "houlihan_lokey",
-   "employer": "Houlihan Lokey",
-   "category": "ib",
-   "scope": "national",
-   "first_seen": "2026-11-21",
-   "prep": {
-    "event": "Senior hire or leadership change",
-    "what": "Yahoo Finance reported on Nov 16 (national coverage): \"Houlihan Lokey Further Expands Global Oil & Gas Group With Senior Hire in London\". Read the article for the details before you bring it up.",
-    "why": "Senior hires show which sectors Houlihan Lokey is building out; a new managing director usually needs analysts.",
-    "interview": "Mention the new leader by name and ask what they plan to build, which shows you've researched the team and not just the firm."
-   }
-  },
-  {
    "title": "Bank of Japan's Rate Normalization Is a Tailwind for Mizuho Financial Group",
    "url": "https://news.google.com/rss/articles/CBMixAFBVV95cUxQSWxGeUlSdHFPd0NIZUJ6dzU1ZHlRZGk1ZlpsUFphUWdZamhLWHF1TFVoOXAtcUcwMlYtR2txbnFzcnRHWXpaelp4OFkxVDNxTU4zLUZMMmNHdnNkTE5ZSlJDX1pNdWxzNVNsejlKa2hRTVFWY1FRNFZvRi1MUFpWekYxcXFNSVZmMVMtR050QmNJTENOWi0wX3dBcEZPbTE2eF9RRlNfRFJfOVdYSGc3VXA5aGdPUDAzRmhMZjRIaTJyd2Zz?oc=5",
    "source": "Morningstar",
@@ -1146,24 +1218,6 @@
     "event": "Firm news",
     "what": "Yahoo Finance reported on Nov 16 (national coverage): \"Piper Sandler Flags a Risk at General Mills (GIS)\". Read the article for the details before you bring it up.",
     "why": "News about Piper Sandler shows where its deal teams are busy.",
-    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
-   }
-  },
-  {
-   "title": "Form 4 Hancock Whitney Corp For: 14 November By Investing.com",
-   "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxPSDBmblVqUE9aenZrRjBPc0R2UGs3ejdKU1gxSDVwNFJna0NqLXkxcm5mRmdYQ1JTa1E4NEtNQ2FhT3UxOHA2VzVyaFQxVWZFdWxCcGJ6RWN2cDVLSWRYZU5BQVkzb3VDXzNmNWtEWFdDZk9yNDRUblotcUZjOTk0VDJNTEhOUjhGcTFvZFhaaWVnbk5TcldNb0xtVWtNZmZFWEVORnpkUQ?oc=5",
-   "source": "Investing.com Australia",
-   "published": "2026-11-15T00:07:43Z",
-   "id": "68f95252c414",
-   "company": "hancock_whitney",
-   "employer": "Hancock Whitney",
-   "category": "bank",
-   "scope": "houston",
-   "first_seen": "2026-11-15",
-   "prep": {
-    "event": "Firm news",
-    "what": "Investing.com Australia reported on Nov 15 (Houston coverage): \"Form 4 Hancock Whitney Corp For: 14 November By Investing.com\". Read the article for the details before you bring it up.",
-    "why": "News about Hancock Whitney shapes its lending appetite and where it is hiring.",
     "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
    }
   },
@@ -1207,7 +1261,7 @@
    "title": "Frost Bank Rings First Opening Bell At Texas Stock Exchange In Frisco",
    "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPZEVtQlNiT293MEdHMUtDdllySzBnMTUwalJTYWhFZ25fMk9Wb0g2SGNZN2tBR1RYdi03M2U4MlJwYlc5d1JPM3BHZ2hSLVpDV0hlS2E5YTI2MWVVUFpSSzVLZEl3Y2dubU4zbWY5NHFHQUlzLWhodGlxb3NUYy1Tc01fSlhHd0hyc00zZmRxaXIzZlB3NWtadmZFLWF1b3U0U0JrcEttWDRzdHN5TWUxYVJn0gG3AUFVX3lxTE1aQzZVMTY1WXRsaURwREY1eW1LWFViRU5USUhpYTBqUVppd196Qm16Y2JnUUpFdF9QOGdiOGFJbjd2Qi1INlkzbUhKT29XNVNQcnpEREl6RnRqUG9KTnhqSENFQTlCbndlQkRZaGhOZWlZQUFxZExCSVU3blJlUzYzSFFvV0dzelpnR0F4RTlHSzdBWU12U2U1Ym95WUZRMlNMclNqSnBZWnp2b2N1LUdzRzZLY3pjUQ?oc=5",
    "source": "Local Profile",
-   "published": "2026-11-13T14:30:00Z",
+   "published": "2026-11-13T08:00:00Z",
    "id": "6002d528e801",
    "company": "frost",
    "employer": "Frost Bank",
@@ -1219,42 +1273,6 @@
     "what": "Local Profile reported on Nov 13 (Houston coverage): \"Frost Bank Rings First Opening Bell At Texas Stock Exchange In Frisco\". Read the article for the details before you bring it up.",
     "why": "Market moves and listings reflect how investors see Frost Bank's growth and risk, the context for its lending strategy.",
     "interview": "Mention it lightly and ask what it means for the firm's strategy in Texas; avoid stock-price predictions."
-   }
-  },
-  {
-   "title": "Regions Bank claims title as best in Overall Satisfaction",
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOSFYyR2l2SzIzeVVzcTgtbE1LSGhXcWNiSTdzZlF0QVdSQkhDTDBmQlVORUw4RXlYalFvVXdxS21BVXR4Mlg2TlRyTkpqNm5Ba2NYR0FYbXVYSjRISHN4ZklWeVVPdDMybEsxQ2dWcXVvTlFNeS15T3ZaTE81a20zRGoyNE1wTVU1Mk13cC1XLUVDZi11bDZOVWhn?oc=5",
-   "source": "ATM Marketplace",
-   "published": "2026-11-13T11:00:00Z",
-   "id": "27286eae92fa",
-   "company": "regions",
-   "employer": "Regions Bank",
-   "category": "bank",
-   "scope": "national",
-   "first_seen": "2026-11-13",
-   "prep": {
-    "event": "Firm news",
-    "what": "ATM Marketplace reported on Nov 13 (national coverage): \"Regions Bank claims title as best in Overall Satisfaction\". Read the article for the details before you bring it up.",
-    "why": "News about Regions Bank shapes its lending appetite and where it is hiring.",
-    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
-   }
-  },
-  {
-   "title": "Trafigura Is Key Player in Aluminum Squeeze With China Trade",
-   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSTlHdGJudFBBbEQ1V2tkY09oZ3Q2b050dkc2RnU0ejhoWV93M1phbnNMa096ZTdRd0p2TEd6TmFWS1Npa1pTY1lkWGlGVkM4RENSSnVMVHhMRjFmTE1Wb2VLQldiRWJYaU1XVXkwYzZ6NldRT0hGbDlmVlpuaU5ydUNJM0Z5ZGFSSkxoWHcyMTl2amVmQ05ORlJXOHhsTU5YUDhJSERlcmJKb1gteFcxT2pDZXZmdw?oc=5",
-   "source": "Bloomberg.com",
-   "published": "2026-11-13T10:32:22Z",
-   "id": "6c1223fe6ee7",
-   "company": "trafigura",
-   "employer": "Trafigura",
-   "category": "energy",
-   "scope": "national",
-   "first_seen": "2026-11-18",
-   "prep": {
-    "event": "Firm news",
-    "what": "Bloomberg.com reported on Nov 13 (national coverage): \"Trafigura Is Key Player in Aluminum Squeeze With China Trade\". Read the article for the details before you bring it up.",
-    "why": "News about Trafigura affects its cash flows and counterparties, the heart of credit and treasury work.",
-    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
    }
   },
   {
@@ -1273,6 +1291,24 @@
     "what": "The Japan Times reported on Nov 13 (national coverage): \"Sumitomo Mitsui and Mizuho raise profit forecast and announce share buyback\". Read the article for the details before you bring it up.",
     "why": "Results show which businesses (M&A advisory, capital markets, restructuring) are driving revenue, and so which groups are busiest.",
     "interview": "Show you follow the firm: cite one number or trend from the results and ask how it affects the group's priorities for next year."
+   }
+  },
+  {
+   "title": "Trafigura Is Key Player in Aluminum Squeeze With China Trade",
+   "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxQSTlHdGJudFBBbEQ1V2tkY09oZ3Q2b050dkc2RnU0ejhoWV93M1phbnNMa096ZTdRd0p2TEd6TmFWS1Npa1pTY1lkWGlGVkM4RENSSnVMVHhMRjFmTE1Wb2VLQldiRWJYaU1XVXkwYzZ6NldRT0hGbDlmVlpuaU5ydUNJM0Z5ZGFSSkxoWHcyMTl2amVmQ05ORlJXOHhsTU5YUDhJSERlcmJKb1gteFcxT2pDZXZmdw?oc=5",
+   "source": "Bloomberg.com",
+   "published": "2026-11-13T08:00:00Z",
+   "id": "6c1223fe6ee7",
+   "company": "trafigura",
+   "employer": "Trafigura",
+   "category": "energy",
+   "scope": "national",
+   "first_seen": "2026-11-18",
+   "prep": {
+    "event": "Firm news",
+    "what": "Bloomberg.com reported on Nov 13 (national coverage): \"Trafigura Is Key Player in Aluminum Squeeze With China Trade\". Read the article for the details before you bring it up.",
+    "why": "News about Trafigura affects its cash flows and counterparties, the heart of credit and treasury work.",
+    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
    }
   },
   {
@@ -1309,6 +1345,24 @@
     "what": "ABF Journal reported on Nov 13 (national coverage): \"Regions Bank Names Hopkins Head of Institutional Services\". Read the article for the details before you bring it up.",
     "why": "New leaders often bring new growth plans for a market or business line, and new teams to staff.",
     "interview": "Mention the new leader by name and ask what they plan to build, which shows you've researched the team and not just the firm."
+   }
+  },
+  {
+   "title": "Hancock Whitney reaches for scale with deal for Miss. rival",
+   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOOGZ4dnFpU2lOWEI2OUU2TWkyeUgzMDQzRDc0a3RuOHpGN2s5ek95Snc2TTBKNXJ4UktYMnNXQTVOdXFaN2FhSDFnMUpSdXNEcGpSWmNLM0Z5NDNadTVBQzlGcjR5VzdFbTlLZXIxOW5XbWI5QnNiWmxWR0gtY0NSMnBwRzVjUVROOE90clBwTDd5bHJLWTd6VDNn?oc=5",
+   "source": "American Banker",
+   "published": "2026-11-12T21:23:25Z",
+   "id": "e7358fb0daed",
+   "company": "hancock_whitney",
+   "employer": "Hancock Whitney",
+   "category": "bank",
+   "scope": "houston",
+   "first_seen": "2026-11-13",
+   "prep": {
+    "event": "Merger or acquisition",
+    "what": "American Banker reported on Nov 12 (Houston coverage): \"Hancock Whitney reaches for scale with deal for Miss. rival\". Read the article for the details before you bring it up.",
+    "why": "A bank merger changes the loan book, the credit policy and often the team structure. Analysts help review the acquired portfolio, and the combined bank usually needs more credit capacity.",
+    "interview": "Bring it up when asked why Hancock Whitney: name the deal, say what it adds (markets, scale or sector coverage), and ask how the integration will change the team you would join."
    }
   },
   {
@@ -1384,24 +1438,6 @@
    }
   },
   {
-   "title": "Hancock Whitney reaches for scale with deal for Miss. rival",
-   "url": "https://news.google.com/rss/articles/CBMimgFBVV95cUxOOGZ4dnFpU2lOWEI2OUU2TWkyeUgzMDQzRDc0a3RuOHpGN2s5ek95Snc2TTBKNXJ4UktYMnNXQTVOdXFaN2FhSDFnMUpSdXNEcGpSWmNLM0Z5NDNadTVBQzlGcjR5VzdFbTlLZXIxOW5XbWI5QnNiWmxWR0gtY0NSMnBwRzVjUVROOE90clBwTDd5bHJLWTd6VDNn?oc=5",
-   "source": "American Banker",
-   "published": "2026-11-12T08:00:00Z",
-   "id": "e7358fb0daed",
-   "company": "hancock_whitney",
-   "employer": "Hancock Whitney",
-   "category": "bank",
-   "scope": "houston",
-   "first_seen": "2026-11-13",
-   "prep": {
-    "event": "Merger or acquisition",
-    "what": "American Banker reported on Nov 12 (Houston coverage): \"Hancock Whitney reaches for scale with deal for Miss. rival\". Read the article for the details before you bring it up.",
-    "why": "A bank merger changes the loan book, the credit policy and often the team structure. Analysts help review the acquired portfolio, and the combined bank usually needs more credit capacity.",
-    "interview": "Bring it up when asked why Hancock Whitney: name the deal, say what it adds (markets, scale or sector coverage), and ask how the integration will change the team you would join."
-   }
-  },
-  {
    "title": "Hancock Whitney (HWC) Gets Beaten for Bidding Billions for This Company",
    "url": "https://news.google.com/rss/articles/CBMinAFBVV95cUxOTU1PTlE1VE5BMHVzdEdtY1g1OE9fSl9zcXFXZVFlWlRHenlTSy02YjBWQ1IyQUE4dVE0am1IenVKclNjeHVkS2VYWlN5ZDdNTllOUGlLT3dhNklpM2hvTWZOLXVtVVktT3dCQnFDN1diM0xoYzBiWng1bXVKa0RSYXJXSnBpel9Xdk9EQUNPa2J3NjNqOTBQbFVkOUQ?oc=5",
    "source": "Yahoo Finance",
@@ -1438,39 +1474,39 @@
    }
   },
   {
-   "title": "Volare Shipping to Acquire Trafigura-Affiliated VLCC for $210M",
-   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5vS0w0RTdBaHltUE9VOEtQYjVsVG92SUhabDUzdUt6UEllOTJpT1dVVWZycm8xaHN6akVhRjFGeDd2NWZsYTZESDJhNWJ2dk1tVkl2eWt5ZUxVekxjbEVYQ0N1ZDMtN1cwMXc0M1NIUQ?oc=5",
-   "source": "Marine News Magazine",
-   "published": "2026-11-11T11:42:13Z",
-   "id": "bde0fab7826b",
-   "company": "trafigura",
-   "employer": "Trafigura",
-   "category": "energy",
+   "title": "Simmons Bank appoints new SVPs to boost innovat...",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxOVXk5Y0pESm83M2pUV1RoWFFYXzAzeVZpSTJPZ3NXN2psU0F0RkxnRERpVXlYWklvVDFhRVhyVjc2MnRyaFlROXRTcm1OaV92WUtyTVBnTVNaZVBsTkwxRkxESkpwcUdNMmlQWDVIZTdwc2oyY0N5dktjRFJaNGxnV3J1YUFKZGdJU3ZPUnNNdGJkQV9YcklmZFhvWUN0eXpkcGJiY0J2ckVQZDg?oc=5",
+   "source": "Pluang",
+   "published": "2026-11-11T13:44:29Z",
+   "id": "f1c953df717f",
+   "company": "simmons",
+   "employer": "Simmons Bank",
+   "category": "bank",
    "scope": "national",
-   "first_seen": "2026-11-20",
+   "first_seen": "2026-11-22",
    "prep": {
-    "event": "Merger or acquisition",
-    "what": "Marine News Magazine reported on Nov 11 (national coverage): \"Volare Shipping to Acquire Trafigura-Affiliated VLCC for $210M\". Read the article for the details before you bring it up.",
-    "why": "An acquisition changes the company's debt, liquidity and counterparty mix, which is what a credit or treasury team watches most closely.",
-    "interview": "Bring it up when asked why Trafigura: name the deal, say what it adds (markets, scale or sector coverage), and ask how the integration will change the team you would join."
+    "event": "Senior hire or leadership change",
+    "what": "Pluang reported on Nov 11 (national coverage): \"Simmons Bank appoints new SVPs to boost innovat...\". Read the article for the details before you bring it up.",
+    "why": "New leaders often bring new growth plans for a market or business line, and new teams to staff.",
+    "interview": "Mention the new leader by name and ask what they plan to build, which shows you've researched the team and not just the firm."
    }
   },
   {
-   "title": "Houlihan Lokey to Acquire Vicente & Partners",
-   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOU3FKcnVmX2l2Q281ZUEwcXZVQU9CWk1fc0NMVURXUVVQS3BlVUtVMGphX1JrLWUtRFlabHhkME82WEZoVmwyQWVXRWMwSW1Tdm5yVHhSaWhuRm9ObGRLc0h2UWtmcDNKb0tlM1B2R2Vsb0NBSVMyYjBJdnRCbzZLSHZNemdkUENnLUVVSmVfN1dmbkswVjRudTlBUDNnUGpF?oc=5",
-   "source": "Business Wire",
-   "published": "2026-11-11T09:00:00Z",
-   "id": "fffe33bf0d87",
-   "company": "houlihan_lokey",
-   "employer": "Houlihan Lokey",
-   "category": "ib",
+   "title": "Simmons Bank Announces Strategic Additions to Drive Innovation, Sales and Service Excellence",
+   "url": "https://news.google.com/rss/articles/CBMi4AFBVV95cUxPU1VkYnUzcElyd1M3TzY3OXdyakxhcGt5cENZX05XcjBQS0F3TTB1UjQxRUM5QUFSSTFMVmZOQVB4aFNhZnJsTi0yTDE1VmhDUjY2VnBSSDBfUURJNk10VFBEY1FadU85V29RTWo5TnNHc3NNSUkwTE5OOTNVSGF5S1RTNEF4XzVxdGY1bFNoU3RMYkx5eVkzd2Vub0xIYkZOVmlRMWY5YTFHY2pYb0pObzEyYXhCelZab3NjVHZGcml0Y1liVHFBbHlBSFVpbTFpOU5aSklTZWxsTTZLdlNRLQ?oc=5",
+   "source": "PR Newswire",
+   "published": "2026-11-11T13:31:00Z",
+   "id": "a8291bcbd55d",
+   "company": "simmons",
+   "employer": "Simmons Bank",
+   "category": "bank",
    "scope": "national",
-   "first_seen": "2026-11-13",
+   "first_seen": "2026-11-22",
    "prep": {
-    "event": "Merger or acquisition",
-    "what": "Business Wire reported on Nov 11 (national coverage): \"Houlihan Lokey to Acquire Vicente & Partners\". Read the article for the details before you bring it up.",
-    "why": "Buying another advisory firm adds bankers and sector coverage, which shows where Houlihan Lokey wants to grow and which groups may be adding analysts.",
-    "interview": "Bring it up when asked why Houlihan Lokey: name the deal, say what it adds (markets, scale or sector coverage), and ask how the integration will change the team you would join."
+    "event": "Firm news",
+    "what": "PR Newswire reported on Nov 11 (national coverage): \"Simmons Bank Announces Strategic Additions to Drive Innovation, Sales and Service Excellence\". Read the article for the details before you bring it up.",
+    "why": "News about Simmons Bank shapes its lending appetite and where it is hiring.",
+    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
    }
   },
   {
@@ -1492,21 +1528,75 @@
    }
   },
   {
-   "title": "Littler, Malik named senior vice presidents at Simmons Bank",
-   "url": "https://news.google.com/rss/articles/CBMikgFBVV95cUxOdFhCQnVmSE5yUVpCSVpNalZVVmlLcmwxMXQxbkRKYnJkd1JNa3ZFZldSLXFqSWRKUExGM0Mwd091eVJUeEZQOE9pOUdCcEE3Zk1uczEwUVpqdExHT0toWDRzV0lEamRROERyNk5IdERHVlNpZl9ETERsS0JhSlQ4aXBENFJPUnNHSlhmRzJSRU5FQQ?oc=5",
-   "source": "Pine Bluff Commercial",
+   "title": "Simmons Bank appoints two senior vice presidents",
+   "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxNdVRGTk5RblExN1c1dE1NR01jWkl4N1BtVmxBTk9PcnExT29URWU0Y0RVd2Q3Y28wYzU1dUxYWlRjLUJ5YXB2b2NOTmtPc21rNk1kTi1OeWVqSjg5Y1BOQVlYRWp1S2ZLRVMzazNMVW9SanE3NDlNQkFzM0ZJbzctSENQN21tV1VWMEVTZkVlbXVUaXhtWndHQ3R3QTV6X09tNldFNDdZLXk?oc=5",
+   "source": "Investing.com",
    "published": "2026-11-11T08:00:00Z",
-   "id": "b6c3b80ba213",
+   "id": "6da0ec8ee64e",
    "company": "simmons",
    "employer": "Simmons Bank",
    "category": "bank",
    "scope": "national",
-   "first_seen": "2026-11-21",
+   "first_seen": "2026-11-22",
    "prep": {
     "event": "Senior hire or leadership change",
-    "what": "Pine Bluff Commercial reported on Nov 11 (national coverage): \"Littler, Malik named senior vice presidents at Simmons Bank\". Read the article for the details before you bring it up.",
+    "what": "Investing.com reported on Nov 11 (national coverage): \"Simmons Bank appoints two senior vice presidents\". Read the article for the details before you bring it up.",
     "why": "New leaders often bring new growth plans for a market or business line, and new teams to staff.",
     "interview": "Mention the new leader by name and ask what they plan to build, which shows you've researched the team and not just the firm."
+   }
+  },
+  {
+   "title": "Houlihan Lokey Snaps Up London Advisory Firm Behind Major Beauty Deals",
+   "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxQOGFrbkQtNlRrVVFSeUZacDZGX2RhUGFwUklhR3Vjd2tKOWVZckpaQzNWTmV6OWtqTUZJWlB3VnpCVTc3aHA2MGJCOGpXVl85Wi00LXBQRWZxUl9jWS1OckZrRXZyT25SQnNNaWRHRm1waGhIRjhSU2FrRXUxR3RYVDNzNGZteGotUG9ER3FqcEVSN3REYXVhM2FBSWw4c05LUWROallPMmJVSEJMM3g3ZjVzNjk?oc=5",
+   "source": "Benzinga",
+   "published": "2026-11-11T08:00:00Z",
+   "id": "8620b4f60a51",
+   "company": "houlihan_lokey",
+   "employer": "Houlihan Lokey",
+   "category": "ib",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Firm news",
+    "what": "Benzinga reported on Nov 11 (national coverage): \"Houlihan Lokey Snaps Up London Advisory Firm Behind Major Beauty Deals\". Read the article for the details before you bring it up.",
+    "why": "News about Houlihan Lokey shows where its deal teams are busy.",
+    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
+   }
+  },
+  {
+   "title": "Houlihan Lokey to Acquire Vicente & Partners",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxOU3FKcnVmX2l2Q281ZUEwcXZVQU9CWk1fc0NMVURXUVVQS3BlVUtVMGphX1JrLWUtRFlabHhkME82WEZoVmwyQWVXRWMwSW1Tdm5yVHhSaWhuRm9ObGRLc0h2UWtmcDNKb0tlM1B2R2Vsb0NBSVMyYjBJdnRCbzZLSHZNemdkUENnLUVVSmVfN1dmbkswVjRudTlBUDNnUGpF?oc=5",
+   "source": "Business Wire",
+   "published": "2026-11-11T08:00:00Z",
+   "id": "fffe33bf0d87",
+   "company": "houlihan_lokey",
+   "employer": "Houlihan Lokey",
+   "category": "ib",
+   "scope": "national",
+   "first_seen": "2026-11-13",
+   "prep": {
+    "event": "Merger or acquisition",
+    "what": "Business Wire reported on Nov 11 (national coverage): \"Houlihan Lokey to Acquire Vicente & Partners\". Read the article for the details before you bring it up.",
+    "why": "Buying another advisory firm adds bankers and sector coverage, which shows where Houlihan Lokey wants to grow and which groups may be adding analysts.",
+    "interview": "Bring it up when asked why Houlihan Lokey: name the deal, say what it adds (markets, scale or sector coverage), and ask how the integration will change the team you would join."
+   }
+  },
+  {
+   "title": "Volare Shipping to Acquire Trafigura-Affiliated VLCC for $210M",
+   "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE5vS0w0RTdBaHltUE9VOEtQYjVsVG92SUhabDUzdUt6UEllOTJpT1dVVWZycm8xaHN6akVhRjFGeDd2NWZsYTZESDJhNWJ2dk1tVkl2eWt5ZUxVekxjbEVYQ0N1ZDMtN1cwMXc0M1NIUQ?oc=5",
+   "source": "Marine News Magazine",
+   "published": "2026-11-11T08:00:00Z",
+   "id": "bde0fab7826b",
+   "company": "trafigura",
+   "employer": "Trafigura",
+   "category": "energy",
+   "scope": "national",
+   "first_seen": "2026-11-20",
+   "prep": {
+    "event": "Merger or acquisition",
+    "what": "Marine News Magazine reported on Nov 11 (national coverage): \"Volare Shipping to Acquire Trafigura-Affiliated VLCC for $210M\". Read the article for the details before you bring it up.",
+    "why": "An acquisition changes the company's debt, liquidity and counterparty mix, which is what a credit or treasury team watches most closely.",
+    "interview": "Bring it up when asked why Trafigura: name the deal, say what it adds (markets, scale or sector coverage), and ask how the integration will change the team you would join."
    }
   },
   {
@@ -1564,6 +1654,24 @@
    }
   },
   {
+   "title": "Regions Holiday Financial Help| Talk of Alabama | 11.10.2026",
+   "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxNWFZUUTFHV01EM05LbjVOMlFqbGlZOUN1YWtBV2xSd2plLThlLWVOUjBBUlRQQ2xPTzJvOFpmQVl3TDEtTWpCX1lUSU12TUhGbE02dHFfZ1hxb1RBaW5pa3JFNzVvTE5mbWtuMDN4NU9PbV82d2lnbnlOaER1TkJnbDBoX0txaHVHRXFsN1FnTC16R0VMemNpYlY2U3Q0OVJO?oc=5",
+   "source": "WBMA",
+   "published": "2026-11-10T08:00:00Z",
+   "id": "b4959e7d9e4f",
+   "company": "regions",
+   "employer": "Regions Bank",
+   "category": "bank",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Firm news",
+    "what": "WBMA reported on Nov 10 (national coverage): \"Regions Holiday Financial Help| Talk of Alabama | 11.10.2026\". Read the article for the details before you bring it up.",
+    "why": "News about Regions Bank shapes its lending appetite and where it is hiring.",
+    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
+   }
+  },
+  {
    "title": "President Hichilema agrees to reset Zambia’s relationship with Trafigura",
    "url": "https://news.google.com/rss/articles/CBMizwFBVV95cUxPbFFkNlI0dUdQMmtLRTJlUjVSMU1BNXJuTEs5eFl3TERSMUlBNEZpR01YMTJ5YkdTaVBhTk05Nm55UWoyLVlBU1hhUExvaXNNTnNuT3RJZXIxRHdHSngzcHBCMGY3aml6WE9COWRKOFNGZXhWOU43MWlZd1pQdkJFdVY5UkVxdHdMWElVZ2R1aE1VNl9JZnBfSUtOcnR4OGFRdTlqdVkwOVhVd0s5cHcxWWY0SU05VTVQVjNOdmU0c3VWSjFtR1RpNTJpS1N2QXc?oc=5",
    "source": "Trafigura",
@@ -1597,24 +1705,6 @@
     "what": "Fortune reported on Nov 10 (national coverage): \"Plains GP Holdings (PAGP) Q2 2026 Earnings Call Transcript\". Read the article for the details before you bring it up.",
     "why": "Results and guidance drive cash flow, leverage and covenant headroom, the core of a credit analyst's view of an energy company.",
     "interview": "Show you follow the firm: cite one number or trend from the results and ask how it affects the group's priorities for next year."
-   }
-  },
-  {
-   "title": "Suspected jugging incident reported outside Frost Bank on Northwest Side",
-   "url": "https://news.google.com/rss/articles/CBMixwFBVV95cUxPX2RzMjBVaVJvSWNWank3eVdqWE5IMEJtbGt0ZGw1TWdNRmRIdlNkY2YxMWdHcVR3U0JiWGI5N1oxTWlza1VoeEd3UlhFZTBYMm5RRkRwNzNPSlFwX0RFeV83WFdSSEdkM1V0dUtYSmlPUE1RRnZxcXY2b2pJa3VyVWFnanZSeHUxcjdNN202MGFvcUw5MTBFRENNS0FlTThDM3NETV9mUWZNNy1LbW94clpRbWc1TWUxMm1jT2FkVXg1dUwwWnN3?oc=5",
-   "source": "WOAI",
-   "published": "2026-11-10T03:18:37Z",
-   "id": "2a08c17f4c09",
-   "company": "frost",
-   "employer": "Frost Bank",
-   "category": "bank",
-   "scope": "national",
-   "first_seen": "2026-11-17",
-   "prep": {
-    "event": "Firm news",
-    "what": "WOAI reported on Nov 10 (national coverage): \"Suspected jugging incident reported outside Frost Bank on Northwest Side\". Read the article for the details before you bring it up.",
-    "why": "News about Frost Bank shapes its lending appetite and where it is hiring.",
-    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
    }
   },
   {
@@ -1798,24 +1888,6 @@
    }
   },
   {
-   "title": "Mitsubishi Electric, MUFG Bank invest in GHGSat",
-   "url": "https://news.google.com/rss/articles/CBMibkFVX3lxTE9fV05FOGhDbElmdHhGSkh5dlRYZkU3OVRIMG4zenIzSUxfaTVOMmRBMy1iWnM4c3Vna1NfLVZ0WDk3WVVrS0ZDeHNHM1NrY0JiNFhQdGN1TnJXZFNpZFMtNzFJcFFZY0xlcklHZnZn?oc=5",
-   "source": "SpaceQ",
-   "published": "2026-11-06T08:00:00Z",
-   "id": "59edc934b4aa",
-   "company": "mufg",
-   "employer": "MUFG",
-   "category": "bank",
-   "scope": "national",
-   "first_seen": "2026-11-20",
-   "prep": {
-    "event": "Firm news",
-    "what": "SpaceQ reported on Nov 6 (national coverage): \"Mitsubishi Electric, MUFG Bank invest in GHGSat\". Read the article for the details before you bring it up.",
-    "why": "News about MUFG shapes its lending appetite and where it is hiring.",
-    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
-   }
-  },
-  {
    "title": "Why Is Plains All American Stock Falling Friday?",
    "url": "https://news.google.com/rss/articles/CBMipwFBVV95cUxOMjRXQUtiRV9jcF9XWkJReHFBeTR0dGNDMFRvZTdVWmxnQUxxUC1BZjE4S05oQ0Z6OXNKSjVMOGJwc3NIanBsbnp3dWRNLTJza1p0X2NrMjJKYXJKa2Fmc1hLVTBvMDI4Zi1QTS1yZkItcklLQkpnZzNaOUZrSjlhcVRsY2stWmM4bnBuLWVENXpsNmNlT0lOQ3o1UWZXLU9wU2ZlbUtIWQ?oc=5",
    "source": "Benzinga",
@@ -1852,21 +1924,57 @@
    }
   },
   {
-   "title": "Huntington Bank Announces Treasury Solution that Turns Multi-Bank Complexity into Improved Liquidity Management",
-   "url": "https://news.google.com/rss/articles/CBMi-wFBVV95cUxQYjBHNm1ZLWMtZDluZTVDbndIVDl3MnFvSGthYU8tWmhfdTJpbVNoR29oVVU0UmlmQ2I5Z3JHS2w0WGtPQmpITjRDYWxuNTE2bk55YW5selJhTUlsX3hWRExMaWM2LUZDMTlJN1VmTDVHVW5XWEtvYV8ySXJlSmR6LVQ2NlRsa0l0VUJyS1ZqOTg0UEdfTDJFTk5Ga1J3Y3hpclZOeW8xOFd6UG13U0pGQ3BPRXJaZDBnSzZaWGlrUG9OQ0JPU0FpMGh2RVc4WnFDOHNuak5PLUEwXzFRYThNamdjSXktSHV4aTAxNi01RGVjeFVSR2pvS2o4NA?oc=5",
-   "source": "PR Newswire",
+   "title": "Mizuho brought in a Deutsche Bank saleswoman and made her an MD",
+   "url": "https://news.google.com/rss/articles/CBMiYkFVX3lxTFBCeEVEZTdjal9EcENCakZ5ZGszQVg3NjhybGtiTFYxQzNQZVNyTFdTM0ZCUFNDbDdlb21wSERIelg2TDNtd2tVaTdfOE1NVkQxVnhtcTQ1RTZwQmdOZk1wRmNn?oc=5",
+   "source": "eFinancialCareers",
    "published": "2026-11-05T08:00:00Z",
-   "id": "5f4ee69fc52e",
-   "company": "huntington",
-   "employer": "Huntington Bank (incl. Cadence)",
-   "category": "bank",
+   "id": "e8bb249b6756",
+   "company": "mizuho",
+   "employer": "Mizuho Americas",
+   "category": "ib",
    "scope": "national",
-   "first_seen": "2026-11-18",
+   "first_seen": "2026-11-22",
    "prep": {
     "event": "Firm news",
-    "what": "PR Newswire reported on Nov 5 (national coverage): \"Huntington Bank Announces Treasury Solution that Turns Multi-Bank Complexity into Improved Liquidity Management\". Read the article for the details before you bring it up.",
-    "why": "News about Huntington Bank (incl. Cadence) shapes its lending appetite and where it is hiring.",
+    "what": "eFinancialCareers reported on Nov 5 (national coverage): \"Mizuho brought in a Deutsche Bank saleswoman and made her an MD\". Read the article for the details before you bring it up.",
+    "why": "News about Mizuho Americas shows where its deal teams are busy.",
     "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
+   }
+  },
+  {
+   "title": "DIFC & Mizuho Launch Gateway to Scale Up 6,000 Japanese Startups Across MEASA",
+   "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxPR3FkaG1uTGhFMHlZVnhJYzRySTRablNZUFJFVXdVa0VQLTFmT0h2UGUtWmMzSkgtWXZDMmpDODY4SXNkTnh6c1gxTENLS2RKSnQ2TzFZc3Vub2pFQ254WVFnTU1LNENHNXJiT3NqMFNmRDN6NGZLN1dFSjJLMXVLWUZwazZQMzBocEdac0toLW5fU09DYUJHQTFYR0hrdU0?oc=5",
+   "source": "FF News",
+   "published": "2026-11-05T08:00:00Z",
+   "id": "7aecebcf3ac8",
+   "company": "mizuho",
+   "employer": "Mizuho Americas",
+   "category": "ib",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Expansion or new office",
+    "what": "FF News reported on Nov 5 (national coverage): \"DIFC & Mizuho Launch Gateway to Scale Up 6,000 Japanese Startups Across MEASA\". Read the article for the details before you bring it up.",
+    "why": "Expansion means new coverage and new seats on deal teams.",
+    "interview": "Say you noticed the expansion and ask how the Houston team fits into it. It's a natural lead-in to why you want to start your career in Houston."
+   }
+  },
+  {
+   "title": "Defense AI Funding Wave Puts Houlihan Lokey Stock In Focus",
+   "url": "https://news.google.com/rss/articles/CBMi3wFBVV95cUxPREZzaDhZcC1YdmVlZ1lxSTJ6eEt2RUdXcTV5VE96T1RsUVZobEpmXzF6cHpndGpZSWh5clRFVlBVUGlHSzZLM2xXdHdOeGFKTnc5QnNsWVNhTUd2dU9NQllIS05lNDZPRmRHZEFrRnFfUl9MRWJvVUYzQWt1MUxHZUowZGhncVZKUUhsMENJakpWTGRVdTM3REtrdGpIc1JFN3BtUEZEWVBDQ1BiZzlLZVVONWZpemtwYlRwQU0xQWhteHB3UXNWbWNxR3ZMendKRWQ1N1pjcnhOVldYX2Uw0gHkAUFVX3lxTE0ybUdna3NEc2RVNlN6OXVEbzBQbjVhUXlWQWt2S0V2T2dxY1pnTjNPRzZvSmpPYWNVOTdwcDJtSzM2YkpWM3haRk9oZG1xcGhtYWdVSXNKSzJDXzZDVTUzZHBxTGJoOWJLWml2RjJ3WTJ4dWhYV1l4eUdFQmloM3hzc0hqbDB5S2RuRC1GRVB5UG5NQm1xVVFFRWM4TlN2UmM1U184VHFSS1l3Nk9RNEFfRlRPemE0bUJja0JBZGFJdUJFSDNUYVNSUWJUNUtPSWFUMVA1SmFGLVFqOHRZMjlHX01taA?oc=5",
+   "source": "Simply Wall St",
+   "published": "2026-11-05T08:00:00Z",
+   "id": "d3b5a42d1fff",
+   "company": "houlihan_lokey",
+   "employer": "Houlihan Lokey",
+   "category": "ib",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Stock listing or market move",
+    "what": "Simply Wall St reported on Nov 5 (national coverage): \"Defense AI Funding Wave Puts Houlihan Lokey Stock In Focus\". Read the article for the details before you bring it up.",
+    "why": "How the market values Houlihan Lokey affects hiring budgets and deal activity.",
+    "interview": "Mention it lightly and ask what it means for the firm's strategy in Texas; avoid stock-price predictions."
    }
   },
   {
@@ -1888,6 +1996,24 @@
    }
   },
   {
+   "title": "Houlihan Lokey Expands European Business Services Capabilities with Senior Hire",
+   "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxNRTNXR3FkdnVpOUxMYVhDQTJWd1FRenZKcFpCRGk5SjhkeEhROXpVZmhsaDRkV012UUdFbFpVNjV0VTVodDYxX1M5ckVNd1hDREtNVmNQSUVNU2pUSDRUVmc0UVU5OGJFZjlhcjNzMTJGaXZrLURSNXJqcHFoREtQM2pJanlrOE9iSTU4RHR3bEdBbXMwOGR4eWctTFRVVFNGNG5VbXdkVndfTEk?oc=5",
+   "source": "ABF Journal",
+   "published": "2026-11-05T07:00:54Z",
+   "id": "a9273e206b3e",
+   "company": "houlihan_lokey",
+   "employer": "Houlihan Lokey",
+   "category": "ib",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Senior hire or leadership change",
+    "what": "ABF Journal reported on Nov 5 (national coverage): \"Houlihan Lokey Expands European Business Services Capabilities with Senior Hire\". Read the article for the details before you bring it up.",
+    "why": "Senior hires show which sectors Houlihan Lokey is building out; a new managing director usually needs analysts.",
+    "interview": "Mention the new leader by name and ask what they plan to build, which shows you've researched the team and not just the firm."
+   }
+  },
+  {
    "title": "Why Piper Sandler Thinks You Should Buy Take-Two Stock Before November 19",
    "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxPZE5abEl0bTBFVzd3TTBnM1lzMXduNmgyc3RXVXR4bUJHWkVwSXZHaUR0WFVLZDFxeDJFMzlWMGJORHRvRlhncmxNaUlQRXlEa0tKODd1MUpzMTVNWUhQaGhwbEsxQXdKTmJ4N1lHY2Vyd0s2dWpvTmM4SGVmZk13SGZ6NEFIX3g2NkdaZUZHNE4yODVCb0FFcw?oc=5",
    "source": "Yahoo Finance",
@@ -1903,42 +2029,6 @@
     "what": "Yahoo Finance reported on Nov 4 (national coverage): \"Why Piper Sandler Thinks You Should Buy Take-Two Stock Before November 19\". Read the article for the details before you bring it up.",
     "why": "Buying another advisory firm adds bankers and sector coverage, which shows where Piper Sandler wants to grow and which groups may be adding analysts.",
     "interview": "Bring it up when asked why Piper Sandler: name the deal, say what it adds (markets, scale or sector coverage), and ask how the integration will change the team you would join."
-   }
-  },
-  {
-   "title": "What Williams Companies (WMB) Said on Its Q3 Earnings Call",
-   "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQTlFJa05IV3h3VGpxdmp0NmJteHNuTGNpMGhUSkl5aC11N0xzM0x1RzV0NE9pRHpabVJvQ25yQThoSnVFVlJRRjN2Z3lUc1Uwb09MeU9kRzBqNzZMMjFrWXphOXJ2ZG1XVXgyQVc2dWxWZF9VUENsYnpYWUVWaDlpNHE0Z25FcWVuZ05TemxUU01tRGhycTZJTkxFUUdKZ3N4VVpVR3dKT0l6ZENhcHR1cHNqdF9XZTJW?oc=5",
-   "source": "TradingView",
-   "published": "2026-11-04T08:00:00Z",
-   "id": "9e5f0cd64798",
-   "company": "williams",
-   "employer": "Williams Companies",
-   "category": "energy",
-   "scope": "national",
-   "first_seen": "2026-11-21",
-   "prep": {
-    "event": "Earnings or results",
-    "what": "TradingView reported on Nov 4 (national coverage): \"What Williams Companies (WMB) Said on Its Q3 Earnings Call\". Read the article for the details before you bring it up.",
-    "why": "Results and guidance drive cash flow, leverage and covenant headroom, the core of a credit analyst's view of an energy company.",
-    "interview": "Show you follow the firm: cite one number or trend from the results and ask how it affects the group's priorities for next year."
-   }
-  },
-  {
-   "title": "Williams Companies (WMB) Drops 5.3%, Shedding About $4 Billion in Value",
-   "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxPcUdrck1BLVBzc0xVMExJdERRS0tMeENQNTJ2RDZHWlVVQW9rSjlXVXcxZ3JVWllpOXN5eGljYUljcU9CeXprZTAtRm1CSXFtNHcxQ1JUVEtsMHJnRTY5NFl4ZWpGdUN2c3hmTFJyUmpheHVjbTJEZG15cExOQVRyMHNESGFMWktEVVV2c2IyUW95aDQ?oc=5",
-   "source": "24/7 Wall St.",
-   "published": "2026-11-04T08:00:00Z",
-   "id": "1216187eee3f",
-   "company": "williams",
-   "employer": "Williams Companies",
-   "category": "energy",
-   "scope": "national",
-   "first_seen": "2026-11-19",
-   "prep": {
-    "event": "Firm news",
-    "what": "24/7 Wall St. reported on Nov 4 (national coverage): \"Williams Companies (WMB) Drops 5.3%, Shedding About $4 Billion in Value\". Read the article for the details before you bring it up.",
-    "why": "News about Williams Companies affects its cash flows and counterparties, the heart of credit and treasury work.",
-    "interview": "Have one sentence ready on this story for the 'what have you read about us lately?' question, and follow it with a question about the team."
    }
   },
   {
@@ -1960,6 +2050,24 @@
    }
   },
   {
+   "title": "Houlihan Lokey Expands Power, Utilities, and Renewables Group With Experienced Hire",
+   "url": "https://news.google.com/rss/articles/CBMi1AFBVV95cUxPZjZRLWxYbmg3ZldVSGJyR2tJYXc1blprWXBNN1JRM001UkRsQjg5Z0wtRk1yajF0UktvUl82ZFFCMHRNVnRwX2k4UzlqUUxtQ0hCVTBUZ09EQy1JT2RCSEFtdlVMWHZMSlB3OWVuUkJRTThoQjRLd24xcEc3bi15MWVQQWI5alEzejBOeHFlWWpoOHdCZ19DeDFneGxIeVU5M1o2RFhkVjJsMEZCNlJMcWJNZWNMSHc2QkduczhsVVZveGtteXkwQTU4cDFuVXZ5X09uUg?oc=5",
+   "source": "Business Wire",
+   "published": "2026-11-03T08:00:00Z",
+   "id": "8e3a54894967",
+   "company": "houlihan_lokey",
+   "employer": "Houlihan Lokey",
+   "category": "ib",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Senior hire or leadership change",
+    "what": "Business Wire reported on Nov 3 (national coverage): \"Houlihan Lokey Expands Power, Utilities, and Renewables Group With Experienced Hire\". Read the article for the details before you bring it up.",
+    "why": "Senior hires show which sectors Houlihan Lokey is building out; a new managing director usually needs analysts.",
+    "interview": "Mention the new leader by name and ask what they plan to build, which shows you've researched the team and not just the firm."
+   }
+  },
+  {
    "title": "Trafigura to provide over USD1 billion to support US refineries acquisition by CVR Energy, Inc.",
    "url": "https://news.google.com/rss/articles/CBMi7wFBVV95cUxQZEVoUEllb0pyb1lfUlNEU3NtcEFObkM4M0VXRFAwSGtmbUJMc1BoSTdYTXFoMDZsd3dOS0w5dlVybVJxLVdwb1Z2aG5zTUFPeXZySjFHRnlqQWN0WkZ6aXJuUkt2R3YxY3kwT2VVbFU3S0JYZGI4d2JnM0VNMV9nMkJiQUkyQWIya1ZSX0Rla1k1S3BMWVczMlhQVDZNQk9mcDlwYWFERGVkbUpKWmVxbmhCUkVEQ2JjZ2VqSkJUZDF1cGxBcUhDYkJSRGZ1SlNlbVFhdThlbFppdjg3N1M4dXdWbkpUNFdmazJHbWpGZw?oc=5",
    "source": "Trafigura",
@@ -1975,24 +2083,6 @@
     "what": "Trafigura reported on Nov 3 (Houston coverage): \"Trafigura to provide over USD1 billion to support US refineries acquisition by CVR Energy, Inc.\". Read the article for the details before you bring it up.",
     "why": "An acquisition changes the company's debt, liquidity and counterparty mix, which is what a credit or treasury team watches most closely.",
     "interview": "Bring it up when asked why Trafigura: name the deal, say what it adds (markets, scale or sector coverage), and ask how the integration will change the team you would join."
-   }
-  },
-  {
-   "title": "Williams Companies Stock Soars on AI Power Demand. Is It Too Late to Get In?",
-   "url": "https://news.google.com/rss/articles/CBMiugFBVV95cUxQTmt0UkpUc3pvNzBoN294YmFQM0NaR0JEbUp3dXd6YUloelRrcldpZkdnVkVyTXZuU2pROUl0NTBqSU5lUHotVkNFeFJ0cVBrMlFtbmJUWDVVX1RkUWozMng4NlZRWHBpcndwaUtBVU5Dc19lT3k4VW16RnZlY3BfaGdyWENoazdtRmUwdlptTmkxN3BENTBpbnRZaU5oSDE4b0pQV1pmaGRfY2lRa1RZR0RpMmhjX2V3MFE?oc=5",
-   "source": "24/7 Wall St.",
-   "published": "2026-11-03T08:00:00Z",
-   "id": "58253a116036",
-   "company": "williams",
-   "employer": "Williams Companies",
-   "category": "energy",
-   "scope": "national",
-   "first_seen": "2026-11-21",
-   "prep": {
-    "event": "Stock listing or market move",
-    "what": "24/7 Wall St. reported on Nov 3 (national coverage): \"Williams Companies Stock Soars on AI Power Demand. Is It Too Late to Get In?\". Read the article for the details before you bring it up.",
-    "why": "Investor sentiment affects the company's cost of capital and access to financing.",
-    "interview": "Mention it lightly and ask what it means for the firm's strategy in Texas; avoid stock-price predictions."
    }
   },
   {
@@ -2014,6 +2104,42 @@
    }
   },
   {
+   "title": "5 insightful analyst questions from Cullen/Frost Bankers’s Q3 earnings call",
+   "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOOXViVXZsSmYzQURrWjdoNzctUmc4eGh4TF9VbFgxWEJrdkRTVWM1SFYyeGlpSFVWN0dwX1g3REN6NnczMnFlVTEtcXBVT09jcmJuV2VUeEFXak84d2R3ZTd3cV9aOHdhMk5KUmZkbDUyT3dPd0NIQ2ttQmNnaVhHVlF1d3RObUZfYlB4dGpEaW93UlVvOHBRRG95UkZpWm03LTg2bw?oc=5",
+   "source": "Yahoo Finance",
+   "published": "2026-11-02T08:00:00Z",
+   "id": "611f35516356",
+   "company": "frost",
+   "employer": "Frost Bank",
+   "category": "bank",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Earnings or results",
+    "what": "Yahoo Finance reported on Nov 2 (national coverage): \"5 insightful analyst questions from Cullen/Frost Bankers’s Q3 earnings call\". Read the article for the details before you bring it up.",
+    "why": "Quarterly results show loan growth, credit quality (charge-offs, reserves) and margin pressure, which shape how much Frost Bank wants to lend and to whom.",
+    "interview": "Show you follow the firm: cite one number or trend from the results and ask how it affects the group's priorities for next year."
+   }
+  },
+  {
+   "title": "'A quintessential Texas company': Frost moving primary listing to TXSE",
+   "url": "https://news.google.com/rss/articles/CBMiiwFBVV95cUxQYlM1ZDhxRFN0eVNzSE1COU5STGlILVFjQkVnTXV3VXdpYUZwaTk5M2s0ZjQ1MEFISm9nMVVxTHpvV1ZscWQyQ3BRNk9zdmVtdXRiMlZuOHlVMHZNVl9ndXh6WWFTMWwxMEJOTVFNVjFoZGNvNzkydXd4NGFLcWkwM2lzbUdta2lkSzAw?oc=5",
+   "source": "The Business Journals",
+   "published": "2026-11-02T08:00:00Z",
+   "id": "c1cef295196c",
+   "company": "frost",
+   "employer": "Frost Bank",
+   "category": "bank",
+   "scope": "national",
+   "first_seen": "2026-11-22",
+   "prep": {
+    "event": "Stock listing or market move",
+    "what": "The Business Journals reported on Nov 2 (national coverage): \"'A quintessential Texas company': Frost moving primary listing to TXSE\". Read the article for the details before you bring it up.",
+    "why": "Market moves and listings reflect how investors see Frost Bank's growth and risk, the context for its lending strategy.",
+    "interview": "Mention it lightly and ask what it means for the firm's strategy in Texas; avoid stock-price predictions."
+   }
+  },
+  {
    "title": "Cheniere Announces Offering of Senior Notes due 2037",
    "url": "https://news.google.com/rss/articles/CBMirgFBVV95cUxPWjNZenBKQ3hxZ3NIYl9XU3oya1o2SXJSR1hLWmVHeEw5THl1WVN5SjlVMlFEYlpQUFNRQ3dMNnIxQWI0X3dLSjlIR3RIN0FickRZMnNVMi1RWEFWTndDdFNDTEN0YjNxdWxlT2RqVG5kUXIwY1FuNGxxNS1UYzF0cUxyZFBNRVlCcFRxcG1oMkpGS0RYbkZjZnFxZFZrOUYxTVdobjA0Sm16b25hWkE?oc=5",
    "source": "Business Wire",
@@ -2029,42 +2155,6 @@
     "what": "Business Wire reported on Nov 2 (Houston coverage): \"Cheniere Announces Offering of Senior Notes due 2037\". Read the article for the details before you bring it up.",
     "why": "New debt changes leverage, interest cost and maturities, the first things a credit analyst checks.",
     "interview": "Connect it to credit work: mention the size and terms, and how you would think about leverage and repayment capacity, drawing on your financing-package work at Watercress."
-   }
-  },
-  {
-   "title": "Earnings call transcript: Cullen/Frost tops Q3 2026 estimates, lifts outlook",
-   "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxQdlp3MllrT3R6ODhlOGJkZDJZQ0QzYmNjQWhwVjk5UWVYSUgyN2RQZjFBb19Dd2N1bXl0SERFTGwzUFJKQ1pTLTZuYVFfXzdkQktqc0xFTFJnZzZhLU9hRHlTSGtydDlZQmpKaUhGN2tBN2VYeEZrLVh2dVg1WFh2LUI0aENiaTViQm5qejc3cDMtVTZhRDQ1RHE5NzFSdmpGZ0Y5alpjZ2xrRmxJa2laSGcxNnBJMTYtMWRuRUI3aTJPQXc0ZnZkWA?oc=5",
-   "source": "Investing.com",
-   "published": "2026-11-01T07:00:00Z",
-   "id": "477aab2feff3",
-   "company": "frost",
-   "employer": "Frost Bank",
-   "category": "bank",
-   "scope": "houston",
-   "first_seen": "2026-11-20",
-   "prep": {
-    "event": "Earnings or results",
-    "what": "Investing.com reported on Nov 1 (Houston coverage): \"Earnings call transcript: Cullen/Frost tops Q3 2026 estimates, lifts outlook\". Read the article for the details before you bring it up.",
-    "why": "Quarterly results show loan growth, credit quality (charge-offs, reserves) and margin pressure, which shape how much Frost Bank wants to lend and to whom.",
-    "interview": "Show you follow the firm: cite one number or trend from the results and ask how it affects the group's priorities for next year."
-   }
-  },
-  {
-   "title": "Cullen/Frost Moves Primary Listing to TXSE as Texas Banks Keep Coming Home",
-   "url": "https://news.google.com/rss/articles/CBMivAFBVV95cUxQcjJxQlV0Umg2NUNjSUt1UkpBQ1dMR2tZbGMtSHNNcGxkWi1fc1RpV0ZJUnVUMXFmbHlENjkzSlk5R2UybW91R0hlQTB1YU9YNGRIbUxBZGVseHVBY1RHalMyVFJwRjZRY0NvUk41RHdyR3AzLTdTZFlOeVlfeDhvMnVqdWVFYVNqOXJqamNBT0NqOEtDWFJHMzlwb1lscm1nVjh0WWIwbFJiOFZJQUVBQXRMU0ZnNFNGV2pLaA?oc=5",
-   "source": "Disruption Banking",
-   "published": "2026-11-01T07:00:00Z",
-   "id": "622e763f5fe6",
-   "company": "frost",
-   "employer": "Frost Bank",
-   "category": "bank",
-   "scope": "national",
-   "first_seen": "2026-11-19",
-   "prep": {
-    "event": "Stock listing or market move",
-    "what": "Disruption Banking reported on Nov 1 (national coverage): \"Cullen/Frost Moves Primary Listing to TXSE as Texas Banks Keep Coming Home\". Read the article for the details before you bring it up.",
-    "why": "Market moves and listings reflect how investors see Frost Bank's growth and risk, the context for its lending strategy.",
-    "interview": "Mention it lightly and ask what it means for the firm's strategy in Texas; avoid stock-price predictions."
    }
   }
  ]

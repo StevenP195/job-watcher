@@ -1,9 +1,9 @@
 {
-  "run_time": "2026-11-21T17:58:00Z",
+  "run_time": "2026-11-22T18:30:43Z",
   "first_run_date": "2026-11-13",
-  "days_with_success": 9,
+  "days_with_success": 10,
   "open": 3970,
-  "new_today": 1,
+  "new_today": 0,
   "removed_today": 0,
   "sources": [
     {
@@ -18,9 +18,9 @@
       "name": "origin_bank",
       "employer": "Origin Bank",
       "ats": "workday",
-      "ok": true,
-      "count": 43,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://originbank.wd1.myworkdayjobs.com/wday/cxs/originbank/Careers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "huntington",
@@ -90,9 +90,9 @@
       "name": "piper_sandler",
       "employer": "Piper Sandler",
       "ats": "workday",
-      "ok": true,
-      "count": 45,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://pipersandler.wd501.myworkdayjobs.com/wday/cxs/pipersandler/Piper_Sandler_Careers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "houlihan_lokey",
