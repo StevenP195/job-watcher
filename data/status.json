@@ -1,10 +1,10 @@
 {
-  "run_time": "2026-11-22T18:30:43Z",
+  "run_time": "2026-11-23T22:38:57Z",
   "first_run_date": "2026-11-13",
-  "days_with_success": 10,
-  "open": 3970,
-  "new_today": 0,
-  "removed_today": 0,
+  "days_with_success": 11,
+  "open": 3965,
+  "new_today": 3,
+  "removed_today": 8,
   "sources": [
     {
       "name": "fifth_third",
@@ -18,9 +18,9 @@
       "name": "origin_bank",
       "employer": "Origin Bank",
       "ats": "workday",
-      "ok": false,
-      "count": 0,
-      "error": "POST https://originbank.wd1.myworkdayjobs.com/wday/cxs/originbank/Careers/jobs failed: HTTP Error 429: Too Many Requests"
+      "ok": true,
+      "count": 38,
+      "error": ""
     },
     {
       "name": "huntington",
@@ -90,17 +90,17 @@
       "name": "piper_sandler",
       "employer": "Piper Sandler",
       "ats": "workday",
-      "ok": false,
-      "count": 0,
-      "error": "POST https://pipersandler.wd501.myworkdayjobs.com/wday/cxs/pipersandler/Piper_Sandler_Careers/jobs failed: HTTP Error 429: Too Many Requests"
+      "ok": true,
+      "count": 44,
+      "error": ""
     },
     {
       "name": "houlihan_lokey",
       "employer": "Houlihan Lokey",
       "ats": "workday",
-      "ok": false,
-      "count": 0,
-      "error": "POST https://hl.wd1.myworkdayjobs.com/wday/cxs/hl/Campus/jobs failed: HTTP Error 429: Too Many Requests"
+      "ok": true,
+      "count": 49,
+      "error": ""
     },
     {
       "name": "trafigura",
