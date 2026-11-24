@@ -1,10 +1,10 @@
 {
-  "run_time": "2026-11-23T22:38:57Z",
+  "run_time": "2026-11-24T21:11:39Z",
   "first_run_date": "2026-11-13",
-  "days_with_success": 11,
+  "days_with_success": 12,
   "open": 3965,
-  "new_today": 3,
-  "removed_today": 8,
+  "new_today": 1,
+  "removed_today": 2,
   "sources": [
     {
       "name": "fifth_third",
@@ -18,9 +18,9 @@
       "name": "origin_bank",
       "employer": "Origin Bank",
       "ats": "workday",
-      "ok": true,
-      "count": 38,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://originbank.wd1.myworkdayjobs.com/wday/cxs/originbank/Careers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "huntington",
@@ -98,9 +98,9 @@
       "name": "houlihan_lokey",
       "employer": "Houlihan Lokey",
       "ats": "workday",
-      "ok": true,
-      "count": 49,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://hl.wd1.myworkdayjobs.com/wday/cxs/hl/Campus/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "trafigura",
