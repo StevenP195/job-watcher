@@ -1,10 +1,10 @@
 {
-  "run_time": "2026-11-24T21:11:39Z",
+  "run_time": "2026-11-25T20:28:36Z",
   "first_run_date": "2026-11-13",
-  "days_with_success": 12,
-  "open": 3965,
-  "new_today": 1,
-  "removed_today": 2,
+  "days_with_success": 13,
+  "open": 3967,
+  "new_today": 2,
+  "removed_today": 0,
   "sources": [
     {
       "name": "fifth_third",
@@ -18,9 +18,9 @@
       "name": "origin_bank",
       "employer": "Origin Bank",
       "ats": "workday",
-      "ok": false,
-      "count": 0,
-      "error": "POST https://originbank.wd1.myworkdayjobs.com/wday/cxs/originbank/Careers/jobs failed: HTTP Error 429: Too Many Requests"
+      "ok": true,
+      "count": 39,
+      "error": ""
     },
     {
       "name": "huntington",
@@ -91,7 +91,7 @@
       "employer": "Piper Sandler",
       "ats": "workday",
       "ok": true,
-      "count": 44,
+      "count": 45,
       "error": ""
     },
     {
