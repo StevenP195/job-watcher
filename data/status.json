@@ -1,9 +1,9 @@
 {
-  "run_time": "2026-11-25T20:28:36Z",
+  "run_time": "2026-11-26T20:11:45Z",
   "first_run_date": "2026-11-13",
-  "days_with_success": 13,
+  "days_with_success": 14,
   "open": 3967,
-  "new_today": 2,
+  "new_today": 0,
   "removed_today": 0,
   "sources": [
     {
@@ -18,9 +18,9 @@
       "name": "origin_bank",
       "employer": "Origin Bank",
       "ats": "workday",
-      "ok": true,
-      "count": 39,
-      "error": ""
+      "ok": false,
+      "count": 0,
+      "error": "POST https://originbank.wd1.myworkdayjobs.com/wday/cxs/originbank/Careers/jobs failed: HTTP Error 429: Too Many Requests"
     },
     {
       "name": "huntington",
